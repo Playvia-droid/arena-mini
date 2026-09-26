@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#0b0d1f">
 <title>Arena Mini</title>
-<meta name="description" content="13 juegos para jugar con amigos, en el mismo celular o en línea: Ajedrez, Ludo, Stop, Botellita, Ahorcado y más.">
+<meta name="description" content="14 juegos para jugar con amigos, en el mismo celular o en línea: Yo Nunca Nunca, City Fortune, Ludo, Stop, Botellita y más.">
 <meta property="og:title" content="Arena Mini: juegos con amigos">
-<meta property="og:description" content="Ajedrez, Ludo, Última Carta, Stop, Botellita, Ahorcado, ¿Quién es? y más. Sin descargar nada.">
+<meta property="og:description" content="Yo Nunca Nunca, City Fortune, Ajedrez, Ludo, Stop, Botellita, Ahorcado y más. Sin descargar nada.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -467,6 +467,62 @@ body.playing #mute{display:none}
 .cf-face b{border-radius:50%}.cf-face b.on{background:radial-gradient(circle at 40% 35%,#46506e,#12162a);margin:12%}
 .cf-console{transition:opacity .25s}.cf-console.hide{opacity:0;pointer-events:none}
 .cf-dtag{position:absolute;left:0;right:0;margin:0 auto;width:max-content;max-width:90%;bottom:22%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:900 clamp(11px,3.4vw,15px) var(--body);color:#fff;background:rgba(14,21,48,.82);padding:5px 12px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.35);animation:cfIn .3s}
+/* ---------- Yo Nunca Nunca ---------- */
+.yn{display:flex;flex-direction:column;gap:10px;flex:1;padding-bottom:8px;--yn:#e11d48}
+.yn-top{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font:800 12px var(--body);color:var(--dim)}.yn-top>span:first-child{color:#fff}
+.yn-bar{flex:1 1 100%;height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;display:block;order:3}.yn-bar i{display:block;height:100%;background:linear-gradient(90deg,#ff6b9a,var(--yn));transition:width .25s linear;border-radius:6px}.yn-bar i.low{background:#ff5a5f;animation:ynPulse .6s ease-in-out infinite alternate}
+.yn-secs{margin-left:auto;font:900 13px var(--body);color:#fff}
+@keyframes ynPulse{to{opacity:.45}}
+.yn-pl{display:flex;gap:6px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none}.yn-pl::-webkit-scrollbar{display:none}
+.yn-p{appearance:none;border:2px solid transparent;flex:none;min-width:62px;max-width:86px;display:grid;justify-items:center;gap:1px;background:var(--bg2);color:#fff;border-radius:14px;padding:6px 4px 5px;position:relative;font-family:var(--body);cursor:default}
+.yn-p i{width:28px;height:28px;border-radius:50%;background:var(--c);display:grid;place-items:center;font:400 15px var(--disp);font-style:normal;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+.yn-p b{font-size:11px;font-weight:900;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.yn-p span{font:400 15px var(--disp);color:var(--gold)}
+.yn-p em{position:absolute;top:-4px;right:-2px;font-style:normal;font-size:15px;filter:drop-shadow(0 1px 2px #000)}
+.yn-p.turn{border-color:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}.yn-p.hot{border-color:#ff7a1a;background:linear-gradient(180deg,#5a1a10,var(--bg2));animation:ynHot 1s ease-in-out infinite alternate}
+.yn-p.me{background:linear-gradient(180deg,#2a2f6b,var(--bg2))}.yn-p.out{opacity:.35}.yn-p.out b{text-decoration:line-through}
+@keyframes ynHot{to{box-shadow:0 0 14px #ff7a1a88}}
+.yn-main{display:flex;flex-direction:column;gap:12px;flex:1}
+.yn-hero{font:400 clamp(26px,8vw,36px) var(--disp);text-align:center;letter-spacing:.02em;text-shadow:0 4px 0 rgba(0,0,0,.35);animation:pop .45s cubic-bezier(.2,1.5,.4,1)}.yn-hero.small{font-size:22px}
+.yn-hero.fire{background:linear-gradient(90deg,#ffd23f,#ff7a1a,#e11d48);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 3px 0 rgba(0,0,0,.4))}
+.yn-sub{text-align:center;color:var(--dim);font-weight:800;margin:0;font-size:14px}.yn-sub b{color:#fff}
+.yn-ask{text-align:center;font:400 22px var(--disp);margin:0}
+.yn-opts{display:grid;gap:8px}
+.yn-opt{appearance:none;text-align:left;border:0;border-left:5px solid var(--yn);background:linear-gradient(135deg,#2a1030,var(--bg2));color:#fff;border-radius:16px;padding:12px 14px;display:grid;gap:3px;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.3);transition:transform .08s}
+.yn-opt:active{transform:translateY(3px)}.yn-opt small{font:800 11px var(--body);color:#ff9dbb}.yn-opt span{font:800 16px var(--body);line-height:1.25}
+.yn-row{display:flex;gap:8px}.yn-row .btn{font-size:17px;padding:13px 8px}
+.yn-mini{font-size:15px!important;padding:10px!important}
+.yn-wait{display:grid;gap:10px;justify-items:center;text-align:center;padding:30px 10px;font-weight:800}.yn-wait p{font:400 24px var(--disp);margin:0}.yn-wait small{color:var(--dim)}
+.yn-card{position:relative;background:#fff;color:#2a0619;border-radius:22px;padding:16px 18px 18px;box-shadow:0 8px 0 rgba(0,0,0,.35),0 0 0 4px var(--yn) inset;text-align:center;display:grid;gap:6px;animation:ynCard .5s cubic-bezier(.2,1.4,.4,1)}
+.yn-card small{font:900 11px var(--body);color:#9f1239;text-transform:uppercase;letter-spacing:.06em}.yn-card h3{font-size:18px;color:var(--yn);letter-spacing:.04em}
+.yn-card p{margin:0;font:800 18px/1.3 var(--body)}.yn-card.big p{font-size:clamp(19px,5.6vw,24px)}
+.yn-card .btn{color:#fff;font-size:16px;padding:10px}.yn-card .yn-load{font-size:13px;color:#9f1239}
+@keyframes ynCard{0%{opacity:0;transform:rotateX(70deg) scale(.9)}100%{opacity:1;transform:none}}
+.yn-ans{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.yn-ans button{appearance:none;border:0;border-radius:20px;padding:20px 8px;font:400 20px var(--disp);color:#fff;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.35);transition:transform .08s}
+.yn-ans button:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.35)}.yn-yes{background:linear-gradient(180deg,#ff4f7b,#c2185b)}.yn-no{background:linear-gradient(180deg,#3da9fc,#1f5fbd)}
+.yn-done{text-align:center;background:var(--bg2);border-radius:16px;padding:14px;font-weight:800}.yn-done small{display:block;margin-top:4px;color:var(--dim)}
+.yn-pass{text-align:center;display:grid;gap:10px;background:var(--bg2);border-radius:18px;padding:14px}.yn-pass p{margin:0;font-weight:800}.yn-pass small{color:var(--dim);font-weight:800}
+.yn-rev{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.yn-rev>div{border-radius:18px;padding:10px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;min-height:90px}.yn-rev .yes{background:rgba(225,29,72,.18);border:2px solid rgba(225,29,72,.5)}.yn-rev .no{background:rgba(61,169,252,.12);border:2px solid rgba(61,169,252,.35)}
+.yn-rev p{flex:1 1 100%;margin:0 0 2px;font:400 16px var(--disp);text-align:center}
+.yn-rev span{background:var(--c);color:#fff;border-radius:999px;padding:5px 10px;font:900 13px var(--body);text-shadow:0 1px 1px rgba(0,0,0,.4);display:inline-flex;gap:5px;align-items:center}.yn-rev span b{background:rgba(0,0,0,.3);border-radius:8px;padding:0 5px;color:var(--gold)}
+.yn-rev em{color:var(--dim);font-weight:800;font-size:13px;margin:auto}
+.yn-rev.anim span{animation:ynPop .45s cubic-bezier(.2,1.6,.4,1) both;animation-delay:var(--d)}
+@keyframes ynPop{0%{opacity:0;transform:scale(.3) translateY(10px)}100%{opacity:1;transform:none}}
+.yn-chcard{background:linear-gradient(135deg,#5a1a10,#2a0619);border:2px solid #ff7a1a;border-radius:20px;padding:14px 16px;text-align:center;display:grid;gap:6px;box-shadow:0 0 24px rgba(255,122,26,.25)}
+.yn-chcard .yn-who{margin:0;font-weight:900}.yn-chcard small{color:#ffb38a;font-weight:800}.yn-chcard h3{font:800 19px/1.3 var(--body)}
+.yn-comp{display:grid;gap:8px}.yn-pre{font:400 18px var(--disp);color:#ff9dbb}
+.yn-comp textarea{width:100%;box-sizing:border-box;background:var(--bg2);border:2px solid var(--line);color:#fff;border-radius:14px;padding:12px;font:800 16px var(--body);resize:none}.yn-comp textarea:focus{outline:none;border-color:var(--yn)}
+.yn-note{text-align:center;color:var(--dim);font-weight:800;font-size:12px;margin:0}.yn-x{appearance:none;border:0;background:none;color:#ff9dbb;font:900 12px var(--body);text-decoration:underline;cursor:pointer}
+.yn-votes{display:grid;gap:6px}.yn-votes>span{text-align:center;color:var(--dim);font-weight:800}
+.yn-lv{display:grid;grid-template-columns:1fr 64px 64px;gap:6px;align-items:center;background:var(--bg2);border-radius:14px;padding:6px 8px}.yn-lv b{font-weight:900}
+.yn-lv button{appearance:none;border:0;background:rgba(255,255,255,.08);border-radius:10px;font-size:22px;padding:6px;cursor:pointer}
+.yn-aw{display:grid;gap:8px}.yn-aw div{display:grid;grid-template-columns:44px 1fr;align-items:center;background:var(--bg2);border-radius:16px;padding:10px 12px}.yn-aw i{font-style:normal;font-size:30px;grid-row:span 2}.yn-aw small{color:var(--dim);font-weight:800}.yn-aw b{font-weight:900}
+.yn-emo{position:relative}.yn-chatb{position:relative}.yn-chatb i{position:absolute;top:0;right:6px;font:900 10px var(--body);font-style:normal;background:#e11d48;border-radius:999px;min-width:14px;line-height:14px}.yn-chatb i:empty{display:none}
+.yn-chat{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(94vw,500px);z-index:60;background:rgba(14,16,40,.97);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:10px;display:grid;gap:8px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.yn-chat[hidden]{display:none}.yn-ch-h{display:flex;justify-content:space-between;align-items:center}.yn-ch-h b{font:400 16px var(--disp)}.yn-chx{appearance:none;border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:10px;width:34px;height:34px;font-weight:900;cursor:pointer}
+.yn-msgs{max-height:34vh;overflow-y:auto;display:grid;gap:4px;align-content:start}.yn-msgs p{margin:0;font-weight:700;font-size:14px;word-break:break-word}.yn-msgs p b{color:var(--c)}
+.yn-cf{display:grid;grid-template-columns:1fr 56px;gap:6px}.yn-cf input{background:var(--bg2);border:2px solid var(--line);color:#fff;border-radius:12px;padding:10px;font:800 15px var(--body);min-width:0}.yn-cf .btn{padding:8px;font-size:20px}
 </style>
 </head>
 <body>
@@ -498,7 +554,7 @@ const rnd = (a, b) => a + Math.random() * (b - a), ri = (a, b) => Math.floor(rnd
 const clamp = (v, a, b) => v < a ? a : v > b ? b : v, TAU = Math.PI * 2;
 const pick = a => a[Math.floor(Math.random() * a.length)];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const COL = ["#ff5a5f", "#3da9fc", "#ffd23f", "#2ec4b6", "#9b5cff", "#ff8a3d", "#ff6bd6", "#a3e635", "#22d3ee", "#c08457"], COL_D = ["#c0353b", "#1f74bd", "#c9a012", "#1d8c81", "#6b3bc4", "#c85f1c", "#c23fa3", "#6e9e1c", "#1597ab", "#8a5a33"], COL_L = ["#ffc2c3", "#c3e4ff", "#fff0b3", "#b8f2ec", "#d9c4ff", "#ffd0b0", "#ffc8f0", "#e0f7b8", "#b8f3fb", "#ecd3bd"];
+const COL = ["#ff5a5f", "#3da9fc", "#ffd23f", "#2ec4b6", "#9b5cff", "#ff8a3d", "#ff6bd6", "#a3e635", "#22d3ee", "#c08457", "#cbd5e1", "#e11d48"], COL_D = ["#c0353b", "#1f74bd", "#c9a012", "#1d8c81", "#6b3bc4", "#c85f1c", "#c23fa3", "#6e9e1c", "#1597ab", "#8a5a33", "#8a95a8", "#9f1239"], COL_L = ["#ffc2c3", "#c3e4ff", "#fff0b3", "#b8f2ec", "#d9c4ff", "#ffd0b0", "#ffc8f0", "#e0f7b8", "#b8f3fb", "#ecd3bd", "#eef2f7", "#fecdd3"];
 const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${n >> 8 & 255},${n & 255},${a})`; };
 const vib = ms => { try { navigator.vibrate && navigator.vibrate(ms); } catch {} };
 
@@ -865,7 +921,7 @@ const LIBS = {
 const BROKERS = ["wss://broker.emqx.io:8084/mqtt", "wss://broker.hivemq.com:8884/mqtt"];
 const LOCAL = /[?&]local=1/.test(location.search), RELAY = /[?&]relay=1/.test(location.search);
 const ICE = { iceServers: [{ urls: "stun:stun.l.google.com:19302" }, { urls: "stun:stun1.l.google.com:19302" }, { urls: "stun:stun.cloudflare.com:3478" }] };
-const MAXP = 10;
+const MAXP = 12;
 /* WebRTC corta mensajes grandes: los partimos en tramos de 14 KB y los volvemos a unir */
 const FR = 14000, FRB = new Map(); let fid = 0;
 function p2pSend(c, o) {
@@ -902,12 +958,12 @@ const sessGet = () => sessRead(localStorage);                 // la última sala
 const sessTab = () => { try { return sessRead(sessionStorage); } catch { return null; } };   // la de esta pestaña (sobrevive a recargar)
 const sessSet = o => { const v = o && JSON.stringify(Object.assign({ t: Date.now() }, o)); for (const st of [localStorage, sessionStorage]) try { v ? st.setItem(SESS_K, v) : st.removeItem(SESS_K); } catch {} };
 const rid = () => Math.random().toString(36).slice(2, 10);
-const ALLG = () => [BOMB, DUEL, HOCKEY, TRIKI, CHESS, LUDO, CARDS, DUO, HANG, WHO, STOP, BOTTLE, CITY];
+const ALLG = () => [BOMB, DUEL, HOCKEY, TRIKI, CHESS, LUDO, CARDS, DUO, HANG, WHO, STOP, BOTTLE, CITY, YNG];
 
 const NET = {
   role: null, me: 0, pi: 0, gid: "", code: "", names: [], gseats: [0], st: "off",   // off · wait · ok
   tr: [], up: null, peers: new Map(), last: 0, rtt: 0, timers: [], ui: () => {}, sent: 0, inAcc: 0, game: null,
-  tok: "", toks: new Map(), away: new Map(), awaySeats: [],          // reconexión: ficha por invitado y asientos guardados de quien se cayó
+  tok: "", toks: new Map(), away: new Map(), awaySeats: [], banned: new Set(), chatT: {},          // reconexión: ficha por invitado y asientos guardados de quien se cayó
   seats() { return [0, ...[...this.peers.values()].map(p => p.idx)].sort((a, b) => a - b); },
   count() { return this.role === "host" ? 1 + this.peers.size : this.names.filter(Boolean).length; },
   pname(i) { return this.names[this.gseats[i]] || PNAMES[i] || "Amigo"; },
@@ -921,6 +977,12 @@ const NET = {
   send(o) {
     if (this.role === "host") { for (const p of this.peers.values()) try { p.send(o); } catch {} }
     else if (this.up) try { this.up.send(Object.assign({ gid: this.gid }, o)); } catch {}
+  },
+  /* el anfitrión saca a alguien de la sala: no puede volver a entrar con el mismo id */
+  ban(seat) {
+    for (const [gid, p] of this.peers) if (p.idx === seat) { this.banned.add(gid); this.peers.delete(gid); this.toks.delete(gid); }
+    for (const [gid, a] of this.away) if (a.idx === seat) { this.banned.add(gid); this.away.delete(gid); }
+    this.names[seat] = null; VOICE.seatLeft(seat); this.roster();
   },
   sendTo(seat, o) { for (const p of this.peers.values()) if (p.idx === seat) try { p.send(o); } catch {} },
   roster() { if (this.st === "off") return; if (this.role === "host" && !busyGame()) this.gseats = this.seats(); this.awaySeats = [...this.away.values()].map(a => a.idx); this.send({ k: "roster", names: this.names, away: this.awaySeats }); },
@@ -964,7 +1026,7 @@ const NET = {
   },
   /* ---------- crear / unirse ---------- */
   host(code) {
-    this.reset(); this.role = "host"; this.me = 0; this.pi = 0; this.code = code || newCode(); this.st = "ok"; this.names = [S.me]; this.gseats = [0]; this.away = new Map(); this.toks = new Map(); this.awaySeats = [];
+    this.reset(); this.role = "host"; this.me = 0; this.pi = 0; this.code = code || newCode(); this.st = "ok"; this.names = [S.me]; this.gseats = [0]; this.away = new Map(); this.toks = new Map(); this.awaySeats = []; this.banned = new Set(); this.chatT = {};
     if (LOCAL) this.bc();
     else { if (!RELAY) this.peerHost().catch(() => {}); BROKERS.forEach(b => this.mqtt(b).catch(() => {})); }
     this.timers.push(setInterval(() => {                       // latido: mide la señal y saca a quien se desconecta
@@ -973,6 +1035,7 @@ const NET = {
     }, 1000));
   },
   join(code, useSaved) {
+    try { const k = JSON.parse(localStorage.getItem("arena-mini-kick") || "null"); if (k && k.code === code.toUpperCase() && Date.now() - k.t < 6 * 3600e3) { this.reset(); this.code = k.code; setTimeout(() => onNetKick(true), 0); return; } } catch {}
     this.reset(); this.role = "guest"; this.code = code.toUpperCase(); this.st = "wait"; this.names = [];
     const ss = [sessTab(), useSaved || this.reconn ? sessGet() : null].find(o => o && o.code === this.code);
     if (ss) { this.gid = ss.gid; this.tok = ss.tok || ""; } else { this.gid = rid(); this.tok = ""; }
@@ -1007,6 +1070,7 @@ const NET = {
     if (!m || !m.k || this.role !== "host") return;
     let p = this.peers.get(m.gid);
     if (m.k === "hello") {
+      if (this.banned.has(m.gid)) { reply({ k: "kick" }); return; }
       const aw = !p && this.away.get(m.gid);
       if (aw && aw.tok && aw.tok === m.tok) {                  // vuelve alguien que se había caído: recupera su asiento
         p = { idx: aw.idx, send: reply, kind, last: Date.now(), rtt: 0 }; this.peers.set(m.gid, p); this.away.delete(m.gid); this.toks.set(m.gid, aw.tok);
@@ -1051,6 +1115,7 @@ const NET = {
       case "p": this.send({ k: "q", t: m.t }); break;
       case "q": this.rtt = Math.round(performance.now() - m.t); break;
       case "bye": this.reset(); onNetBye(); break;
+      case "kick": onNetKick(); break;
       default: onNetMsg(m);
     }
   },
@@ -1082,6 +1147,11 @@ function onNetMsg(m) {
     else if (m.k === "tm") { if (T.g && T.online && T.s) { const pi = T.seats.indexOf(m.from); if (pi >= 0 && !tApply(pi, m.a || {}) && T.g.lastErr !== undefined) NET.sendTo(m.from, { k: "tno", e: T.g.lastErr }); } }
     else if (m.k === "emo") { const e = String(m.e || "").slice(0, 4); NET.send({ k: "emo", e, from: m.from }); onEmote(m.from, e); }
     else if (m.k === "mc") mediaChunk(m, m.from);
+    else if (m.k === "chat") {                                            // chat de texto: máx. 120 letras y 1 mensaje por segundo
+      const t = String(m.t || "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim().slice(0, 120), now = Date.now();
+      if (!t || now - (NET.chatT[m.from] || 0) < 900) return; NET.chatT[m.from] = now;
+      NET.send({ k: "chat", t, from: m.from }); onChat(m.from, t);
+    }
     else if (m.k === "vj" || m.k === "vl" || m.k === "vm") VOICE.hostMsg(m);
     return;
   }
@@ -1089,7 +1159,7 @@ function onNetMsg(m) {
   if (m.k === "start") { const g = ALLG().find(x => x.id === m.game); if (g) { tStop(); NET.gseats = m.seats || [0, NET.me]; NET.pi = NET.gseats.indexOf(NET.me); startGuest(g, m.opt); } }
   else if (m.k === "s") { if (E.game && E.st !== "off") applySnap(m); }
   else if (m.k === "pause") m.on ? pause(true) : resume(true);
-  else if (m.k === "result") { stopMatch(); tStop(); resultOnline(m.w, m.sc); }
+  else if (m.k === "result") { stopMatch(); tStop(); resultOnline(m.w, m.sc, Array.isArray(m.nm) ? m.nm.map(x => String(x).slice(0, 12)) : null); }
   else if (m.k === "lobby") { if (E.st !== "off") stopMatch(); tStop(); lobby(); }
   else if (m.k === "tstart") { const g = ALLG().find(x => x.id === m.game); if (g) { if (E.st !== "off") stopMatch(); NET.gseats = m.seats; NET.pi = m.seats.indexOf(NET.me); startTurnGuest(g, m.opts, m.seats); } }
   else if (m.k === "ts") tRecv(m);
@@ -1098,6 +1168,7 @@ function onNetMsg(m) {
   else if (m.k === "vr") VOICE.onMembers(m.mem);
   else if (m.k === "tno") { if (T.g && T.g.errText) toast(T.g.errText(m.e)); }
   else if (m.k === "emo") onEmote(m.from, m.e);
+  else if (m.k === "chat") onChat(m.from, String(m.t || "").slice(0, 120));
 }
 function startGuest(g, opt) {
   if (g.setOpt) g.setOpt(opt);
@@ -1766,7 +1837,7 @@ const HOCKEY = {
                  render(root, s, prev, ctx) }
    Solo el anfitrión (o el celular local) aplica jugadas; el invitado las envía.
    ===================================================================== */
-const PNAMES = ["Rojo", "Azul", "Amarillo", "Verde", "Morado", "Naranja", "Rosado", "Lima", "Celeste", "Café"];
+const PNAMES = ["Rojo", "Azul", "Amarillo", "Verde", "Morado", "Naranja", "Rosado", "Lima", "Celeste", "Café", "Plata", "Carmesí"];
 const clone = o => JSON.parse(JSON.stringify(o));
 const T = { g: null, s: null, prev: null, online: false, me: null, np: 2, wins: [], round: 0, rover: null, timer: null, opts: {}, reveal: -1, busy: false };
 const tname = i => T.online ? (NET.names[T.seats[i]] || PNAMES[i]) : ((T.names && T.names[i]) || S.names[i] || PNAMES[i]);
@@ -1818,7 +1889,7 @@ function tAfter() {
     const over = (w >= 0 && T.wins[w] >= T.g.need) || (w < 0 && !!T.g.drawEnds);
     T.rover.over = over;
     clearTimeout(T.timer);
-    T.timer = setTimeout(() => { if (!T.g) return; over ? tFinish(w) : tNewRound(); }, over ? 2600 : 2400);
+    T.timer = setTimeout(() => { if (!T.g) return; over ? tFinish(w) : tNewRound(); }, over ? (T.g.overMs || 2600) : 2400);
   }
   tSync(); tRender(); if (!T.rover) tAuto(); tPersist();
 }
@@ -1838,7 +1909,7 @@ function tRecv(m) {                                         // invitado recibe e
 }
 function tFinish(w) {
   const g = T.g, sc = g.scores ? g.scores(T.s) : T.wins.slice(), opts = T.opts, np = T.np;
-  if (T.online) { NET.send({ k: "result", w, sc }); tStop(); resultOnline(w, sc); return; }
+  if (T.online) { const nm = T.s && Array.isArray(T.s.names) ? T.s.names : null; NET.send({ k: "result", w, sc, nm }); tStop(); resultOnline(w, sc, nm); return; }
   if (w >= 0) { S.wins[g.id] = S.wins[g.id] || []; S.wins[g.id][w] = (S.wins[g.id][w] || 0) + 1; save(); }
   tStop(); tResult(g, w, sc, opts, np);
 }
@@ -1850,14 +1921,14 @@ function tFrame() {
     <div class="tg-main"></div><div class="tg-ov"></div></div>`);
   $("#app").replaceChildren(v); $("#app").scrollTop = 0;
   $("#tq", v).onclick = () => {
-    if (T.g && T.g.resumable) {                                  // partidas largas: se guardan; un invitado que sale, abandona
-      const guest = T.online && T.me !== 0;
-      if (!confirm(guest ? "¿Abandonar la partida? Quedas fuera y tus propiedades vuelven al banco. (Si solo se te cayó la señal, no toques nada: te reconectas solo.)" : "La partida queda guardada: puedes continuarla después desde el inicio. ¿Salir?")) return;
+    const guest = T.online && T.me !== 0;
+    if (T.g && T.g.resumable && (guest || T.g.persist)) {          // partidas largas: se guardan; un invitado que sale, abandona
+      if (!confirm(guest ? (T.g.leaveMsg || "¿Abandonar la partida? Quedas fuera y tus propiedades vuelven al banco. (Si solo se te cayó la señal, no toques nada: te reconectas solo.)") : "La partida queda guardada: puedes continuarla después desde el inicio. ¿Salir?")) return;
       if (guest) { tAct({ t: "FORFEIT", aid: "ff" + Date.now() }); tStop(); lobby(); }
       else { tPersist(); const on = T.online; tStop(); if (on) { NET.send({ k: "lobby" }); lobby(); } else home(); }
       return;
     }
-    if (!confirm("¿Salir de la partida?")) return;
+    if (!confirm(T.online && !guest && T.g && T.g.resumable ? "¿Terminar la partida para todos?" : "¿Salir de la partida?")) return;
     if (T.online) { const host = T.me === 0; tStop(); NET.send({ k: host ? "lobby" : "leave" }); lobby(); } else { tStop(); home(); }
   };
   VOICE.draw();
@@ -1889,7 +1960,7 @@ function tRender() {
   const ov = $(".tg-ov", root);
   if (T.rover) {
     const w = T.rover.w, meW = T.online ? w === T.me : true;
-    ov.innerHTML = `<div class="tg-ban ${T.rover.over ? "big" : ""}"><b style="color:${w < 0 ? "#fff" : COL[w]}">${w < 0 ? "¡Empate!" : T.online ? (meW ? "¡Ganaste!" : `Ganó ${esc(tname(w))}`) : `¡Gana ${esc(tname(w))}!`}</b>
+    ov.innerHTML = T.g.noBan ? "" : `<div class="tg-ban ${T.rover.over ? "big" : ""}"><b style="color:${w < 0 ? "#fff" : COL[w]}">${w < 0 ? "¡Empate!" : T.online ? (meW ? "¡Ganaste!" : `Ganó ${esc(tname(w))}`) : `¡Gana ${esc(tname(w))}!`}</b>
       <span>${T.rover.over ? "Fin de la partida" : T.g.need > 1 ? `Marcador ${T.wins.join(" – ")} · primero a ${T.g.need}` : ""}</span></div>`;
     if (!T.shown) { T.shown = true; (w < 0 ? sfx.lose : (!T.online || meW) ? sfx.win : sfx.lose)(); if (T.rover.over && (!T.online || meW)) setTimeout(() => confetti(140, innerWidth / 2, innerHeight * .3), 300); }
   } else { ov.innerHTML = ""; T.shown = false; }
@@ -2974,7 +3045,7 @@ async function mediaChunk(m, from) {
   if (st.ready || st.parts[m.i] !== undefined) return;
   st.parts[m.i] = m.d; st.got++; st.n = m.n;
   if (NET.role === "host") for (const p of NET.peers.values()) if (p.idx !== from) try { p.send({ k: "mc", id: m.id, t: m.t, i: m.i, n: m.n, d: m.d }); } catch {}
-  if (st.got === st.n) { const url = await MEDIA.toBlobURL(st.parts.join("")); st.parts = []; MEDIA.put(m.id, m.t, url); if (T.g === BOTTLE) tRender(); }
+  if (st.got === st.n) { const url = await MEDIA.toBlobURL(st.parts.join("")); st.parts = []; MEDIA.put(m.id, m.t, url); if (T.g === BOTTLE || T.g === YNG) tRender(); }
   else if (T.g === BOTTLE) { const el = $(".bt-load"); if (el) el.textContent = `Recibiendo la prueba… ${Math.round(st.got / st.n * 100)}%`; }
 }
 /* visor protegido: sin descargar, sin menú, se oculta si sales de la app */
@@ -4361,6 +4432,667 @@ function cfShowCard(e) {
 }
 
 /* =====================================================================
+   YO NUNCA NUNCA · banco de preguntas y retos (textos originales)
+   Las preguntas se guardan SIN el "Yo nunca nunca…" del inicio.
+   ===================================================================== */
+const YN_CATS = [
+  { id: "divertidas", name: "Divertidas", icon: "😂" },
+  { id: "vergonzosas", name: "Vergonzosas", icon: "🙈" },
+  { id: "amigos", name: "Amigos", icon: "👯" },
+  { id: "relaciones", name: "Relaciones", icon: "❤️" },
+  { id: "viajes", name: "Viajes", icon: "✈️" },
+  { id: "gaming", name: "Gaming y redes", icon: "🎮" },
+  { id: "comida", name: "Comida", icon: "🍔" },
+  { id: "fiestas", name: "Fiestas", icon: "🎉" },
+  { id: "picantes", name: "Picantes +18", icon: "😈", adult: true },
+];
+const YN_Q = {
+  divertidas: [
+    "me he reído en un momento serio y no he podido parar",
+    "he hablado solo en la calle y alguien me ha visto",
+    "he saludado a alguien que en realidad saludaba a otra persona",
+    "me he caído en público y he fingido que no pasó nada",
+    "he cantado a todo volumen en el carro con la ventana abierta",
+    "he buscado el celular mientras lo tenía en la mano",
+    "he llamado a un profesor \"mamá\" o \"papá\" sin querer",
+    "me he quedado dormido en el transporte y me he pasado de parada",
+    "he empujado una puerta que decía \"hale\"",
+    "he bailado frente al espejo como si fuera un videoclip",
+    "he fingido estar hablando por teléfono para evitar a alguien",
+    "he contestado \"igualmente\" cuando me dijeron \"buen provecho\" en la caja",
+    "me he tropezado con algo que no existía",
+    "he practicado una discusión en la ducha",
+    "he reenviado un audio sin escucharlo antes",
+    "me he puesto la ropa al revés todo el día sin darme cuenta",
+    "he inventado una palabra y la he defendido como si existiera",
+    "he dicho \"tú también\" cuando no tenía sentido",
+    "me he asustado con mi propio reflejo",
+    "he aplaudido cuando aterrizó un avión",
+    "he fingido saber una canción moviendo la boca",
+    "me he quedado mirando el refrigerador esperando que apareciera comida nueva",
+    "he perdido una discusión con un niño",
+    "he contado un chiste y me he reído yo solo",
+    "he usado la linterna del celular para buscar el celular",
+    "he dejado de ver una serie por un spoiler",
+  ],
+  vergonzosas: [
+    "he enviado un mensaje a la persona equivocada",
+    "he stalkeado a alguien y le he dado like a una foto vieja sin querer",
+    "me han descubierto hablando mal de alguien que estaba al lado",
+    "he llorado viendo una película animada",
+    "he mentido sobre mi edad",
+    "he fingido estar enfermo para no ir a algún lado",
+    "he buscado mi propio nombre en internet",
+    "me he tomado más de 50 selfies para subir una sola",
+    "he borrado una foto porque no tuvo suficientes likes",
+    "me he equivocado de nombre en un momento importante",
+    "he dicho que leí un libro que nunca leí",
+    "me he quedado encerrado en un baño",
+    "he tenido un apodo que odiaba",
+    "he escrito un poema o una canción para alguien",
+    "he mentido en mi currículum",
+    "he ensayado lo que iba a decir antes de una llamada",
+    "me han pillado cantando o bailando solo",
+    "me he quedado dormido en clase o en el trabajo",
+    "he tenido un crush con alguien famoso por más de un año",
+    "me he hecho el ofendido para ganar una discusión",
+    "he usado ropa de otra persona sin avisar",
+    "he escondido comida para no compartirla",
+    "he fingido que me gustaba un regalo",
+    "he leído los mensajes de otra persona sin permiso",
+    "me han devuelto un mensaje con \"¿quién eres?\"",
+  ],
+  amigos: [
+    "he olvidado el cumpleaños de mi mejor amigo",
+    "he contado un secreto que me pidieron guardar",
+    "me he enojado con un amigo por una tontería",
+    "he dejado a un amigo en \"visto\" a propósito",
+    "he cancelado un plan a última hora solo por flojera",
+    "he fingido que ya estaba llegando cuando ni había salido",
+    "he tenido una pelea en un grupo de chat",
+    "he creado un grupo de chat para hablar de alguien del otro grupo",
+    "he pedido dinero prestado a un amigo y he tardado en devolverlo",
+    "he dicho \"te quiero, hermano\" más de tres veces en una noche",
+    "he tenido un amigo imaginario",
+    "he dejado de hablarle a alguien sin explicar por qué",
+    "me he puesto celoso porque mi amigo tenía un nuevo mejor amigo",
+    "he hecho una broma pesada que salió mal",
+    "he mentido para cubrir a un amigo",
+    "he llorado en el hombro de alguien de esta sala",
+    "he tomado una foto fea de un amigo y la he guardado para chantajearlo",
+    "he escuchado una conversación ajena y la he contado",
+    "he sido el último en enterarse de un chisme del grupo",
+    "he cambiado de planes porque llegó alguien que no me cae bien",
+    "he juzgado a alguien antes de conocerlo y luego fuimos amigos",
+    "he viajado con amigos y he terminado peleado con alguno",
+    "he compartido mi contraseña de algo con un amigo",
+    "he hecho una videollamada de más de tres horas",
+    "he pedido la última porción sin preguntar a nadie",
+  ],
+  relaciones: [
+    "he tenido un crush con el amigo de un amigo",
+    "he vuelto con un ex",
+    "he revisado la última conexión de alguien que me gusta",
+    "he escrito un mensaje largo y lo he borrado sin enviarlo",
+    "me he enamorado a primera vista",
+    "he tenido una cita a ciegas",
+    "he dejado a alguien por mensaje",
+    "he fingido estar ocupado para hacerme el interesante",
+    "he tenido celos de una mascota",
+    "he stalkeado al ex de mi pareja",
+    "he dicho \"te quiero\" primero y no me lo respondieron",
+    "he tenido un amor de verano",
+    "he coqueteado para conseguir algo gratis",
+    "he usado la misma frase para ligar con más de una persona",
+    "me he arreglado mucho para ver a alguien y no me miró",
+    "he guardado un regalo de un ex",
+    "he tenido una relación a distancia",
+    "me he declarado y me han rechazado",
+    "he rechazado a alguien y luego me arrepentí",
+    "he ensayado una conversación con mi crush frente al espejo",
+    "he tenido una cita que terminó en desastre",
+    "he usado una app de citas",
+    "he cambiado mis gustos para impresionar a alguien",
+    "he enviado un audio romántico que luego quise borrar",
+    "he llorado por alguien que no lo merecía",
+  ],
+  viajes: [
+    "he perdido un vuelo o un bus",
+    "me he perdido en una ciudad sin internet",
+    "he viajado solo",
+    "he dormido en un aeropuerto",
+    "he perdido la maleta",
+    "he comido algo en otro país sin saber qué era",
+    "he pedido direcciones y he fingido entender",
+    "me he quemado con el sol el primer día de vacaciones",
+    "he llevado más ropa de la que usé en el viaje",
+    "he hecho un viaje improvisado de un día para otro",
+    "he tomado un taxi y me han cobrado de más",
+    "me he mareado en un barco",
+    "he llegado a un hotel que no se parecía nada a las fotos",
+    "he intentado hablar otro idioma y nadie me entendió",
+    "he acampado al aire libre",
+    "he olvidado el pasaporte o la cédula en un viaje",
+    "he hecho amigos en un viaje y los he vuelto a ver",
+    "he viajado más de diez horas seguidas",
+    "he visto el amanecer en la playa",
+    "he comprado un recuerdo feísimo solo por la experiencia",
+    "he subido más fotos del viaje que días que duró",
+    "he dormido en la casa de un desconocido",
+  ],
+  gaming: [
+    "he jugado videojuegos toda la noche sin dormir",
+    "he tirado el control por rabia",
+    "he gastado dinero real en un juego",
+    "he mentido sobre mi rango en un juego",
+    "he dejado una partida en línea a la mitad",
+    "he jugado con la cuenta de otra persona",
+    "he hecho trampa en un juego de mesa",
+    "he visto un video tutorial para pasar un nivel fácil",
+    "he pasado más de una hora creando un personaje",
+    "he llorado por un videojuego",
+    "he tenido una publicación viral",
+    "he borrado una historia a los cinco minutos de subirla",
+    "he seguido a alguien solo para que me siguiera de vuelta",
+    "he usado un filtro que me cambiaba la cara por completo",
+    "he pasado más de cinco horas en redes en un día",
+    "he discutido con un desconocido en los comentarios",
+    "he subido una foto con un pie de foto de una canción",
+    "me he quedado sin batería justo en el momento más importante",
+    "he dado like a mi propia publicación",
+    "he creado una cuenta falsa",
+    "he perdido una racha y me ha dolido de verdad",
+    "he tenido un canal o un blog que nadie vio",
+  ],
+  comida: [
+    "he comido algo que se cayó al piso",
+    "he comido pizza fría de desayuno",
+    "he probado comida de mascota",
+    "he quemado el agua para hacer pasta",
+    "he pedido comida a domicilio dos veces el mismo día",
+    "he comido un postre entero yo solo",
+    "he fingido que me gustaba la comida de alguien",
+    "he puesto kétchup en algo que no llevaba kétchup",
+    "he comido algo vencido sabiendo que estaba vencido",
+    "me he enfermado por comer demasiado",
+    "he cocinado para impresionar a alguien y salió fatal",
+    "he robado papas fritas del plato de otro",
+    "he comido cereal con agua",
+    "he ido a un buffet solo por los postres",
+    "he mojado galletas en algo raro",
+    "he comido en la cama y dormido entre migajas",
+    "he pedido lo mismo que la persona de al lado por no leer el menú",
+    "he dicho que estaba a dieta con un pan en la mano",
+    "he escondido que me comí lo último que había",
+    "he comido algo picante y he llorado",
+    "he hecho una receta viral y salió horrible",
+    "he comido helado en pleno invierno",
+  ],
+  fiestas: [
+    "he llegado a una fiesta sin ser invitado",
+    "me he quedado dormido en una fiesta",
+    "he bailado encima de una mesa o una silla",
+    "he sido el último en irme de una fiesta",
+    "me he ido de una fiesta sin despedirme",
+    "he perdido algo importante en una fiesta",
+    "he cantado karaoke frente a desconocidos",
+    "he organizado una fiesta sorpresa que no fue sorpresa",
+    "he usado un disfraz ridículo en público",
+    "he conocido a mi mejor amigo en una fiesta",
+    "he bailado una canción que no conocía como si fuera mi favorita",
+    "he fingido que la música me gustaba",
+    "he hecho una videollamada desde una fiesta",
+    "he llegado tan tarde a una fiesta que ya se había acabado",
+    "me he escapado de casa para ir a una fiesta",
+    "he estado en una fiesta que terminó con la policía",
+    "he tomado el micrófono sin que nadie me lo pidiera",
+    "he despertado sin saber cómo llegué a casa",
+    "he sido el que pone la música y nadie quería que la pusiera",
+    "he hecho una promesa en una fiesta que no cumplí",
+    "he llorado en una fiesta",
+    "he salido en una foto de fiesta que no quería que nadie viera",
+  ],
+  picantes: [
+    "he besado a alguien en la primera cita",
+    "he besado a alguien de esta sala",
+    "he tenido un crush con alguien de esta sala",
+    "he enviado una foto atrevida",
+    "he coqueteado con alguien que tenía pareja",
+    "he dado mi número a un desconocido",
+    "he besado a dos personas la misma noche",
+    "me he despertado al lado de alguien sin recordar su nombre",
+    "he tenido una relación en secreto",
+    "he mentido sobre mi experiencia amorosa",
+    "he hecho un striptease de broma",
+    "he escrito un mensaje atrevido a la persona equivocada",
+    "he tenido un sueño atrevido con alguien que conozco",
+    "he besado a un amigo y luego fingimos que no pasó nada",
+    "me he enamorado de alguien mucho mayor que yo",
+    "he tenido una cita con dos personas la misma semana",
+    "he usado una excusa para quedarme a dormir en casa de alguien",
+    "he ligado en una boda",
+    "he borrado conversaciones para que no las viera mi pareja",
+    "he dicho \"soy soltero\" teniendo pareja",
+  ],
+};
+/* retos: tipo, texto y si pide prueba con foto o video */
+const YN_CH = [
+  { t: "voz", s: "Canta el coro de tu canción favorita durante 15 segundos." },
+  { t: "voz", s: "Habla como narrador de documental describiendo lo que hace la persona a tu izquierda durante 20 segundos." },
+  { t: "voz", s: "Imita la voz de un personaje famoso (sin decir quién es) hasta que alguien adivine." },
+  { t: "voz", s: "Di un trabalenguas tres veces seguidas sin equivocarte." },
+  { t: "voz", s: "Canta \"Feliz cumpleaños\" como si fuera una ópera dramática." },
+  { t: "voz", s: "Haz un anuncio de radio vendiendo un objeto que tengas cerca." },
+  { t: "actuacion", s: "Imita durante 20 segundos a otro jugador sin decir su nombre. Los demás adivinan." },
+  { t: "actuacion", s: "Actúa como si hubieras ganado un premio muy importante y da un discurso de 20 segundos." },
+  { t: "actuacion", s: "Habla como robot hasta tu próximo turno." },
+  { t: "actuacion", s: "Haz la cara más dramática que puedas mientras alguien cuenta hasta 10." },
+  { t: "actuacion", s: "Cuenta una historia inventada de 30 segundos en la que salgan todos los jugadores." },
+  { t: "actuacion", s: "Actúa una escena de telenovela: descubres un secreto terrible (20 segundos)." },
+  { t: "movimiento", s: "Baila sin música durante 15 segundos." },
+  { t: "movimiento", s: "Haz 10 sentadillas mientras dices el abecedario." },
+  { t: "movimiento", s: "Camina como modelo de pasarela de un lado a otro de la habitación." },
+  { t: "movimiento", s: "Haz tu mejor paso de baile viral." },
+  { t: "movimiento", s: "Quédate en un pie con los ojos cerrados durante 20 segundos." },
+  { t: "habilidad", s: "Di 5 países que empiecen con la letra C en menos de 10 segundos." },
+  { t: "habilidad", s: "Nombra 6 frutas en 8 segundos sin repetir." },
+  { t: "habilidad", s: "Deletrea tu nombre completo al revés sin equivocarte." },
+  { t: "habilidad", s: "Di el abecedario al revés desde la M." },
+  { t: "habilidad", s: "Cuenta del 30 al 1 de tres en tres (30, 27, 24…) sin equivocarte." },
+  { t: "habilidad", s: "Haz reír a alguien de la sala en menos de 30 segundos sin tocarlo." },
+  { t: "interaccion", s: "Dile un cumplido sincero a cada jugador." },
+  { t: "interaccion", s: "Deja que el jugador de tu derecha escriba tu próximo estado en redes (y lo subes 10 minutos)." },
+  { t: "interaccion", s: "Envía un audio a un amigo que no esté aquí diciéndole que lo extrañas, con voz dramática." },
+  { t: "interaccion", s: "Llama a alguien de tus contactos y cántale 5 segundos de una canción." },
+  { t: "interaccion", s: "Deja que los demás elijan un emoji y úsalo como foto de perfil durante una hora." },
+  { t: "interaccion", s: "Cuenta cuál ha sido tu momento más vergonzoso del año." },
+  { t: "foto", s: "Tómate una foto haciendo la cara más graciosa que puedas.", proof: "img" },
+  { t: "foto", s: "Tómate una selfie imitando la pose de una estatua famosa.", proof: "img" },
+  { t: "foto", s: "Haz una foto artística del objeto más feo que tengas cerca.", proof: "img" },
+  { t: "foto", s: "Muestra la foto más rara de tu galería del último mes.", proof: "img" },
+  { t: "foto", s: "Tómate una foto con un peinado improvisado.", proof: "img" },
+  { t: "foto", s: "Haz una foto con tu mascota o, si no tienes, con un peluche o un cojín, como si fuera tu mascota.", proof: "img" },
+  { t: "video", s: "Graba un video de 10 segundos bailando tu canción favorita.", proof: "vid" },
+  { t: "video", s: "Graba un video de 10 segundos presentando las noticias del día como reportero.", proof: "vid" },
+  { t: "video", s: "Graba un video de 10 segundos haciendo un tutorial de algo que no sabes hacer.", proof: "vid" },
+  { t: "video", s: "Graba un video diciendo un trabalenguas lo más rápido posible.", proof: "vid" },
+  { t: "video", s: "Graba un video de 10 segundos actuando como el personaje de una película sin decir cuál.", proof: "vid" },
+  { t: "aleatorio", s: "Los demás eligen una palabra: tienes que usarla en todas tus frases durante tres turnos." },
+  { t: "aleatorio", s: "Muestra la última foto que tomaste (si quieres, puedes saltarte una)." },
+  { t: "aleatorio", s: "Responde con total sinceridad una pregunta que te haga el jugador con menos puntos." },
+  { t: "aleatorio", s: "Habla con acento de otro país hasta tu próximo turno." },
+  { t: "aleatorio", s: "Deja que otro jugador lea en voz alta tu último mensaje enviado (puedes elegir el chat)." },
+];
+const YN_CH_TYPES = { voz: "🎤 Voz", actuacion: "🎭 Actuación", movimiento: "🕺 Movimiento", habilidad: "🧠 Habilidad", interaccion: "👥 Interacción", foto: "📸 Foto", video: "🎥 Video", aleatorio: "🎲 Aleatorio" };
+
+/* =====================================================================
+   YO NUNCA NUNCA · MOTOR (sin DOM). Lo ejecuta solo el anfitrión.
+   Fases: pick → answer → reveal → (challenge → proof → vote) → pick … → over
+   Las respuestas de los demás NO salen del anfitrión hasta la revelación.
+   Acciones: CHOOSE · REDRAW · CUSTOM · ANSWER · NEXT · ACCEPT · PASS_CH ·
+             SET_CH · PROOF · DONE_CH · VOTE · TIMEOUT · LEAVE   (+ aid)
+   ===================================================================== */
+const YN_RULES = { rounds: 2, every: 5, answerMs: 30000, pickMs: 60000, chMs: 60000, proofMs: 120000, voteMs: 30000, revealMs: 9000,
+  cats: ["divertidas", "vergonzosas", "amigos", "relaciones", "viajes", "gaming", "comida", "fiestas"], spicy: false, custom: true, media: true, customCh: true, failPenalty: 2 };
+const YN_BLOCK = /(https?:|www\.|\.com\b)|(.)\2{7,}/i;                         // enlaces y spam de letras repetidas
+const YN_BAD = ["maric", "sidos", "negr@", "retrasad", "put@", "violaci", "pedof", "nazi"];   // insultos/odio: se rechazan
+const YN = (() => {
+  const E = (s, k, o) => s.ev.push(Object.assign({ k }, o || {}));
+  const nm = (s, p) => s.names[p] || "Jugador " + (p + 1);
+  function rand(s) { let t = (s.rng = (s.rng + 0x6D2B79F5) >>> 0); t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }
+  const shuffle = (s, a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand(s) * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const seed = () => { try { return crypto.getRandomValues(new Uint32Array(1))[0]; } catch { return (Math.random() * 4294967296) >>> 0; } };
+  const alive = s => s.out.map((o, i) => o ? -1 : i).filter(i => i >= 0);
+  const log = (s, txt, p) => { s.log.push({ n: s.n, txt, p: p ?? -1 }); if (s.log.length > 60) s.log.shift(); };
+  /* texto de preguntas/retos escritos por jugadores: limpio y validado */
+  function clean(txt, min = 6, max = 160) {
+    let t = String(txt ?? "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim().replace(/^yo\s+nunca(\s+nunca)?[\s,.:…-]*/i, "");
+    if (t.length < min) return { err: "short" }; if (t.length > max) return { err: "long" };
+    if (YN_BLOCK.test(t)) return { err: "spam" }; const low = t.toLowerCase(); if (YN_BAD.some(w => low.includes(w))) return { err: "bad" };
+    return { t };
+  }
+  function newGame({ np, names, rules, seed: sd }) {
+    np = Math.max(2, Math.min(12, np | 0)); const r = Object.assign({}, YN_RULES, rules || {});
+    r.cats = (r.cats || []).filter(c => YN_Q[c] && (c !== "picantes" || r.spicy)); if (!r.cats.length) r.cats = ["divertidas"];
+    if (r.spicy && !r.cats.includes("picantes")) r.cats.push("picantes");
+    const s = { v: 1, gid: Math.random().toString(36).slice(2, 10), n: 0, np, names: (names || []).slice(0, np).map(String), r,
+      phase: "pick", turn: 0, round: 1, inRound: 0, asked: 0, q: null, opts: [], redraws: 0, dl: 0,
+      ans: Array(np).fill(null), done: Array(np).fill(false), rv: null, pts: Array(np).fill(0), out: Array(np).fill(false),
+      st: { yes: Array(np).fill(0), no: Array(np).fill(0), chOk: Array(np).fill(0), chFail: Array(np).fill(0), qs: 0, chs: 0 },
+      ch: null, votes: {}, chRes: null, qdeck: [], cdeck: [], rng: (sd ?? seed()) >>> 0, ev: [], evn: 0, log: [], aids: {}, w: null };
+    s.qdeck = shuffle(s, r.cats.flatMap(c => YN_Q[c].map((_, i) => c + ":" + i)));
+    s.cdeck = shuffle(s, YN_CH.map((c, i) => i).filter(i => r.media || !YN_CH[i].proof));
+    drawOpts(s); E(s, "TURN", { p: 0 }); log(s, "¡Empieza Yo Nunca Nunca!");
+    return s;
+  }
+  const qText = id => { const [c, i] = id.split(":"); return YN_Q[c][+i]; };
+  function drawOpts(s) {
+    if (s.qdeck.length < 3) s.qdeck = s.qdeck.concat(shuffle(s, s.r.cats.flatMap(c => YN_Q[c].map((_, i) => c + ":" + i))));
+    s.opts = s.qdeck.splice(0, 3); s.dl = Date.now() + s.r.pickMs;
+  }
+  function setQuestion(s, p, text, cat, media, custom) {
+    s.q = { text, cat, media: media || null, by: p, custom: !!custom };
+    s.ans = Array(s.np).fill(null); s.done = s.out.slice(); s.rv = null; s.phase = "answer"; s.dl = Date.now() + s.r.answerMs; s.st.qs++;
+    E(s, "QUESTION", { p }); log(s, `${nm(s, p)}: «Yo nunca nunca ${text}»`, p);
+  }
+  function reveal(s) {
+    s.phase = "reveal"; s.rv = s.ans.slice(); s.asked++;
+    s.rv.forEach((v, i) => { if (s.out[i]) return; if (v === true) { s.pts[i]++; s.st.yes[i]++; } else if (v === false) s.st.no[i]++; });
+    s.dl = Date.now() + s.r.revealMs; E(s, "REVEAL"); log(s, `Lo han hecho: ${s.rv.map((v, i) => v ? nm(s, i) : null).filter(Boolean).join(", ") || "nadie"}.`);
+  }
+  function leader(s) { const a = alive(s), top = Math.max(...a.map(i => s.pts[i])), c = a.filter(i => s.pts[i] === top); return c[Math.floor(rand(s) * c.length)]; }
+  function startChallenge(s) {
+    if (!s.cdeck.length) s.cdeck = shuffle(s, YN_CH.map((c, i) => i).filter(i => s.r.media || !YN_CH[i].proof));
+    const id = s.cdeck.shift(), c = YN_CH[id], p = leader(s);
+    s.ch = { p, id, text: c.s, type: c.t, proof: c.proof || null, media: null, custom: false }; s.votes = {}; s.chRes = null; s.phase = "challenge"; s.dl = Date.now() + s.r.chMs; s.st.chs++;
+    E(s, "CHALLENGE", { p }); log(s, `🔥 Reto para ${nm(s, p)} (${s.pts[p]} puntos): ${c.s}`, p);
+  }
+  function chResult(s, ok) {
+    const p = s.ch.p; if (ok) s.st.chOk[p]++; else { s.st.chFail[p]++; s.pts[p] += s.r.failPenalty; }
+    s.chRes = { p, ok, yes: Object.values(s.votes).filter(v => v).length, no: Object.values(s.votes).filter(v => !v).length };
+    E(s, "CH_RESULT", { p, ok }); log(s, ok ? `✅ ${nm(s, p)} cumplió el reto.` : `❌ ${nm(s, p)} no cumplió el reto (+${s.r.failPenalty} puntos).`, p);
+    nextTurn(s);
+  }
+  function nextTurn(s) {
+    const a = alive(s); if (a.length < 2) return finish(s);
+    s.inRound++;
+    if (s.inRound >= a.length) { s.inRound = 0; s.round++; if (s.round > s.r.rounds) return finish(s); }
+    let i = s.turn; do i = (i + 1) % s.np; while (s.out[i]);
+    s.turn = i; s.q = null; s.phase = "pick"; s.redraws = 0; drawOpts(s); E(s, "TURN", { p: i });
+  }
+  function finish(s) {
+    const a = alive(s); s.phase = "over"; s.dl = 0;
+    const top = Math.max(...a.map(i => s.pts[i])), tops = a.filter(i => s.pts[i] === top); s.w = tops.length === 1 ? tops[0] : -1; s.ties = tops;
+    E(s, "OVER", { p: s.w }); log(s, `🏆 Fin de la partida. ${tops.length === 1 ? "Gana" : "Empatan"} ${tops.map(i => nm(s, i)).join(" y ")} con ${top} puntos.`);
+  }
+  const due = s => Date.now() >= s.dl - 400;
+  const H = {
+    CHOOSE(s, p, a) { if (s.phase !== "pick" || p !== s.turn) return "turn"; const k = a.k; if (!Number.isInteger(k) || !s.opts[k]) return "bad"; const id = s.opts[k]; setQuestion(s, p, qText(id), id.split(":")[0]); },
+    REDRAW(s, p) { if (s.phase !== "pick" || p !== s.turn) return "turn"; if (s.redraws >= 2) return "limit"; s.qdeck.push(...s.opts); s.redraws++; drawOpts(s); },
+    CUSTOM(s, p, a) {
+      if (s.phase !== "pick" || p !== s.turn) return "turn"; if (!s.r.custom) return "disabled";
+      const c = clean(a.text); if (c.err) return c.err; let m = null;
+      if (a.media) { if (!s.r.media) return "disabled"; m = { id: String(a.media.id || "").slice(0, 20), type: a.media.type === "vid" ? "vid" : "img" }; if (!m.id) return "bad"; }
+      setQuestion(s, p, c.t, "propia", m, true);
+    },
+    ANSWER(s, p, a) {
+      if (s.phase !== "answer") return "phase"; if (s.done[p]) return "dup"; if (typeof a.v !== "boolean") return "bad";
+      s.ans[p] = a.v; s.done[p] = true; E(s, "ANSWERED", { p });
+      if (s.done.every(Boolean)) reveal(s);
+    },
+    NEXT(s, p) { if (s.phase !== "reveal") return "phase"; if (p !== s.turn && p !== 0 && !s.out[s.turn]) return "turn"; afterReveal(s); },
+    ACCEPT(s, p) { if (s.phase !== "challenge" || p !== s.ch.p) return "turn"; s.phase = "proof"; s.dl = Date.now() + s.r.proofMs; E(s, "ACCEPT", { p }); log(s, `${nm(s, p)} aceptó el reto.`, p); },
+    PASS_CH(s, p) { if ((s.phase !== "challenge" && s.phase !== "proof") || p !== s.ch.p) return "turn"; s.votes = {}; chResult(s, false); },
+    SET_CH(s, p, a) {
+      if (s.phase !== "challenge") return "phase"; if (!s.r.customCh) return "disabled";
+      const setter = s.ch.p === 0 ? alive(s).find(i => i !== 0) : 0; if (p !== setter) return "turn";   // el anfitrión (o, si el reto es para él, el siguiente jugador)
+      const c = clean(a.text, 6, 200); if (c.err) return c.err;
+      s.ch.text = c.t; s.ch.type = "propio"; s.ch.proof = null; s.ch.custom = true; s.dl = Date.now() + s.r.chMs; E(s, "SET_CH"); log(s, `✍️ ${nm(s, p)} cambió el reto: ${c.t}`, p);
+    },
+    PROOF(s, p, a) {
+      if (s.phase !== "proof" || p !== s.ch.p) return "turn"; if (!s.r.media) return "disabled";
+      const m = a.media || {}; const id = String(m.id || "").slice(0, 20); if (!id) return "bad";
+      s.ch.media = { id, type: m.type === "vid" ? "vid" : "img" }; E(s, "PROOF", { p });
+    },
+    DONE_CH(s, p) {
+      if (s.phase !== "proof" || p !== s.ch.p) return "turn";
+      s.phase = "vote"; s.votes = {}; s.dl = Date.now() + s.r.voteMs; E(s, "VOTE_START", { p }); log(s, `${nm(s, p)} dice que cumplió el reto. ¡A votar!`, p);
+      if (alive(s).length < 2) chResult(s, true);
+    },
+    VOTE(s, p, a) {
+      if (s.phase !== "vote") return "phase"; if (p === s.ch.p) return "self"; if (s.votes[p] !== undefined) return "dup"; if (typeof a.v !== "boolean") return "bad";
+      s.votes[p] = a.v; E(s, "VOTED", { p });
+      if (alive(s).filter(i => i !== s.ch.p).every(i => s.votes[i] !== undefined)) resolveVote(s);
+    },
+    /* el anfitrión la envía sola cuando se acaba el tiempo (el motor revisa que de verdad se acabó) */
+    TIMEOUT(s) {
+      if (!s.dl || !due(s)) return "early";
+      if (s.phase === "pick") { const id = s.opts[0]; setQuestion(s, s.turn, qText(id), id.split(":")[0]); }
+      else if (s.phase === "answer") reveal(s);
+      else if (s.phase === "reveal") afterReveal(s);
+      else if (s.phase === "challenge") chResult(s, false);
+      else if (s.phase === "proof") { s.phase = "vote"; s.votes = {}; s.dl = Date.now() + s.r.voteMs; E(s, "VOTE_START", { p: s.ch.p }); }
+      else if (s.phase === "vote") resolveVote(s);
+      else return "phase";
+    },
+    /* salir de la partida (o que el anfitrión saque a alguien) */
+    LEAVE(s, p) {
+      if (s.out[p]) return "out"; s.out[p] = true; s.done[p] = true; delete s.votes[p]; E(s, "LEFT", { p }); log(s, `🚪 ${nm(s, p)} salió de la partida.`, p);
+      if (alive(s).length < 2) return void finish(s);
+      if (s.phase === "answer" && s.done.every(Boolean)) reveal(s);
+      else if ((s.phase === "challenge" || s.phase === "proof" || s.phase === "vote") && s.ch && s.ch.p === p) nextTurn(s);
+      else if (s.phase === "vote" && alive(s).filter(i => i !== s.ch.p).every(i => s.votes[i] !== undefined)) resolveVote(s);
+      else if (s.phase === "pick" && s.turn === p) { s.inRound--; nextTurn(s); }
+    },
+  };
+  function afterReveal(s) { if (s.r.every > 0 && s.asked % s.r.every === 0 && alive(s).length > 1) startChallenge(s); else nextTurn(s); }
+  function resolveVote(s) { const v = Object.values(s.votes), yes = v.filter(x => x).length, no = v.length - yes; chResult(s, yes >= no); }
+  function act(s, p, a) {
+    if (!s || s.phase === "over") return { ok: false, err: "over" };
+    if (!a || typeof a !== "object" || typeof a.t !== "string" || !H.hasOwnProperty(a.t)) return { ok: false, err: "unknown" };
+    if (!Number.isInteger(p) || p < 0 || p >= s.np) return { ok: false, err: "player" };
+    if (s.out[p] && a.t !== "TIMEOUT") return { ok: false, err: "out" };
+    const aid = a.aid !== undefined ? String(a.aid).slice(0, 40) : null;
+    if (aid && (s.aids[p] || []).includes(aid)) return { ok: false, err: "dup" };
+    s.ev = []; const e = H[a.t](s, p, a); if (e) return { ok: false, err: e };
+    if (aid) { const L = s.aids[p] = s.aids[p] || []; L.push(aid); if (L.length > 30) L.shift(); }
+    s.n++; s.evn++; return { ok: true, s };
+  }
+  /* lo que ve cada jugador: durante las respuestas, solo su propia respuesta */
+  function redact(s, p) {
+    const o = Object.assign({}, s); delete o.rng; delete o.aids; delete o.qdeck; delete o.cdeck;
+    if (s.phase === "answer") o.ans = s.ans.map((v, i) => i === p ? v : null);
+    if (s.phase === "vote") o.votes = Object.fromEntries(Object.keys(s.votes).map(k => [k, +k === p ? s.votes[k] : null]));
+    return o;
+  }
+  return { newGame, act, redact, alive, clean, qText, H };
+})();
+
+/* =====================================================================
+   YO NUNCA NUNCA · INTERFAZ (solo dibuja; las reglas están en YN)
+   ===================================================================== */
+const YNV = { chat: [], chatOpen: false, unread: 0, gid: null, lastN: -1, compose: false, chEdit: false, draft: "", file: null, busy: false, opened: {}, localReady: -1, clk: null };
+const ynEsc = s => esc(String(s ?? ""));
+const YNG = {
+  id: "yonunca", name: "Yo Nunca Nunca", kind: "turn", need: 1, minp: 2, maxp: 12, party: true, resumable: true, drawEnds: true, noBan: true, overMs: 7000,
+  leaveMsg: "¿Salir de la partida? Quedas fuera hasta que termine. (Si solo se te cayó la señal, no toques nada: te reconectas solo.)",
+  init(round, np, opts) {
+    YNV.chat = []; YNV.unread = 0; YNV.compose = false; YNV.chEdit = false; YNV.localReady = -1;
+    return YN.newGame({ np, names: Array.from({ length: np }, (_, i) => tname(i)), rules: {
+      rounds: opts.rounds || 2, every: opts.every ?? 5, answerMs: (opts.secs || 30) * 1000, cats: opts.cats, spicy: !!opts.spicy,
+      custom: opts.custom !== false, media: opts.media !== false, customCh: opts.customCh !== false } });
+  },
+  move(s, p, a) { if (a && a.t === "FORFEIT") a = Object.assign({}, a, { t: "LEAVE" }); const r = YN.act(s, p, a); this.lastErr = r.ok ? undefined : r.err; return r.ok ? r.s : null; },
+  errText: e => ({ turn: "No es tu turno", dup: "Ya lo hiciste", short: "Muy corta: escribe un poco más", long: "Muy larga (máximo 160 letras)", spam: "Sin enlaces ni letras repetidas", bad: "Ese texto no está permitido", disabled: "El anfitrión desactivó esa opción", early: "Todavía queda tiempo", self: "No puedes votar por ti", limit: "Ya cambiaste las opciones 2 veces" }[e] || "Eso ya no se puede hacer"),
+  winner(s) { return s.phase === "over" ? s.w : null; },
+  redact(s, p) { return YN.redact(s, p); },
+  scores(s) { return s.pts.slice(); },
+  fmt: n => n + " pts",
+  /* los tiempos los controla el anfitrión: cuando vence, él manda TIMEOUT (el motor verifica la hora) */
+  auto(s) {
+    if (s.phase === "over" || !s.dl) return null;
+    if (!T.online && s.phase !== "reveal") return null;
+    const p = YN.alive(s)[0] ?? 0; return { d: Math.max(0, s.dl - Date.now()) + 350, a: { t: "TIMEOUT", aid: "to" + s.n }, p };
+  },
+  onEmote(pi, e) { const chip = document.querySelector(`.yn-p[data-p="${pi}"]`); if (!chip) return; const r = chip.getBoundingClientRect(), f = h(`<div class="cf-emof">${esc(e)}</div>`); f.style.left = (r.left + r.width / 2) + "px"; f.style.top = r.top + "px"; document.body.appendChild(f); setTimeout(() => f.remove(), 1800); },
+  onChat(pi, t) { YNV.chat.push({ pi, t, at: Date.now() }); if (YNV.chat.length > 60) YNV.chat.shift(); if (!YNV.chatOpen) YNV.unread++; ynPaintChat(); tone(1200, .05, "sine", .05); },
+  render(root, s, prev, ctx) {
+    const fresh = YNV.gid !== s.gid; if (fresh) { YNV.gid = s.gid; YNV.lastN = -1; YNV.opened = {}; }
+    const changed = YNV.lastN !== s.n; const pv = changed && YNV.prevPhase; YNV.lastN = s.n;
+    if (changed) { if (s.phase !== YNV.prevPhase || s.turn !== YNV.prevTurn) { YNV.compose = false; YNV.chEdit = false; YNV.localReady = -1; } ynSounds(s, pv); YNV.prevPhase = s.phase; YNV.prevTurn = s.turn; }
+    if (s.phase === "pick" && pv && pv !== "pick" && Object.keys(MEDIA.store).length) MEDIA.clear();
+    if (!root.querySelector(".yn") || fresh) {
+      root.innerHTML = `<div class="yn"><div class="yn-top"></div><div class="yn-pl"></div><div class="yn-main"></div>
+        ${ctx.online ? `<div class="cf-emo yn-emo">${["😂", "👀", "🔥", "💀", "😈", "😱", "👍"].map(e => `<button data-e="${e}" aria-label="Enviar ${e}">${e}</button>`).join("")}<button class="yn-chatb" aria-label="Chat">💬<i></i></button></div>
+        <div class="yn-chat" hidden><div class="yn-ch-h"><b>💬 Chat de la sala</b><button class="yn-chx" aria-label="Cerrar chat">✕</button></div><div class="yn-msgs"></div><form class="yn-cf"><input maxlength="120" placeholder="Escribe un mensaje…" aria-label="Mensaje"><button class="btn green">➤</button></form></div>` : ""}</div>`;
+      root.querySelectorAll(".yn-emo button[data-e]").forEach(b => b.onclick = () => { const n = Date.now(); if (n - (YNV.emoT || 0) < 1200) return; YNV.emoT = n; sendEmote(b.dataset.e); });
+      const cb = $(".yn-chatb", root); if (cb) cb.onclick = () => { YNV.chatOpen = !YNV.chatOpen; YNV.unread = 0; ynPaintChat(); };
+      const cx = $(".yn-chx", root); if (cx) cx.onclick = () => { YNV.chatOpen = false; ynPaintChat(); };
+      const cf = $(".yn-cf", root); if (cf) cf.onsubmit = e => { e.preventDefault(); const i = $("input", cf), t = i.value.trim(); if (!t) return; const n = Date.now(); if (n - (YNV.chatT || 0) < 1200) return toast("Espera un momento para escribir otra vez"); YNV.chatT = n; sendChat(t); i.value = ""; };
+      ynPaintChat();
+    }
+    ynTop(s, ctx); ynPlayers(s, ctx); ynMain(s, ctx, pv);
+  },
+};
+function ynSounds(s, pv) {
+  if (!pv) return;
+  if (s.phase === "pick" && pv !== "pick") { tone(660, .08, "triangle", .1); tone(880, .1, "triangle", .1, .08); }
+  if (s.phase === "answer" && pv === "pick") { tone(520, .12, "sine", .1); tone(780, .14, "sine", .08, .1); }
+  if (s.phase === "reveal") { noise(.25, .15, 1500, 400); [392, 523, 659, 784].forEach((f, k) => tone(f, .12, "triangle", .1, .25 + k * .09)); }
+  if (s.phase === "challenge" && pv !== "challenge") { tone(220, .25, "sawtooth", .06); [330, 440, 660].forEach((f, k) => tone(f, .15, "square", .05, .2 + k * .1)); vib(60); }
+  if (s.phase === "pick" && s.chRes && (pv === "vote" || pv === "proof" || pv === "challenge")) { if (s.chRes.ok) sfx.win(); else sfx.lose(); toast(s.chRes.ok ? `✅ ${s.names[s.chRes.p]} cumplió el reto (${s.chRes.yes} sí · ${s.chRes.no} no)` : `❌ ${s.names[s.chRes.p]} no cumplió el reto: +2 puntos`); }
+}
+function ynTop(s, ctx) {
+  const el = $(".yn-top"); if (!el) return;
+  el.innerHTML = `<span>Ronda ${Math.min(s.round, s.r.rounds)} de ${s.r.rounds}</span><span>${s.st.qs} pregunta${s.st.qs === 1 ? "" : "s"}${s.r.every ? ` · reto cada ${s.r.every}` : ""}</span>${s.dl && ctx.online && s.phase !== "over" ? `<i class="yn-bar"><i data-dl="${s.dl}" data-len="${({ pick: s.r.pickMs, answer: s.r.answerMs, reveal: s.r.revealMs, challenge: s.r.chMs, proof: s.r.proofMs, vote: s.r.voteMs })[s.phase] || 30000}"></i></i><b class="yn-secs"></b>` : ""}`;
+  clearInterval(YNV.clk);
+  const tick = () => { const b = $(".yn-bar i"); if (!b) return clearInterval(YNV.clk); const left = Math.max(0, +b.dataset.dl - Date.now()); b.style.width = Math.min(100, left / +b.dataset.len * 100) + "%"; const sx = $(".yn-secs"); if (sx) sx.textContent = Math.ceil(left / 1000) + " s"; b.classList.toggle("low", left < 6000); };
+  tick(); YNV.clk = setInterval(tick, 250);
+}
+function ynPlayers(s, ctx) {
+  const el = $(".yn-pl"); if (!el) return;
+  const away = i => ctx.online && T.seats && (NET.awaySeats || []).includes(T.seats[i]);
+  const host = ctx.online && ctx.me === 0;
+  el.innerHTML = s.names.map((n, i) => {
+    let st = "";
+    if (s.out[i]) st = "🚪";
+    else if (s.phase === "answer") st = s.done[i] ? "✅" : "⏳";
+    else if (s.phase === "reveal") st = s.rv[i] === true ? "🙋" : s.rv[i] === false ? "🙅" : "💤";
+    else if (s.phase === "vote" && s.ch && i !== s.ch.p) st = s.votes[i] !== undefined ? "🗳️" : "⏳";
+    if (away(i) && !s.out[i]) st = "📵";
+    const turn = (s.phase === "pick" || s.phase === "answer" || s.phase === "reveal") && i === s.turn, hot = s.ch && (s.phase === "challenge" || s.phase === "proof" || s.phase === "vote") && s.ch.p === i;
+    return `<button class="yn-p ${turn ? "turn" : ""} ${hot ? "hot" : ""} ${s.out[i] ? "out" : ""} ${ctx.online && i === ctx.me ? "me" : ""}" data-p="${i}" style="--c:${COL[i % COL.length]}" ${host && i !== 0 && !s.out[i] ? "" : "tabindex=-1"}>
+      <i>${ynEsc(n.slice(0, 1).toUpperCase())}</i><b>${ynEsc(n)}${ctx.online && i === ctx.me ? " (tú)" : ""}</b><span>${s.pts[i]}</span><em>${st}</em></button>`;
+  }).join("");
+  if (host) el.querySelectorAll(".yn-p").forEach(b => b.onclick = () => {
+    const i = +b.dataset.p; if (i === 0 || s.out[i]) return;
+    if (!confirm(`¿Sacar a ${s.names[i]} de la partida?`)) return;
+    tApply(i, { t: "LEAVE", aid: "kick" + s.n + i }); const seat = T.seats[i]; NET.sendTo(seat, { k: "kick" }); NET.ban && NET.ban(seat);
+  });
+}
+function ynQCard(s, big) {
+  const cat = YN_CATS.find(c => c.id === s.q.cat);
+  return `<div class="yn-card ${big ? "big" : ""}"><small>${cat ? cat.icon + " " + cat.name : "✍️ Pregunta de " + ynEsc(s.names[s.q.by])}</small><h3>YO NUNCA NUNCA…</h3><p>${ynEsc(s.q.text)}</p>
+    ${s.q.media ? (MEDIA.store[s.q.media.id] && MEDIA.store[s.q.media.id].ready ? `<button class="btn ghost yn-see" data-id="${s.q.media.id}">👀 Ver ${s.q.media.type === "vid" ? "el video" : "la foto"}</button>` : `<p class="yn-load">Recibiendo ${s.q.media.type === "vid" ? "video" : "foto"}…</p>`) : ""}</div>`;
+}
+function ynMain(s, ctx, pv) {
+  const el = $(".yn-main"); if (!el) return;
+  const N = i => ynEsc(s.names[i]), C = i => `<b style="color:${COL[i % COL.length]}">${N(i)}</b>`, mine = i => ctx.mine(i), me = ctx.online ? ctx.me : null;
+  let html = "";
+  if (s.phase === "pick") {
+    if (mine(s.turn)) {
+      html = `<div class="yn-hero">🎤 ${ctx.online ? "¡TE TOCA!" : `TURNO DE ${N(s.turn).toUpperCase()}`}</div><p class="yn-sub">Elige una pregunta o escribe la tuya.</p>
+        ${YNV.compose ? ynComposer(s) : `<div class="yn-opts">${s.opts.map((id, k) => { const [c] = id.split(":"), cat = YN_CATS.find(x => x.id === c); return `<button class="yn-opt" data-k="${k}"><small>${cat.icon} ${cat.name}</small><span>Yo nunca nunca ${ynEsc(YN.qText(id))}</span></button>`; }).join("")}</div>
+        <div class="yn-row"><button class="btn ghost" id="ynre" ${s.redraws >= 2 ? "disabled" : ""}>🔄 Otras (${2 - s.redraws})</button>${s.r.custom ? `<button class="btn ghost" id="ynwr">✍️ Escribir la mía</button>` : ""}</div>`}`;
+    } else html = `<div class="yn-wait"><div class="dots4"><i style="background:${COL[s.turn % COL.length]}"></i><i style="background:var(--gold)"></i><i style="background:var(--p2)"></i></div><p>🎤 Turno de ${C(s.turn)}</p><small>Está eligiendo la pregunta…</small></div>`;
+  } else if (s.phase === "answer") {
+    const n = YN.alive(s).length, k = YN.alive(s).filter(i => s.done[i]).length;
+    if (!ctx.online) {                                                        // mismo celular: cada uno responde en secreto por turnos
+      const next = YN.alive(s).find(i => !s.done[i]);
+      if (YNV.localReady !== next) html = ynQCard(s, true) + `<div class="yn-pass"><p>Pásale el celular a ${C(next)} para que responda en secreto 🤫</p><button class="btn gold" id="ynready">SOY ${N(next).toUpperCase()}</button><small>${k} de ${n} ya respondieron</small></div>`;
+      else html = ynQCard(s, true) + `<p class="yn-ask">¿Lo has hecho, ${N(next)}?</p><div class="yn-ans"><button class="yn-yes" data-v="1">🙋 LO HE HECHO</button><button class="yn-no" data-v="0">🙅 NUNCA</button></div>`;
+    } else if (!s.done[me]) html = ynQCard(s, true) + `<p class="yn-ask">¿Lo has hecho? Nadie verá tu respuesta hasta el final 🤫</p><div class="yn-ans"><button class="yn-yes" data-v="1">🙋 LO HE HECHO</button><button class="yn-no" data-v="0">🙅 NUNCA</button></div>`;
+    else html = ynQCard(s, false) + `<div class="yn-done">Respondiste ${s.ans[me] ? "🙋 <b>Lo he hecho</b>" : "🙅 <b>Nunca</b>"}<small>Esperando a los demás · ${k} de ${n}</small></div>`;
+  } else if (s.phase === "reveal") {
+    const yes = s.rv.map((v, i) => v === true && !s.out[i] ? i : -1).filter(i => i >= 0), no = s.rv.map((v, i) => v === false && !s.out[i] ? i : -1).filter(i => i >= 0), none = YN.alive(s).filter(i => s.rv[i] === null);
+    const anim = pv === "answer";
+    html = ynQCard(s, false) + `<div class="yn-hero small">👀 ¿QUIÉN LO HA HECHO?</div>
+      <div class="yn-rev ${anim ? "anim" : ""}"><div class="yes"><p>🙋 Lo han hecho</p>${yes.map((i, k) => `<span style="--c:${COL[i % COL.length]};--d:${.25 + k * .18}s">${N(i)} <b>+1</b></span>`).join("") || "<em>Nadie 😇</em>"}</div>
+      <div class="no"><p>🙅 Nunca</p>${no.map((i, k) => `<span style="--c:${COL[i % COL.length]};--d:${.25 + (yes.length + k) * .18}s">${N(i)}</span>`).join("") || "<em>Nadie 😈</em>"}</div></div>
+      ${none.length ? `<p class="yn-sub">No respondieron a tiempo: ${none.map(N).join(", ")}</p>` : ""}
+      ${mine(s.turn) || me === 0 || (!ctx.online) ? `<button class="btn green yn-next" id="ynnext">SIGUIENTE ▶</button>` : `<p class="yn-sub">Sigue en unos segundos…</p>`}`;
+  } else if (s.phase === "challenge" || s.phase === "proof" || s.phase === "vote") {
+    const ch = s.ch, p = ch.p, setter = p === 0 ? YN.alive(s).find(i => i !== 0) : 0;
+    const proofBtn = ch.media ? (MEDIA.store[ch.media.id] && MEDIA.store[ch.media.id].ready ? `<button class="btn ghost yn-see" data-id="${ch.media.id}">👀 Ver la prueba (${ch.media.type === "vid" ? "video" : "foto"})</button>` : `<p class="yn-load">Recibiendo la prueba…</p>`) : "";
+    html = `<div class="yn-hero fire">🔥 HORA DEL RETO</div><div class="yn-chcard"><p class="yn-who">${C(p)} · ${s.pts[p]} puntos</p><small>${YN_CH_TYPES[ch.type] || "✍️ Reto propio"}${ch.proof ? ` · pide ${ch.proof === "vid" ? "video" : "foto"}` : ""}</small><h3>${ynEsc(ch.text)}</h3></div>`;
+    if (s.phase === "challenge") {
+      if (mine(p)) html += `<div class="yn-row"><button class="btn gold" id="ynacc">✅ ACEPTO EL RETO</button><button class="btn ghost" id="ynpass">🏳️ Me rindo (+${s.r.failPenalty})</button></div>`;
+      else html += `<p class="yn-sub">Esperando que ${C(p)} acepte…</p>`;
+      if (s.r.customCh && mine(setter) && !mine(p)) html += YNV.chEdit ? `<div class="yn-comp"><textarea id="ynchtx" maxlength="200" rows="2" placeholder="Escribe otro reto…"></textarea><button class="btn green" id="ynchok">CAMBIAR RETO</button></div>` : `<button class="btn ghost yn-mini" id="ynched">✍️ Poner otro reto</button>`;
+    } else if (s.phase === "proof") {
+      if (mine(p)) html += `<p class="yn-sub">¡Hazlo ahora! Los demás te ven o te escuchan por la voz.${s.r.media ? " Si quieres, sube una prueba:" : ""}</p>
+        ${s.r.media && !ch.media ? ynUploadBtns("pf") + `<p class="yn-note">La prueba solo se ve dentro del juego y se borra al terminar el turno.</p>` : proofBtn}
+        <button class="btn green" id="yndone">¡LISTO, LO HICE!</button><button class="btn ghost yn-mini" id="ynpass">🏳️ Me rindo</button>`;
+      else html += `<p class="yn-sub">${C(p)} está haciendo el reto…</p>${proofBtn}`;
+    } else {
+      const voters = YN.alive(s).filter(i => i !== p), k = voters.filter(i => s.votes[i] !== undefined).length;
+      html += proofBtn;
+      if (!ctx.online) html += `<p class="yn-ask">¿${N(p)} cumplió el reto? Voten todos juntos:</p><div class="yn-votes">${voters.map(i => s.votes[i] !== undefined ? `<span>${N(i)} votó ✓</span>` : `<div class="yn-lv"><b>${N(i)}</b><button data-v="1" data-p="${i}">✅</button><button data-v="0" data-p="${i}">❌</button></div>`).join("")}</div>`;
+      else if (me === p) html += `<p class="yn-sub">Los demás están votando… ${k} de ${voters.length}</p>`;
+      else if (s.votes[me] === undefined || s.votes[me] === null && false) html += `<p class="yn-ask">¿${N(p)} cumplió el reto?</p><div class="yn-ans"><button class="yn-yes" data-vote="1">✅ SÍ</button><button class="yn-no" data-vote="0">❌ NO</button></div>`;
+      else html += `<div class="yn-done">Votaste 🗳️<small>${k} de ${voters.length} votos</small></div>`;
+    }
+  } else if (s.phase === "over") {
+    const a = YN.alive(s), best = f => { const m = Math.max(...a.map(f)); return m > 0 ? a.filter(i => f(i) === m) : []; };
+    const aw = [["😈", "El más atrevido", best(i => s.st.yes[i])], ["😇", "El más santo", best(i => s.st.no[i])], ["🔥", "Rey de los retos", best(i => s.st.chOk[i])]].filter(x => x[2].length);
+    const tops = s.ties || (s.w >= 0 ? [s.w] : []);
+    html = `<div class="yn-hero">🏆 ${tops.length > 1 ? "¡EMPATE!" : ctx.online && s.w === me ? "¡GANASTE!" : "¡GANA " + N(s.w).toUpperCase() + "!"}</div><p class="yn-sub">${tops.length > 1 ? "Empatan " + tops.map(C).join(" y ") + " con " + s.pts[tops[0]] + " puntos" : "Con " + s.pts[s.w] + " puntos: quien más cosas ha hecho"}</p><div class="yn-aw">${aw.map(([e, t, w]) => `<div><i>${e}</i><small>${t}</small><b>${w.map(C).join(", ")}</b></div>`).join("")}</div>`;
+  }
+  el.innerHTML = html;
+  // ---- eventos ----
+  const on = (sel, f) => { const b = $(sel, el); if (b) b.onclick = f; };
+  const act = a => { if (YNV.busy) return; sfx.tap(); ctx.act(Object.assign({ aid: Math.random().toString(36).slice(2, 12) }, a)); };
+  el.querySelectorAll(".yn-opt").forEach(b => b.onclick = () => act({ t: "CHOOSE", k: +b.dataset.k, p: s.turn }));
+  on("#ynre", () => act({ t: "REDRAW", p: s.turn })); on("#ynwr", () => { YNV.compose = true; ynMain(s, ctx); });
+  on("#ynback", () => { YNV.compose = false; YNV.file = null; ynMain(s, ctx); });
+  on("#ynready", () => { YNV.localReady = YN.alive(s).find(i => !s.done[i]); ynMain(s, ctx); });
+  el.querySelectorAll(".yn-ans button[data-v]").forEach(b => b.onclick = () => { const p = ctx.online ? me : YN.alive(s).find(i => !s.done[i]); YNV.localReady = -1; act({ t: "ANSWER", v: b.dataset.v === "1", p }); });
+  el.querySelectorAll(".yn-ans button[data-vote]").forEach(b => b.onclick = () => act({ t: "VOTE", v: b.dataset.vote === "1" }));
+  el.querySelectorAll(".yn-lv button").forEach(b => b.onclick = () => act({ t: "VOTE", v: b.dataset.v === "1", p: +b.dataset.p }));
+  on("#ynnext", () => act({ t: "NEXT", p: ctx.online ? me : s.turn }));
+  on("#ynacc", () => act({ t: "ACCEPT", p: s.ch.p })); on("#ynpass", () => { if (confirm(`¿Rendirte? Sumas ${s.r.failPenalty} puntos.`)) act({ t: "PASS_CH", p: s.ch.p }); });
+  on("#yndone", () => act({ t: "DONE_CH", p: s.ch.p }));
+  on("#ynched", () => { YNV.chEdit = true; ynMain(s, ctx); });
+  on("#ynchok", () => { const t = $("#ynchtx", el).value; const c = YN.clean(t, 6, 200); if (c.err) return toast(YNG.errText(c.err)); act({ t: "SET_CH", text: t, p: s.ch.p === 0 ? YN.alive(s).find(i => i !== 0) : 0 }); });
+  el.querySelectorAll(".yn-see").forEach(b => b.onclick = () => openViewer(b.dataset.id, s.phase === "answer" || s.phase === "reveal" ? "Yo nunca nunca " + s.q.text : "Reto de " + s.names[s.ch.p]));
+  // subir foto/video (pregunta propia o prueba del reto)
+  el.querySelectorAll("input[type=file]").forEach(inp => inp.onchange = () => ynFile(inp.files[0], inp.dataset.for, s, ctx));
+  on("#ynpub", () => ynPublish(s, ctx));
+  // abrir sola la foto de una pregunta la primera vez
+  const mid = s.phase === "answer" && s.q && s.q.media && s.q.media.id;
+  if (mid && !YNV.opened[mid] && MEDIA.store[mid] && MEDIA.store[mid].ready && s.q.by !== me) { YNV.opened[mid] = 1; openViewer(mid, "Yo nunca nunca " + s.q.text); }
+}
+function ynUploadBtns(k) {
+  return `<div class="bt-up"><label class="btn ghost">📸 Foto<input type="file" accept="image/*" capture="environment" data-for="${k}" hidden></label><label class="btn ghost">🎥 Video<input type="file" accept="video/*" capture="environment" data-for="${k}" hidden></label><label class="btn ghost bt-gal">🖼️ Galería<input type="file" accept="image/*,video/*" data-for="${k}" hidden></label></div>`;
+}
+function ynComposer(s) {
+  return `<div class="yn-comp"><label class="yn-pre">YO NUNCA NUNCA…</label><textarea id="yntx" maxlength="160" rows="3" placeholder="he…">${ynEsc(YNV.draft)}</textarea>
+    ${s.r.media ? (YNV.file ? `<p class="yn-note">📎 ${YNV.file.type.startsWith("video") ? "Video" : "Foto"} lista <button class="yn-x" id="ynrm">quitar</button></p>` : ynUploadBtns("q")) : ""}
+    <div class="yn-row"><button class="btn ghost" id="ynback">‹ Volver</button><button class="btn green" id="ynpub">PUBLICAR</button></div><p class="yn-note" id="ynst"></p></div>`;
+}
+async function ynFile(file, kind, s, ctx) {
+  if (!file) return;
+  if (kind === "q") { YNV.draft = ($("#yntx") || {}).value || YNV.draft; YNV.file = file; ynMain(s, ctx); const rm = $("#ynrm"); if (rm) rm.onclick = () => { YNV.file = null; ynMain(s, ctx); }; return; }
+  // prueba del reto: se envía de una vez
+  try { const id = await ynSendMedia(file); ctx.act({ t: "PROOF", media: id, p: s.ch.p, aid: "pf" + id.id }); } catch (e) { toast(e.message || "No se pudo enviar"); }
+}
+async function ynSendMedia(file) {
+  YNV.busy = true; const note = () => $("#ynst") || $(".yn-note");
+  try {
+    const r = await MEDIA.prepare(file), id = Math.random().toString(36).slice(2, 10);
+    if (!T.online) { MEDIA.put(id, r.type, r.blob ? URL.createObjectURL(r.blob) : await MEDIA.toBlobURL(r.data)); return { id, type: r.type }; }
+    MEDIA.put(id, r.type, await MEDIA.toBlobURL(r.data));
+    await MEDIA.send(id, r.type, r.data, f => { const n = note(); if (n) n.textContent = `Enviando a todos… ${Math.round(f * 100)}%`; });
+    return { id, type: r.type };
+  } finally { YNV.busy = false; }
+}
+async function ynPublish(s, ctx) {
+  const tx = $("#yntx"); const text = tx ? tx.value : ""; YNV.draft = text;
+  const c = YN.clean(text); if (c.err) return toast(YNG.errText(c.err));
+  let media = null;
+  if (YNV.file) { const st = $("#ynst"); if (st) st.textContent = "Preparando…"; try { media = await ynSendMedia(YNV.file); } catch (e) { return toast(e.message || "No se pudo enviar"); } }
+  YNV.file = null; YNV.draft = ""; YNV.compose = false;
+  ctx.act({ t: "CUSTOM", text, media, p: s.turn, aid: "cu" + Date.now() });
+}
+function ynPaintChat() {
+  const box = $(".yn-chat"), b = $(".yn-chatb i"); if (b) b.textContent = YNV.unread ? YNV.unread : "";
+  if (!box) return; box.hidden = !YNV.chatOpen;
+  const m = $(".yn-msgs", box); if (!m) return;
+  m.innerHTML = YNV.chat.map(x => { const nm = T.s && T.s.names[x.pi] || "?"; return `<p style="--c:${COL[x.pi % COL.length] || "#fff"}"><b>${ynEsc(nm)}</b> ${ynEsc(x.t)}</p>`; }).join("") || `<p class="dim">Todavía no hay mensajes.</p>`;
+  m.scrollTop = m.scrollHeight;
+}
+
+/* =====================================================================
    VOZ · hablar por micrófono en la sala (Botellita, Stop, Ludo, Ahorcado)
    - Llamadas de audio directas entre celulares (WebRTC / PeerJS)
    - El anfitrión lleva la lista de quién está en la voz y la reparte
@@ -4369,7 +5101,7 @@ function cfShowCard(e) {
 const VOICE_ICE = { iceServers: [...ICE.iceServers,
   { urls: ["turn:eu-0.turn.peerjs.com:3478", "turn:us-0.turn.peerjs.com:3478"], username: "peerjs", credential: "peerjsp" }] };
 const VOICE = {
-  games: ["botellita", "stop", "ludo", "ahorcado", "cityfortune"],
+  games: ["botellita", "stop", "ludo", "ahorcado", "cityfortune", "yonunca"],
   on: false, busy: false, muted: false, listen: false, peer: null, pid: "", stream: null, ctx: null,
   members: {}, calls: new Map(), lv: {}, needTap: false, timer: null, key: "",
   mySeat() { return NET.role === "host" ? 0 : NET.me; },
@@ -4624,6 +5356,12 @@ const GAMES = [
     steps: ["Tira los dados y avanza por la ciudad. Cada vez que pasas por la <b>Estación Central</b> cobras $200.", "Si caes en una propiedad libre puedes <b>comprarla</b> (si no, se <b>subasta</b>). Si es de otro, le pagas <b>alquiler</b>. Con un <b>distrito completo</b> cobras el doble y puedes <b>construir</b>: Local → Edificio → Torre → Complejo.", "<b>Negocia</b> con los demás para completar distritos. Si te falta dinero, <b>hipoteca</b> o vende. Cuidado con los impuestos, los eventos y el <b>Centro de Detención</b>."],
     goal: "Modo por rondas: gana el mayor patrimonio al terminar. Modo clásico: gana el último que no quiebre.",
     setup: "En este celular se lo pasan en cada turno, o en línea cada uno juega desde el suyo. La partida se guarda sola: si alguien se desconecta, su lugar lo espera. <b>Beta, parte 3 de 5:</b> jugar contra la máquina llega en la parte 4." },
+  { g: YNG, cat: "fiesta", c1: "#e11d48", c2: "#4c0d2e", tag: "Confiesa en secreto lo que has hecho… y cumple los retos si vas ganando.", tags: ["2 a 12 jugadores", "En línea", "Fiesta"], party: 1,
+    steps: ["Por turnos, cada jugador elige una frase <b>«Yo nunca nunca…»</b> de entre 3 opciones, o <b>escribe la suya</b> (puede llevar foto o video).",
+      "Todos responden <b>en secreto</b>: 🙋 <b>Lo he hecho</b> o 🙅 <b>Nunca</b>. Cuando responden todos (o se acaba el tiempo), se revela a la vez quién lo ha hecho: cada «lo he hecho» suma <b>1 punto</b>.",
+      "Cada cierto número de preguntas llega la <b>hora del reto</b> para quien va ganando: si lo acepta, lo hace (con prueba opcional) y los demás <b>votan</b> si lo cumplió. Si se rinde o no lo cumple, suma puntos extra."],
+    goal: "Al final gana quien más puntos tiene: el que más cosas ha hecho. Hay premios al más atrevido, al más santo y al rey de los retos.",
+    setup: "En línea cada uno responde desde su celular y nadie ve tu respuesta hasta la revelación. En el mismo celular se lo pasan para responder en secreto. Las preguntas picantes (+18) vienen apagadas." },
   { g: DUO, cat: "aventura", c1: "#ff7a1a", c2: "#1f74bd", tag: "Fuego y Agua tienen que ayudarse para escapar del templo.", tags: ["Cooperativo", `${DUO_LEVELS.length} niveles`], lv: 1,
     steps: ["<b>Fuego</b> puede pisar lava y <b>Agua</b> puede pisar agua. El charco del otro color los elimina, y el <b>veneno verde</b> elimina a los dos.",
       "Muévete con <b>◀ ▶</b> y salta con <b>▲</b>. Pon el celular <b>de lado</b>: Fuego usa los botones de la izquierda y Agua los de la derecha. En línea, cada uno maneja a su personaje.",
@@ -4718,6 +5456,7 @@ function info(x, mode) {
   const opts = { np: 2 }; const maxLv = Math.min(S.duo || 1, DUO_LEVELS.length); if (g === DUO) opts.lv = maxLv - 1;
   if (!S.party || S.party.length < 2) S.party = ["Jugador 1", "Jugador 2", "Jugador 3"];
   if (g === HANG) opts.mode = "rand"; if (g === STOP) { opts.cats = (S.stopCats && S.stopCats.length ? S.stopCats : STOP_CATS.slice(0, 6)).slice(); opts.rounds = 5; } if (g === BOTTLE) opts.shots = false; if (g === CITY) { opts.rounds = 20; opts.mode = "rounds"; }
+  if (g === YNG) { const ok = (S.ynCats || []).filter(c => YN_CATS.some(x => x.id === c && !x.adult)); Object.assign(opts, { rounds: 2, every: 5, secs: 30, cats: ok.length >= 2 ? ok : YN_RULES.cats.slice(), spicy: false, custom: true, media: true, customCh: true }); }
   const chipsRow = (id, arr, cur) => `<div class="row" id="${id}">${arr.map(([v, t]) => `<button class="chip ${v === cur ? "on" : ""}" data-v="${v}">${t}</button>`).join("")}</div>`;
   let optHtml = "";
   if (mode !== "guest") {
@@ -4726,6 +5465,14 @@ function info(x, mode) {
     if (g === HANG) optHtml += `<p class="label">¿De dónde salen las palabras?</p>${chipsRow("hm", [["rand", "Al azar"], ["player", "Las escribe un jugador"]], "rand")}`;
     if (g === STOP) optHtml += `<p class="label">Rondas</p>${chipsRow("sr", [[3, "3"], [5, "5"], [8, "8"]], 5)}<p class="label">Categorías (toca para cambiar)</p><div class="cats">${STOP_CATS.map(c => `<button class="chip sm ${opts.cats.includes(c) ? "on" : ""}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>`;
     if (g === CITY) optHtml += `<p class="label">Modo de juego</p>${chipsRow("cm", [["rounds", "Por rondas"], ["classic", "Clásico"]], "rounds")}<p class="dim" id="cmx" style="font-size:12px;font-weight:800;margin-top:-6px">Gana el mayor patrimonio al terminar las rondas.</p><div id="crw"><p class="label">¿Cuántas rondas?</p>${chipsRow("cr", [[10, "10 · corta"], [20, "20 · normal"], [30, "30 · larga"]], 20)}<p class="dim" style="font-size:12px;font-weight:800;margin-top:-6px">Cada ronda es un turno de cada jugador. Con 4 jugadores, 20 rondas duran unos 30–40 minutos.</p></div>`;
+    if (g === YNG) optHtml += `<p class="label">Rondas (cada ronda todos preguntan una vez)</p>${chipsRow("ynr", [[1, "1"], [2, "2"], [3, "3"]], 2)}
+      <p class="label">Retos para quien va ganando</p>${chipsRow("ynx", [[0, "Sin retos"], [3, "Cada 3"], [5, "Cada 5"], [8, "Cada 8"]], 5)}
+      ${onl ? `<p class="label">Tiempo para responder</p>${chipsRow("yns", [[20, "20 s"], [30, "30 s"], [45, "45 s"]], 30)}` : ""}
+      <p class="label">Categorías (toca para cambiar)</p><div class="cats" id="ync">${YN_CATS.filter(c => !c.adult).map(c => `<button class="chip sm ${opts.cats.includes(c.id) ? "on" : ""}" data-c="${c.id}">${c.icon} ${c.name}</button>`).join("")}</div>
+      <p class="label">Opciones</p><div style="display:grid;gap:8px"><label class="tog"><input type="checkbox" id="ynsp"><span>Incluir preguntas <b>picantes 😈</b> (solo mayores de 18)</span></label>
+      <label class="tog"><input type="checkbox" id="yncu" checked><span>Dejar que escriban <b>sus propias preguntas</b></span></label>
+      <label class="tog"><input type="checkbox" id="ynme" checked><span>Permitir <b>fotos y videos</b> (en preguntas y pruebas de retos)</span></label>
+      <label class="tog"><input type="checkbox" id="ynch" checked><span>Dejar que ${onl ? "el anfitrión" : "el grupo"} ponga <b>retos propios</b></span></label></div>`;
     if (g === BOTTLE) optHtml += `<p class="label">Opciones</p><label class="tog"><input type="checkbox" id="shots"><span>Incluir <b>SHOT 🥃</b> (solo mayores de 18; agua también vale)</span></label>`;
     if (!onl && x.party) optHtml += `<p class="label">¿Quiénes juegan? (${g.minp}–${g.maxp})</p><div class="party">${S.party.map((n, i) => `<div class="pf" style="--c:${COL[i % COL.length]}"><i></i><input maxlength="10" value="${esc(n)}" data-i="${i}"><button class="rm" data-i="${i}" aria-label="Quitar">✕</button></div>`).join("")}</div>
       ${S.party.length < g.maxp ? `<button class="btn ghost" id="addp" style="font-size:16px;padding:10px">+ Agregar jugador</button>` : ""}`;
@@ -4747,6 +5494,9 @@ function info(x, mode) {
   v.querySelectorAll("#cm .chip").forEach(b => b.addEventListener("click", () => { opts.mode = b.dataset.v; $("#crw", v).style.display = opts.mode === "rounds" ? "" : "none"; $("#cmx", v).textContent = opts.mode === "rounds" ? "Gana el mayor patrimonio al terminar las rondas." : "Se juega hasta que todos menos uno quiebren. En las simulaciones, con 4 jugadores dura unas 45 rondas (más de una hora)."; }));
   v.querySelectorAll(".cats .chip").forEach(b => b.onclick = () => { const c = b.dataset.c, i = opts.cats.indexOf(c); if (i >= 0) { if (opts.cats.length <= 3) { toast("Mínimo 3 categorías"); return; } opts.cats.splice(i, 1); } else { if (opts.cats.length >= 8) { toast("Máximo 8 categorías"); return; } opts.cats.push(c); } b.classList.toggle("on", i < 0); S.stopCats = opts.cats.slice(); save(); });
   const sh = $("#shots", v); if (sh) sh.onchange = () => opts.shots = sh.checked;
+  chips("#ynr", "rounds"); chips("#ynx", "every"); chips("#yns", "secs");
+  v.querySelectorAll("#ync .chip").forEach(b => b.onclick = () => { const c = b.dataset.c, i = opts.cats.indexOf(c); if (i >= 0) { if (opts.cats.length <= 2) { toast("Deja al menos 2 categorías"); return; } opts.cats.splice(i, 1); } else opts.cats.push(c); b.classList.toggle("on", i < 0); S.ynCats = opts.cats.slice(); save(); });
+  [["#ynsp", "spicy"], ["#yncu", "custom"], ["#ynme", "media"], ["#ynch", "customCh"]].forEach(([id, k]) => { const c = $(id, v); if (c) c.onchange = () => { if (k === "spicy" && c.checked && !confirm("Las preguntas picantes son solo para mayores de 18. ¿Todos en el grupo son mayores de edad?")) { c.checked = false; return; } opts[k] = c.checked; }; });
   const syncParty = () => { v.querySelectorAll(".party input").forEach(inp => S.party[+inp.dataset.i] = inp.value.trim() || `Jugador ${+inp.dataset.i + 1}`); save(); };
   v.querySelectorAll(".party .rm").forEach(b => b.onclick = () => { syncParty(); if (S.party.length <= (g.minp || 2)) { toast(`Mínimo ${g.minp || 2} jugadores`); return; } S.party.splice(+b.dataset.i, 1); save(); info(x, mode); });
   const ap = $("#addp", v); if (ap) ap.onclick = () => { syncParty(); S.party.push(`Jugador ${S.party.length + 1}`); save(); info(x, mode); };
@@ -4784,6 +5534,9 @@ function confetti(n, x, y) { for (let i = 0; i < n; i++) parts.push({ x, y, vx: 
   requestAnimationFrame(loop);
 })();
 Object.assign(ART, {
+  yonunca: `<svg viewBox="0 0 120 120"><defs><radialGradient id="ynbg" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#8a1c4a"/><stop offset="1" stop-color="#2a0619"/></radialGradient></defs><rect width="120" height="120" fill="url(#ynbg)"/>
+    <g transform="rotate(-8 60 50)"><rect x="16" y="20" width="88" height="54" rx="12" fill="#fff" stroke="#e11d48" stroke-width="3"/><text x="60" y="44" font-size="17" font-family="Lilita One,sans-serif" fill="#e11d48" text-anchor="middle">YO NUNCA</text><text x="60" y="63" font-size="17" font-family="Lilita One,sans-serif" fill="#4c0d2e" text-anchor="middle">NUNCA…</text></g>
+    ${[["#ff5a5f", 1], ["#3da9fc", 0], ["#ffd23f", 1], ["#2ec4b6", 0]].map(([c, y], k) => `<g transform="translate(${24 + k * 24} 98)"><circle r="11" fill="${c}" stroke="#fff" stroke-width="2"/><text y="5" font-size="13" font-family="Lilita One,sans-serif" fill="#fff" text-anchor="middle">${y ? "✓" : "✗"}</text></g>`).join("")}</svg>`,
   ahorcado: `<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#23285e"/><path d="M22 104h52M38 104V18h40v14" stroke="#8a7fc7" stroke-width="6" fill="none" stroke-linecap="round"/>
     <g stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"><circle cx="78" cy="42" r="10"/><path d="M78 52v26M78 60l-12 10M78 60l12 10M78 78l-10 16"/></g>
     <g fill="#ffd23f"><rect x="60" y="104" width="10" height="3"/><rect x="74" y="104" width="10" height="3"/><rect x="88" y="104" width="10" height="3"/></g><text x="79" y="100" font-size="14" font-family="Lilita One,sans-serif" fill="#fff" text-anchor="middle">A  _  _</text></svg>`,
@@ -4891,6 +5644,14 @@ function onNetBack(seat) {
   if (Object.keys(VOICE.members).length) VOICE.bcast();
 }
 function onEmote(seat, e) { if (T.g && T.g.onEmote && T.online) T.g.onEmote(T.seats.indexOf(seat), e); }
+function onChat(seat, t) { if (T.g && T.g.onChat && T.online) T.g.onChat(T.seats.indexOf(seat), t); }
+function sendChat(t) { t = String(t || "").replace(/[<>]/g, "").trim().slice(0, 120); if (!t) return; if (NET.role === "host") { NET.send({ k: "chat", t, from: 0 }); onChat(0, t); } else NET.send({ k: "chat", t }); }
+function onNetKick(again) {
+  if (!again) try { localStorage.setItem("arena-mini-kick", JSON.stringify({ code: NET.code, t: Date.now() })); } catch {}
+  if (E.st !== "off") stopMatch(); tStop(); NET.reset(); sessSet(null); VOICE.leave(true);
+  const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión te sacó de la sala</h2><p class="center dim" style="font-weight:800">Ya no puedes volver a esta sala.</p><div class="grow"></div><button class="btn green" id="bk">MENÚ</button>`);
+  $("#bk", v).onclick = home;
+}
 function sendEmote(e) { if (NET.role === "host") { NET.send({ k: "emo", e, from: 0 }); onEmote(0, e); } else NET.send({ k: "emo", e }); }
 /* se perdió el anfitrión en medio de una partida guardable: reintentar solo */
 function reconnecting(code) {
@@ -4931,8 +5692,8 @@ function onNetBye() {
   const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión cerró la sala</h2><div class="grow"></div><button class="btn green" id="bk">MENÚ</button>`);
   $("#bk", v).onclick = home;
 }
-function resultOnline(w, sc) {
-  const me = NET.pi, won = w >= 0 && w === me, g = ALLG().find(x => x.id === NET.game) || E.game || BOMB, host = NET.role === "host", N = i => NET.pname(i);
+function resultOnline(w, sc, nm) {
+  const me = NET.pi, won = w >= 0 && w === me, g = ALLG().find(x => x.id === NET.game) || E.game || BOMB, host = NET.role === "host", N = i => (nm && nm[i]) || NET.pname(i);
   if (w >= 0) { S.onl[won ? 0 : 1]++; save(); }
   const wc = w >= 0 ? COL[w % COL.length] : "#fff";
   const v = show(`<div style="height:10px"></div>
@@ -4961,7 +5722,7 @@ onNetMsg = function (m) {
   _onNetMsg(m);
 };
 
-window.AM = { E, Pads, BOMB, DUEL, HOCKEY, NET, startMatch, endRound, T, TRIKI, CHESS, LUDO, CARDS, DUO, HANG, WHO, STOP, BOTTLE, MEDIA, VOICE, CITY, CF, CFV, CF_TIMERS, tApply, tAct, launch, S };
+window.AM = { E, Pads, BOMB, DUEL, HOCKEY, NET, startMatch, endRound, T, TRIKI, CHESS, LUDO, CARDS, DUO, HANG, WHO, STOP, BOTTLE, MEDIA, VOICE, CITY, CF, CFV, CF_TIMERS, YN, YNG, tApply, tAct, launch, S };
 /* arranque: si el link trae #sala-XXXX, ir directo a unirse */
 (() => { const m = location.hash.match(/sala-([A-Z0-9]{4})/i); if (m) onlineMenu(m[1].toUpperCase()); else home(); })();
 function phoneOnline(id, me) {
@@ -4985,3 +5746,4 @@ function phoneOnline(id, me) {
 </script>
 </body>
 </html>
+
