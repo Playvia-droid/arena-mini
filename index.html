@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0b0d1f;--bg2:#141735;--panel:#1b1f42;--line:rgba(255,255,255,.1);--ink:#fff;--dim:#a3a8d4;
@@ -523,6 +523,148 @@ body.playing #mute{display:none}
 .yn-chat[hidden]{display:none}.yn-ch-h{display:flex;justify-content:space-between;align-items:center}.yn-ch-h b{font:400 16px var(--disp)}.yn-chx{appearance:none;border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:10px;width:34px;height:34px;font-weight:900;cursor:pointer}
 .yn-msgs{max-height:34vh;overflow-y:auto;display:grid;gap:4px;align-content:start}.yn-msgs p{margin:0;font-weight:700;font-size:14px;word-break:break-word}.yn-msgs p b{color:var(--c)}
 .yn-cf{display:grid;grid-template-columns:1fr 56px;gap:6px}.yn-cf input{background:var(--bg2);border:2px solid var(--line);color:#fff;border-radius:12px;padding:10px;font:800 15px var(--body);min-width:0}.yn-cf .btn{padding:8px;font-size:20px}
+/* ===================== INTERFAZ PRINCIPAL · negro elegante ===================== */
+:root{--u-0:#0a0b0e;--u-1:#131519;--u-2:#1a1d23;--u-3:#252932;--u-l:rgba(255,255,255,.07);--u-t:#f3f4f6;--u-d:#8b91a1;--u-b:#2f8cff;--u-b2:#1a6ee8;--u-r:#ff4d5e;--u-f:"Poppins","Segoe UI",system-ui,sans-serif}
+body:not(.tplay):not(.playing){background:var(--u-0)}
+body:not(.tplay):not(.playing) #app{background:radial-gradient(100% 38% at 50% -6%,rgba(47,140,255,.11),transparent 70%),var(--u-0)}
+body:not(.tplay):not(.playing) #mute{background:var(--u-2);border-radius:50%;box-shadow:inset 0 0 0 1px var(--u-l)}
+.wrap{font-family:var(--u-f);gap:18px;color:var(--u-t);-webkit-font-smoothing:antialiased}
+.wrap h1,.wrap h2,.wrap h3{font-family:var(--u-f);font-weight:700;letter-spacing:-.015em}
+.wrap p{line-height:1.5}.wrap .dim{color:var(--u-d)}
+.wrap .label{font:600 11.5px var(--u-f);letter-spacing:.09em;color:var(--u-d);margin-bottom:-8px}
+.wrap .btn{font:600 16px var(--u-f);letter-spacing:0;border-radius:16px;padding:15px 18px;background:var(--u-3);box-shadow:none;transition:transform .12s,filter .12s;min-height:52px}
+.wrap .btn svg{width:18px;height:18px}
+.wrap .btn:active{transform:scale(.97);box-shadow:none}
+.wrap .btn.green{background:linear-gradient(180deg,#3a95ff,var(--u-b2));box-shadow:0 10px 24px -8px rgba(47,140,255,.6)}
+.wrap .btn.gold{background:#f3f4f6;color:#0a0b0e}
+.wrap .btn.ghost{background:var(--u-2);box-shadow:inset 0 0 0 1px var(--u-l)}
+.wrap .btn small{font:400 12px var(--u-f);opacity:.8}
+.wrap .btn:focus-visible,.wrap button:focus-visible,.wrap [role=button]:focus-visible,#bnav button:focus-visible{outline:2px solid var(--u-b);outline-offset:2px}
+.wrap .back{background:var(--u-2);border-radius:999px;padding:9px 15px;font:500 13px var(--u-f);box-shadow:inset 0 0 0 1px var(--u-l)}
+.wrap .topbar{min-height:40px}
+.wrap .card{background:var(--u-1);border:1px solid var(--u-l);border-radius:20px}
+.wrap .row .btn{font-size:14px;padding:12px 10px;min-height:46px}
+.wrap .chip{font:600 15px var(--u-f);background:var(--u-1);border:1px solid var(--u-l);border-radius:14px;padding:11px 0;color:#d6d9e0;transition:background .15s}
+.wrap .chip.on{background:var(--u-b);border-color:var(--u-b);color:#fff;box-shadow:0 8px 18px -8px rgba(47,140,255,.7)}
+.wrap .chip.sm{font:500 13px var(--u-f);padding:8px 13px;border-radius:999px}
+.wrap .tog{background:var(--u-1);border:1px solid var(--u-l);border-radius:16px;font:500 14px/1.4 var(--u-f);color:#d6d9e0;padding:13px 14px}.wrap .tog b{color:#fff;font-weight:600}
+.wrap .tog input{accent-color:var(--u-b);width:20px;height:20px;flex:none}
+.wrap .namef,.wrap .pf{background:var(--u-1);border:1px solid var(--u-l);border-left:4px solid var(--c);border-radius:14px}
+.wrap .namef input,.wrap .pf input{font:500 16px var(--u-f)}
+.wrap .or{font:500 12.5px var(--u-f);color:var(--u-d)}
+.wrap .codein{background:var(--u-1);border:1px solid var(--u-l);border-radius:16px;font:700 34px var(--u-f);letter-spacing:.45em;padding:12px 0 12px .45em}
+.wrap .codein:focus{border-color:var(--u-b)}
+.wrap .code{font:700 38px var(--u-f);color:#fff;letter-spacing:.35em}
+.wrap .code.big{background:var(--u-1);border:1px dashed rgba(47,140,255,.5)}
+.wrap .winner{font:700 34px/1.1 var(--u-f)}
+.wrap .score{font:700 54px var(--u-f)}
+.wrap .rival{background:var(--u-1);border:1px solid var(--u-l)}.wrap .rival .nm{font:700 18px var(--u-f)}.wrap .rival .vs{font:700 22px var(--u-f)}
+.wrap .stick{background:linear-gradient(transparent,var(--u-0) 38%);padding-top:18px}
+.wrap .dots4 i{width:10px;height:10px}
+/* info del juego */
+.ix-hero{position:relative;overflow:hidden;border-radius:26px;padding:20px 18px;min-height:176px;display:flex;align-items:flex-end;border:1px solid var(--u-l);
+  background:radial-gradient(90% 110% at 92% 25%,color-mix(in srgb,var(--c1) 58%,transparent),transparent 62%),linear-gradient(160deg,#1c1f26,#111317)}
+.ix-hero .art{position:absolute;right:-16px;top:-8px;width:126px;height:126px;transform:rotate(8deg);filter:drop-shadow(0 18px 26px rgba(0,0,0,.55))}
+.ix-hero .art svg{width:100%;height:100%;border-radius:28px;display:block}
+.ix-hero .txt{position:relative;max-width:64%;display:grid;gap:6px}
+.ix-hero h2{font-size:27px;line-height:1.08}.ix-hero p{font:400 13px/1.45 var(--u-f);color:#c9ccd6}
+.ix-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.ix-tags span{font:500 11px var(--u-f);padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.08);backdrop-filter:blur(6px)}
+.wrap .steps{gap:8px}
+.wrap .step{background:var(--u-1);border:1px solid var(--u-l);border-radius:18px;padding:13px 14px;grid-template-columns:30px 1fr}
+.wrap .step b.n{width:30px;height:30px;background:rgba(47,140,255,.14);color:#74b3ff;font:600 14px var(--u-f)}
+.wrap .step p{font:400 14px/1.55 var(--u-f);color:#cfd2da}.wrap .step p b{color:#fff;font-weight:600}
+.wrap .goal{background:linear-gradient(135deg,rgba(255,196,64,.13),rgba(255,196,64,.03));border:1px solid rgba(255,196,64,.24);border-radius:18px;font:500 14px/1.5 var(--u-f)}
+.wrap .setup{background:var(--u-1);border:1px solid var(--u-l);border-radius:18px;font:400 13.5px/1.5 var(--u-f);color:#c9ccd6;padding:13px 14px}.wrap .setup b{color:#fff;font-weight:600}
+.wrap .phone{width:150px}
+/* barra inferior */
+#bnav{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);z-index:45;max-width:460px;margin:0 auto;display:none;grid-template-columns:repeat(4,1fr);gap:4px;
+  background:rgba(20,22,27,.86);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:6px;box-shadow:0 16px 36px rgba(0,0,0,.55)}
+body.hasnav #bnav{display:grid}body.tplay #bnav,body.playing #bnav{display:none!important}
+#bnav button{appearance:none;border:0;background:none;color:#8b91a1;display:grid;justify-items:center;gap:2px;padding:7px 0 6px;border-radius:18px;font:500 11px var(--u-f);cursor:pointer;transition:color .15s,background .15s}
+#bnav svg{width:23px;height:23px}#bnav button.on{color:#fff;background:rgba(47,140,255,.15)}#bnav button.on svg{color:#5aa6ff}
+body.hasnav #app{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
+/* inicio */
+.hx-top{display:flex;align-items:center;gap:10px;min-height:42px}body.hasnav #mute{display:none}
+.hx-ic{width:42px;height:42px;border-radius:50%;border:0;background:var(--u-2);box-shadow:inset 0 0 0 1px var(--u-l);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}.hx-ic svg{width:20px;height:20px}
+.hx-brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}.hx-brand b{display:block;font:700 17px var(--u-f);letter-spacing:-.01em}.hx-brand small{display:block;font:400 11.5px var(--u-f);color:var(--u-d)}
+.hx-logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#3a95ff,#7b5cff);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:9px;box-shadow:0 8px 18px -6px rgba(47,140,255,.7)}
+.hx-logo i{border-radius:3px;background:#fff}.hx-logo i:nth-child(2),.hx-logo i:nth-child(3){opacity:.55}
+.hx-av{width:42px;height:42px;border-radius:50%;border:0;padding:0;background:linear-gradient(135deg,#ff6b8b,#7b5cff);color:#fff;font:600 16px var(--u-f);display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 2px var(--u-0),0 0 0 3px rgba(255,255,255,.15)}
+.hx-av svg{width:20px;height:20px}
+.hx-hi{margin-top:-4px}.hx-hi h1{font-size:28px;line-height:1.15}.hx-hi p{color:var(--u-d);font-size:14px;margin-top:2px}
+.hx-search{appearance:none;display:flex;align-items:center;gap:10px;width:100%;background:var(--u-1);border:1px solid var(--u-l);border-radius:16px;padding:13px 15px;color:var(--u-d);font:400 14px var(--u-f);cursor:text;text-align:left}
+.hx-search svg{width:19px;height:19px;flex:none}.hx-search input{flex:1;min-width:0;background:none;border:0;color:#fff;font:400 15px var(--u-f);user-select:text;-webkit-user-select:text}.hx-search input:focus{outline:none}.hx-search.in:focus-within{border-color:rgba(47,140,255,.6)}
+.hx-hero-rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none}.hx-hero-rail::-webkit-scrollbar,.hx-rail::-webkit-scrollbar,.ui-chips::-webkit-scrollbar{display:none}
+.hx-hero{flex:0 0 86%;max-width:420px;scroll-snap-align:center;position:relative;overflow:hidden;border-radius:26px;min-height:212px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;cursor:pointer;border:1px solid var(--u-l);
+  background:radial-gradient(85% 100% at 95% 30%,color-mix(in srgb,var(--c1) 62%,transparent),transparent 60%),linear-gradient(150deg,#1d2027,#101216);transition:transform .15s}
+.hx-hero:active{transform:scale(.985)}
+.hx-hero .art{position:absolute;right:-18px;top:14px;width:148px;height:148px;transform:rotate(9deg);filter:drop-shadow(0 20px 26px rgba(0,0,0,.55))}.hx-hero .art svg{width:100%;height:100%;border-radius:30px;display:block}
+.hx-hero .txt{position:relative;max-width:60%}
+.hx-tag{display:inline-block;background:var(--u-r);color:#fff;font:600 10px var(--u-f);letter-spacing:.08em;padding:4px 8px;border-radius:7px}.hx-tag.alt{background:rgba(255,255,255,.14)}
+.hx-hero h2{font-size:23px;line-height:1.1;margin:9px 0 5px}.hx-hero p{font:400 12px/1.45 var(--u-f);color:#c3c7d1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hx-cta{position:relative;display:flex;gap:8px;align-items:center}
+.hx-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:12px;padding:10px 12px;font:500 12px var(--u-f)}.hx-pill svg{width:15px;height:15px;opacity:.8}
+.hx-play{display:flex;align-items:center;gap:6px;background:linear-gradient(180deg,#3a95ff,var(--u-b2));color:#fff;font:600 13.5px var(--u-f);padding:10px 16px;border-radius:12px;box-shadow:0 10px 20px -8px rgba(47,140,255,.8)}.hx-play svg{width:14px;height:14px}
+.hx-dots{display:flex;gap:6px;justify-content:center;margin-top:-10px}.hx-dots i{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.18);transition:width .25s,background .25s}.hx-dots i.on{width:22px;background:#fff}
+.hx-res{display:grid;grid-template-columns:44px 1fr auto;gap:4px 12px;align-items:center;background:linear-gradient(135deg,#1c2029,#14161b);border:1px solid rgba(47,140,255,.22);border-radius:20px;padding:12px 12px 12px 14px;box-shadow:0 14px 30px -18px rgba(47,140,255,.6)}
+.hx-res .ic{width:44px;height:44px;border-radius:14px;background:rgba(47,140,255,.14);color:#6fb1ff;display:grid;place-items:center}.hx-res .ic svg{width:22px;height:22px}
+.hx-res b{display:block;font:600 14px var(--u-f)}.hx-res small{display:block;font:400 11.5px/1.4 var(--u-f);color:var(--u-d);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.hx-res .btn{min-height:40px;padding:9px 16px;font-size:13.5px;width:auto;border-radius:12px}
+.hx-del{grid-column:2/-1;justify-self:start;appearance:none;border:0;background:none;color:#8b91a1;font:500 12px var(--u-f);padding:2px 0;text-decoration:underline;cursor:pointer}
+.hx-onl{background:linear-gradient(160deg,#181b22,#111317);border:1px solid var(--u-l);border-radius:24px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.hx-onl>*{min-width:0}
+.hx-onl .hd,.on-opt{display:flex;gap:12px;align-items:center}.hx-onl .ic,.on-opt .ic{width:44px;height:44px;border-radius:14px;background:rgba(47,140,255,.14);color:#6fb1ff;display:grid;place-items:center;flex:none}.hx-onl .ic svg,.on-opt .ic svg{width:22px;height:22px}
+.hx-onl b,.on-opt b{display:block;font:600 15px var(--u-f)}.hx-onl small,.on-opt small{display:block;font:400 12px/1.4 var(--u-f);color:var(--u-d)}
+.hx-onl .btn{min-height:46px;padding:12px;font-size:14px}
+.hx-join{display:flex;gap:8px;align-items:center;background:var(--u-0);border:1px solid var(--u-l);border-radius:16px;padding:6px 6px 6px 14px}.hx-join:focus-within{border-color:rgba(47,140,255,.6)}
+.hx-join input{flex:1;min-width:0;width:100%;background:none;border:0;color:#fff;font:600 16px var(--u-f);letter-spacing:.25em;text-transform:uppercase;user-select:text;-webkit-user-select:text}.hx-join input::placeholder{letter-spacing:0;text-transform:none;color:#6b7080;font-weight:400}.hx-join input:focus{outline:none}
+.hx-join button{appearance:none;border:0;width:42px;height:42px;border-radius:12px;background:linear-gradient(180deg,#3a95ff,var(--u-b2));color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}.hx-join button svg{width:20px;height:20px}
+.hx-sec{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 -8px}.hx-sec h3{font-size:16.5px;font-weight:600}
+.hx-sec button{appearance:none;border:0;background:none;color:#5aa6ff;font:500 13px var(--u-f);cursor:pointer;padding:4px 0}
+.hx-rail{display:flex;gap:12px;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
+.hx-tile{flex:0 0 124px;appearance:none;border:0;background:none;color:#fff;text-align:left;padding:0;cursor:pointer;scroll-snap-align:start;font-family:var(--u-f)}
+.hx-tile .th{display:block;position:relative;width:124px;height:124px;border-radius:22px;overflow:hidden;box-shadow:0 14px 24px -14px rgba(0,0,0,.9);transition:transform .15s}
+.hx-tile:active .th{transform:scale(.96)}.hx-tile .th svg{width:100%;height:100%;display:block}
+.hx-tile b{display:block;font:600 13.5px var(--u-f);margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hx-tile small{display:block;font:400 11.5px var(--u-f);color:var(--u-d);margin-top:1px}
+.ui-new{position:absolute;top:8px;left:8px;background:var(--u-r);color:#fff;font:600 9.5px var(--u-f);font-style:normal;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:6px}
+.ui-row h3 .ui-new{position:static;vertical-align:2px;margin-left:4px}
+.hx-wide{flex:0 0 240px;height:128px;appearance:none;border:0;padding:14px;border-radius:22px;overflow:hidden;position:relative;color:#fff;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;scroll-snap-align:start;font-family:var(--u-f)}
+.hx-wide .bg{position:absolute;inset:0}.hx-wide .bg svg{width:100%;height:100%;display:block}
+.hx-wide .sh{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.78))}
+.hx-wide b,.hx-wide small{position:relative}.hx-wide b{font:600 15px var(--u-f)}.hx-wide small{font:400 11.5px var(--u-f);color:#d6d9e0}
+.hx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hx-stats div{background:var(--u-1);border:1px solid var(--u-l);border-radius:18px;padding:12px}.hx-stats small{display:block;font:400 11px/1.3 var(--u-f);color:var(--u-d);min-height:28px}.hx-stats b{display:block;font:700 22px var(--u-f);margin-top:4px}
+/* listas */
+.ui-head h1{font-size:28px;line-height:1.15}.ui-head p{color:var(--u-d);font-size:13.5px;margin-top:3px}
+.ui-note{font:400 12.5px/1.5 var(--u-f);color:var(--u-d);margin:-6px 0 -4px}.ui-note.center{text-align:center;margin:0}
+.ui-chips{display:flex;gap:8px;overflow-x:auto;margin:-4px -16px 0;padding:0 16px;scrollbar-width:none}
+.ui-chips button{flex:none;appearance:none;border:1px solid var(--u-l);background:var(--u-1);color:#c9ccd6;border-radius:999px;padding:9px 15px;font:500 13px var(--u-f);cursor:pointer;transition:all .15s}
+.ui-chips button.on{background:#fff;color:#0a0b0e;border-color:#fff;font-weight:600}
+.ui-list{display:grid;gap:10px}
+.ui-row{appearance:none;width:100%;display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;background:var(--u-1);border:1px solid var(--u-l);border-radius:20px;padding:10px 12px 10px 10px;color:#fff;text-align:left;cursor:pointer;font-family:var(--u-f);transition:transform .12s,background .12s}
+.ui-row:active{transform:scale(.985);background:var(--u-2)}.ui-row.static{cursor:default}.ui-row.static:active{transform:none;background:var(--u-1)}
+.ui-row .th{width:58px;height:58px;border-radius:16px;overflow:hidden;display:block}.ui-row .th svg{width:100%;height:100%;display:block}
+.ui-row .tx{min-width:0}.ui-row h3{font:600 15px var(--u-f);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ui-row p{font:400 12px/1.4 var(--u-f);color:var(--u-d);margin-top:2px}
+.ui-row .go{border:1px solid rgba(47,140,255,.55);color:#74b3ff;border-radius:999px;padding:7px 14px;font:600 12.5px var(--u-f)}.ui-row .go.n{border-color:rgba(255,196,64,.4);color:#ffd36b;min-width:36px;text-align:center}
+.ui-row.off{opacity:.42}
+.ui-empty{display:grid;gap:4px;text-align:center;padding:30px 10px;background:var(--u-1);border:1px dashed var(--u-l);border-radius:20px}.ui-empty b{font-weight:600}.ui-empty span{color:var(--u-d);font-size:13px}
+/* perfil */
+.pf-card{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c2029,#131519);border:1px solid var(--u-l);border-radius:22px;padding:16px}
+.pf-av{width:62px;height:62px;flex:none;border-radius:50%;background:linear-gradient(135deg,#ff6b8b,#7b5cff);display:grid;place-items:center;font:700 26px var(--u-f);box-shadow:0 0 0 3px var(--u-0),0 0 0 4px rgba(255,255,255,.15)}
+.pf-card label{flex:1;min-width:0;display:grid;gap:3px}.pf-card small{font:400 12px var(--u-f);color:var(--u-d)}
+.pf-card input{width:100%;background:var(--u-0);border:1px solid var(--u-l);border-radius:12px;color:#fff;font:600 17px var(--u-f);padding:10px 12px;user-select:text;-webkit-user-select:text}.pf-card input:focus{outline:none;border-color:rgba(47,140,255,.6)}
+/* en línea y sala */
+.lb-code{background:linear-gradient(160deg,#1a1e27,#111317);border:1px solid rgba(47,140,255,.2);border-radius:24px;padding:18px 16px 16px;display:grid;gap:12px;text-align:center;box-shadow:0 18px 36px -24px rgba(47,140,255,.7)}
+.lb-code small{font:500 12px var(--u-f);color:var(--u-d);letter-spacing:.06em}
+.lb-digits{display:flex;justify-content:center;gap:8px}.lb-digits span{width:56px;height:66px;border-radius:16px;background:var(--u-0);border:1px solid var(--u-l);display:grid;place-items:center;font:700 32px var(--u-f);color:#fff}
+.lb-code p{font:400 13px var(--u-f);color:#c3c7d1}
+.lb-via{font:400 11.5px var(--u-f);color:var(--u-d)}
+.lb-ppl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lb-p{display:flex;align-items:center;gap:10px;background:var(--u-1);border:1px solid var(--u-l);border-radius:16px;padding:9px 10px;min-width:0}
+.lb-p i{width:34px;height:34px;flex:none;border-radius:50%;background:var(--c);display:grid;place-items:center;font:600 14px var(--u-f);font-style:normal;color:#0a0b0e}
+.lb-p div{flex:1;min-width:0}.lb-p b{display:block;font:600 13.5px var(--u-f);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lb-p b small{font-weight:400;color:var(--u-d)}.lb-p div>small{display:block;font:400 11px var(--u-f);color:var(--u-d)}
+.lb-p .dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,.18);flex:none}.lb-p .cr{color:#ffd36b;flex:none}.lb-p .cr svg{width:18px;height:18px}
+.lb-wait{display:grid;gap:8px;justify-items:center;text-align:center;background:var(--u-1);border:1px dashed rgba(255,255,255,.12);border-radius:20px;padding:18px}.lb-wait b{font-weight:600}.lb-wait span{font:400 12.5px var(--u-f);color:var(--u-d)}
+.wrap .cf-resume{background:linear-gradient(135deg,#1c2029,#14161b);border:1px solid rgba(47,140,255,.22)}
 </style>
 </head>
 <body>
@@ -1977,7 +2119,7 @@ function tResult(g, w, sc, opts, np) {
       : g.need > 1 ? `<div class="score">${sc.map((n, i) => `<span style="color:${COL[i]}">${n}</span>`).join("<i>–</i>")}</div>` : ""}
     ${g.party ? "" : `<div class="card" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">${Array.from({ length: np }, (_, i) => `<span style="font-weight:900;color:${COL[i]}">${esc(tname(i))}: ${rec[i] || 0}</span>`).join("")}<span class="dim" style="width:100%;text-align:center;font-size:12px;font-weight:800">victorias en ${g.name}</span></div>`}
     <div class="grow"></div>
-    <button class="btn green" id="re">REVANCHA</button><button class="btn ghost" id="ot">Elegir otro juego</button>`);
+    <button class="btn green" id="re">Revancha</button><button class="btn ghost" id="ot">Elegir otro juego</button>`);
   $("#re", v).onclick = () => startTurn(g, false, opts); $("#ot", v).onclick = home;
   setTimeout(() => confetti(150, innerWidth / 2, innerHeight * .25), 250);
 }
@@ -5382,9 +5524,10 @@ const GAMES = [
     goal: "No hay ganador: la gracia es reírse. La botella elige al azar y no repite a la misma persona dos veces seguidas.",
     setup: "Pongan el celular en el centro de la mesa: los jugadores aparecen alrededor en el orden en que están sentados." },
 ];
-function show(html) { const w = h(`<div class="wrap">${html}</div>`); $("#app").replaceChildren(w); $("#app").scrollTop = 0; return w; }
+function show(html, nav) { const w = h(`<div class="wrap">${html}</div>`); $("#app").replaceChildren(w); $("#app").scrollTop = 0; setNav(nav || null); return w; }
 const tot = i => Object.values(S.wins).reduce((a, v) => a + (v[i] || 0), 0);
 function launch(g, online, opts = {}) {
+  S.plays = S.plays || {}; S.plays[g.id] = (S.plays[g.id] || 0) + 1; save();
   if (g.kind === "turn") return startTurn(g, online, opts);
   if (g === DUO && opts.lv !== undefined) DUO.lv = opts.lv;
   startMatch(g, online);
@@ -5392,40 +5535,6 @@ function launch(g, online, opts = {}) {
 const CATS = [["accion", "⚡ Acción"], ["mesa", "♟️ Juegos de mesa"], ["fiesta", "🎉 Para la fiesta"], ["aventura", "🗺️ Aventura para dos"]];
 function gcards(list, small, attr = "") {
   return list.map(x => { const k = GAMES.indexOf(x); return `<button class="gcard ${small ? "sm" : ""}" data-k="${k}" style="--c1:${x.c1};--c2:${x.c2}" ${attr}>${ART[x.g.id]}<div><h3>${x.g.name}</h3>${small ? "" : `<p>${x.tag}</p>`}<div class="tags">${x.tags.map(t => `<span>${t}</span>`).join("")}</div></div></button>`; }).join("");
-}
-function home() {
-  const v = show(`
-    <div style="height:8px"></div>
-    <div class="logo"><span class="a">A</span><span class="b">R</span><span class="c">E</span><span class="d">N</span><span class="a">A</span><small>MINI</small></div>
-    <p class="center dim" style="font-weight:800">${GAMES.length} juegos para jugar con amigos: cada uno en su celular o todos en el mismo.</p>
-    ${cfSaved() ? (() => { const o = cfSaved(), s = o.s; return `<div class="cf-resume"><div><b>♟️ Partida guardada de City Fortune</b><small>${o.online ? `En línea · sala ${esc(o.code)}` : "En este celular"} · ronda ${s.round} · ${s.names.map(esc).join(", ")}</small></div><button class="btn green" id="cfres">CONTINUAR</button><button class="cf-del" id="cfdel">Borrar</button></div>`; })() : ""}
-    ${sessGet() && !cfSaved() ? `<div class="cf-resume alt"><div><b>🔌 Volver a la sala ${esc(sessGet().code)}</b><small>Si estabas jugando y se cerró la app, entras con tu mismo lugar.</small></div><button class="btn ghost" id="rejoin">VOLVER</button></div>` : ""}
-    <button class="gcard online" id="onl" style="--c1:#ffb627;--c2:#e8590c;grid-template-columns:64px 1fr">
-      <svg viewBox="0 0 64 64" style="width:64px;height:64px;border-radius:14px"><rect width="64" height="64" fill="#0005"/><rect x="8" y="14" width="18" height="34" rx="4" fill="#ff5a5f"/><rect x="38" y="14" width="18" height="34" rx="4" fill="#3da9fc"/><path d="M28 24q4-5 8 0M26 20q6-8 12 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="32" cy="28" r="2.5" fill="#fff"/></svg>
-      <div><h3>Jugar en línea</h3><p>Cada uno en su celular, estén donde estén. Crea una sala y pásale el código a tu amigo.</p>${S.onl[0] + S.onl[1] ? `<div class="tags"><span>Tu récord en línea: ${S.onl[0]} ganadas · ${S.onl[1]} perdidas</span></div>` : ""}</div></button>
-    <div class="rival">
-      <div class="pl"><span class="nm" style="color:var(--p1)">${esc(nm(0))}</span><span class="w">${tot(0)} victorias</span></div>
-      <div class="vs">VS</div>
-      <div class="pl"><span class="nm" style="color:var(--p2)">${esc(nm(1))}</span><span class="w">${tot(1)} victorias</span></div>
-      <button id="names">Cambiar nombres</button>
-    </div>
-    ${CATS.map(([c, t]) => `<p class="label" style="margin-top:6px">${t} · en el mismo celular</p>${c === "mesa" || c === "fiesta" ? `<div class="ggrid">${gcards(GAMES.filter(x => x.cat === c), true)}</div>` : gcards(GAMES.filter(x => x.cat === c))}`).join("")}
-    <div style="height:4px"></div>`);
-  v.querySelectorAll(".gcard[data-k]").forEach(b => b.onclick = () => info(GAMES[+b.dataset.k]));
-  $("#onl", v).onclick = () => onlineMenu();
-  $("#names", v).onclick = names;
-  const cr = $("#cfres", v); if (cr) cr.onclick = () => { sfx.pick(); cfResume(); };
-  const cd = $("#cfdel", v); if (cd) cd.onclick = () => { if (!confirm("¿Borrar la partida guardada? No se puede recuperar.")) return; try { localStorage.removeItem(CF_SAVE); } catch { } home(); };
-  const rj = $("#rejoin", v); if (rj) rj.onclick = () => { const ss = sessGet(); if (!ss) return home(); NET.join(ss.code, true); joining(ss.code); };
-}
-function names() {
-  const v = show(`<div class="topbar"><button class="back" id="bk">‹ Volver</button></div>
-    <h2 style="font-size:34px">¿Quién juega?</h2>
-    <p class="dim" style="font-weight:700">En los juegos de acción el <b style="color:var(--p1)">rojo</b> se sienta abajo y el <b style="color:var(--p2)">azul</b> enfrente. Amarillo y Verde se usan en Ludo y Última Carta con 3 o 4 jugadores.</p>
-    ${[0, 1, 2, 3].map(i => `<label class="namef" style="--c:${COL[i]}"><svg width="30" height="30"><circle cx="15" cy="15" r="14" fill="${COL[i]}"/></svg><input maxlength="10" value="${esc(S.names[i] || PNAMES[i])}" data-i="${i}" aria-label="Nombre del jugador ${i + 1}"></label>`).join("")}
-    <div class="grow"></div><button class="btn green" id="ok">LISTO</button>`);
-  const done = () => { v.querySelectorAll("input").forEach(inp => S.names[+inp.dataset.i] = inp.value.trim() || PNAMES[+inp.dataset.i]); save(); home(); };
-  $("#bk", v).onclick = done; $("#ok", v).onclick = done;
 }
 function phone(id) {
   const zone = (y, i, flip) => {
@@ -5480,15 +5589,15 @@ function info(x, mode) {
   const who = multi ? `Juegan ${NET.gseats.length} personas en la sala` : onl ? (mode === "host" ? "Tú eres el rojo" : "Tú eres el azul") : pads ? `${esc(nm(0))} ${rec[0]} · ${rec[1]} ${esc(nm(1))}` : x.tag;
   const setupTxt = onl ? (multi ? "Cada uno juega desde su celular." : (pads ? `En línea, <b>cada uno se ve abajo</b> en su propio celular y tu rival aparece arriba.` : g === DUO ? "Cada uno maneja a su personaje desde su celular. Pongan el celular de lado." : "Cada uno juega desde su celular; solo puedes tocar en tu turno.") + ` Tu color: <b style="color:${COL[me]}">${me === 0 ? "ROJO" : "AZUL"}</b>${g === DUO ? ` (${me === 0 ? "Fuego" : "Agua"})` : g === CHESS ? ` (${me === 0 ? "blancas" : "negras"})` : ""}.`)
     : x.setup || `Pongan el celular plano en la mesa: <b style="color:var(--p1)">${esc(nm(0))}</b> del lado de abajo y <b style="color:var(--p2)">${esc(nm(1))}</b> del lado de arriba. Desactiven el giro automático de pantalla.`;
-  const v = show(`<div class="topbar"><button class="back" id="bk">${onl ? (mode === "host" ? "‹ Sala" : "") : "‹ Juegos"}</button>${onl ? `<span class="label">En línea · ${multi ? NET.gseats.length + " jugadores" : esc(N(0)) + " vs " + esc(N(1))}</span>` : ""}</div>
-    <div class="hero">${ART[g.id]}<div><h2>${g.name}</h2><p class="dim" style="font-weight:800;margin-top:6px">${who}</p></div></div>
+  const v = show(`<div class="topbar"><button class="back" id="bk">${onl ? (mode === "host" ? "‹ Sala" : "") : "‹ Volver"}</button>${onl ? `<span class="label">En línea · ${multi ? NET.gseats.length + " jugadores" : esc(N(0)) + " vs " + esc(N(1))}</span>` : ""}</div>
+    <div class="ix-hero" style="--c1:${x.c1};--c2:${x.c2}"><div class="art">${ART[g.id]}</div><div class="txt"><h2>${g.name}</h2><p>${who}</p><div class="ix-tags">${(onl ? [] : x.tags).map(t => `<span>${t}</span>`).join("")}</div></div></div>
     ${optHtml}
     <p class="label">Cómo se juega</p>
     ${pads ? `<div style="display:grid;grid-template-columns:1fr;gap:12px">${onl ? phoneOnline(g.id, me) : phone(g.id)}</div>` : ""}
     <div class="steps">${x.steps.map((s, k) => `<div class="step"><b class="n">${k + 1}</b><p>${s}</p></div>`).join("")}</div>
     <div class="goal">🏆 ${x.goal}</div>
     <div class="setup"><span>${setupTxt}</span></div>
-    <div class="stick">${mode === "guest" ? `<button class="btn ghost" id="go" disabled style="opacity:.85">Esperando que ${esc(NET.names[0] || "el anfitrión")} empiece…</button>` : `<button class="btn green" id="go">¡JUGAR!</button>`}</div>`);
+    <div class="stick">${mode === "guest" ? `<button class="btn ghost" id="go" disabled style="opacity:.85">Esperando que ${esc(NET.names[0] || "el anfitrión")} empiece…</button>` : `<button class="btn green" id="go">${UI_ICON.play}Jugar ahora</button>`}</div>`);
   const chips = (sel, key, num = true) => v.querySelectorAll(sel + " .chip").forEach(b => b.onclick = () => { if (b.disabled) return; opts[key] = num ? +(b.dataset.n ?? b.dataset.v) : b.dataset.v; v.querySelectorAll(sel + " .chip").forEach(z => z.classList.toggle("on", z === b)); });
   chips("#np", "np"); chips("#lv", "lv"); chips("#hm", "mode", false); chips("#sr", "rounds"); chips("#cr", "rounds");
   v.querySelectorAll("#cm .chip").forEach(b => b.addEventListener("click", () => { opts.mode = b.dataset.v; $("#crw", v).style.display = opts.mode === "rounds" ? "" : "none"; $("#cmx", v).textContent = opts.mode === "rounds" ? "Gana el mayor patrimonio al terminar las rondas." : "Se juega hasta que todos menos uno quiebren. En las simulaciones, con 4 jugadores dura unas 45 rondas (más de una hora)."; }));
@@ -5502,7 +5611,7 @@ function info(x, mode) {
   const ap = $("#addp", v); if (ap) ap.onclick = () => { syncParty(); S.party.push(`Jugador ${S.party.length + 1}`); save(); info(x, mode); };
   if (mode === "guest") { $("#bk", v).style.display = "none"; return; }
   if (mode === "host") { $("#bk", v).onclick = () => { NET.send({ k: "lobby" }); lobby(); }; $("#go", v).onclick = () => launch(g, true, opts); return; }
-  $("#bk", v).onclick = home;
+  $("#bk", v).onclick = uiBack;
   $("#go", v).onclick = () => { if (x.party) { syncParty(); opts.names = S.party.slice(0, g.maxp); } launch(g, false, opts); };
 }
 function result(g, w, sc) {
@@ -5515,7 +5624,7 @@ function result(g, w, sc) {
     <div class="score"><span>${sc[0]}</span><i>–</i><span>${sc[1]}</span></div>
     <div class="rival"><div class="pl"><span class="nm" style="color:var(--p1)">${esc(nm(0))}</span><span class="w">${rec[0]} partidas</span></div><div class="vs" style="font-size:16px;color:var(--dim)">HISTORIAL</div><div class="pl"><span class="nm" style="color:var(--p2)">${esc(nm(1))}</span><span class="w">${rec[1]} partidas</span></div></div>
     <div class="grow"></div>
-    <button class="btn green" id="re">REVANCHA</button>
+    <button class="btn green" id="re">Revancha</button>
     <button class="btn ghost" id="ot">Elegir otro juego</button>`);
   $("#re", v).onclick = () => startMatch(g); $("#ot", v).onclick = home;
   setTimeout(() => confetti(150, innerWidth / 2, innerHeight * .25), 250);
@@ -5550,6 +5659,132 @@ Object.assign(ART, {
 });
 
 /* =====================================================================
+   INTERFAZ PRINCIPAL · estilo oscuro elegante, pensado para celular
+   inicio · juegos · perfil · barra de navegación inferior
+   (los tableros de los juegos no cambian)
+   ===================================================================== */
+const uiSvg = (d, fill) => `<svg viewBox="0 0 24 24" fill="${fill ? "currentColor" : "none"}" stroke="${fill ? "none" : "currentColor"}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const UI_ICON = {
+  home: uiSvg(`<path d="M3.5 10.2 12 3.5l8.5 6.7V19a1.5 1.5 0 0 1-1.5 1.5h-4.2v-5.8H9.2v5.8H5A1.5 1.5 0 0 1 3.5 19z"/>`),
+  games: uiSvg(`<rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/>`),
+  online: uiSvg(`<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5s-1.2 6.1-3.6 8.5c-2.4-2.4-3.6-5.2-3.6-8.5s1.2-6.1 3.6-8.5z"/>`),
+  user: uiSvg(`<circle cx="12" cy="8" r="3.8"/><path d="M4.5 20.5c1.2-3.8 4.1-5.8 7.5-5.8s6.3 2 7.5 5.8"/>`),
+  search: uiSvg(`<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>`),
+  arrow: uiSvg(`<path d="M5 12h14M13 6l6 6-6 6"/>`),
+  play: uiSvg(`<path d="M8 5.8v12.4a1 1 0 0 0 1.5.86l10-6.2a1 1 0 0 0 0-1.72l-10-6.2A1 1 0 0 0 8 5.8z"/>`, true),
+  people: uiSvg(`<circle cx="9" cy="8.5" r="3.3"/><path d="M3 19.5c.9-3.2 3.2-5 6-5s5.1 1.8 6 5"/><path d="M15.5 5.6a3.2 3.2 0 0 1 0 6M17.5 14.8c1.7.6 2.9 2.2 3.5 4.7"/>`),
+  save: uiSvg(`<path d="M5 3.5h11l3.5 3.5v12a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 19V5A1.5 1.5 0 0 1 6 3.5z"/><path d="M8 3.5v5h7v-5M8 20.5v-6h8v6"/>`),
+  plug: uiSvg(`<path d="M9 3.5v5M15 3.5v5M6.5 8.5h11V12a5.5 5.5 0 0 1-11 0zM12 17.5v3"/>`),
+  crown: uiSvg(`<path d="m3.5 8 4.2 3.6L12 5l4.3 6.6L20.5 8l-1.8 10H5.3z"/>`),
+  mute: uiSvg(`<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/>`),
+  sound: uiSvg(`<path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>`),
+};
+/* ---------- barra de navegación inferior (solo en las pantallas principales) ---------- */
+const NAV = [["home", "Inicio", () => home()], ["games", "Juegos", () => gamesList()], ["online", "En línea", () => onlineMenu()], ["user", "Perfil", () => profile()]];
+let UI_LAST = "home"; const UI_GL = { cat: "all", q: "" };
+const uiBack = () => UI_LAST === "games" ? gamesList(UI_GL.cat, UI_GL.q) : (NAV.find(x => x[0] === UI_LAST) || NAV[0])[2]();
+function setNav(key) {
+  if (key) UI_LAST = key;
+  let n = $("#bnav");
+  if (!n) {
+    n = h(`<nav id="bnav" aria-label="Menú principal">${NAV.map(([k, t]) => `<button data-k="${k}">${UI_ICON[k]}<span>${t}</span></button>`).join("")}</nav>`);
+    document.body.appendChild(n);
+    n.querySelectorAll("button").forEach(b => b.onclick = () => { if (b.classList.contains("on") && b.dataset.k !== "games") { $("#app").scrollTo({ top: 0, behavior: "smooth" }); return; } sfx.tap(); NAV.find(x => x[0] === b.dataset.k)[2](); });
+  }
+  document.body.classList.toggle("hasnav", !!key);
+  n.querySelectorAll("button").forEach(b => { const on = b.dataset.k === key; b.classList.toggle("on", on); if (on) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+}
+/* ---------- piezas comunes ---------- */
+const gRange = g => { const r = grange(g); return r[0] === r[1] ? `${r[0]} jugadores` : `${r[0]} a ${r[1]} jugadores`; };
+const gIdx = x => GAMES.indexOf(x);
+const uiNorm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+const catName = c => (CATS.find(x => x[0] === c) || ["", c])[1].replace(/^\S+\s/, "");
+const FEAT = [["yonunca", "NUEVO"], ["cityfortune", "BETA"], ["botellita", "FIESTA"], ["ludo", "CLÁSICO"]];
+const NEWG = ["yonunca"];
+function uiRow(x, btn = "Jugar", extra = "") {
+  return `<button class="ui-row ${extra}" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}${NEWG.includes(x.g.id) ? ` <em class="ui-new">Nuevo</em>` : ""}</h3><p>${gRange(x.g)} · ${catName(x.cat)}</p></span><span class="go">${btn}</span></button>`;
+}
+function uiTile(x) {
+  return `<button class="hx-tile" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}${NEWG.includes(x.g.id) ? `<em class="ui-new">Nuevo</em>` : ""}</span><b>${x.g.name}</b><small>${gRange(x.g)}</small></button>`;
+}
+const uiWideArt = id => ART[id].replace("<svg ", '<svg preserveAspectRatio="xMidYMid slice" ');
+function uiBindGames(v) { v.querySelectorAll("[data-k]").forEach(b => { if (b.closest("#bnav")) return; b.onclick = () => { sfx.tap(); info(GAMES[+b.dataset.k]); }; b.onkeydown = e => { if (e.key === "Enter") b.onclick(); }; }); }
+/* ============================ INICIO ============================ */
+function home() {
+  const first = (S.me || "").trim().split(/\s+/)[0] || "", plays = S.plays || {};
+  const total = Object.values(plays).reduce((a, b) => a + b, 0);
+  const most = GAMES.filter(x => plays[x.g.id]).sort((a, b) => plays[b.g.id] - plays[a.g.id]).slice(0, 6);
+  const feat = FEAT.map(([id, t]) => [GAMES.find(x => x.g.id === id), t]).filter(f => f[0]);
+  const cf = cfSaved(), ss = !cf && sessGet();
+  const v = show(`
+    <header class="hx-top"><div class="hx-brand"><span class="hx-logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span><div><b>Arena Mini</b><small>${GAMES.length} juegos con amigos</small></div></div>
+      <button class="hx-ic" id="hsnd" aria-label="Sonido" aria-pressed="${!S.muted}">${UI_ICON[S.muted ? "mute" : "sound"]}</button><button class="hx-av" id="prof" aria-label="Tu perfil">${first ? esc(first.slice(0, 1).toUpperCase()) : UI_ICON.user}</button></header>
+    <section class="hx-hi"><h1>${first ? `Hola, ${esc(first)}` : "¡Hola!"}</h1><p>¿A qué jugamos hoy?</p></section>
+    <button class="hx-search" id="srch">${UI_ICON.search}<span>Buscar un juego…</span></button>
+    ${cf ? (() => { const s = cf.s; return `<div class="hx-res"><span class="ic">${UI_ICON.save}</span><div><b>City Fortune guardada</b><small>${cf.online ? `En línea · sala ${esc(cf.code)}` : "En este celular"} · ronda ${s.round} · ${s.names.map(esc).join(", ")}</small></div><button class="btn green" id="cfres">Seguir</button><button class="hx-del" id="cfdel">Borrar partida</button></div>`; })() : ""}
+    ${ss ? `<div class="hx-res"><span class="ic">${UI_ICON.plug}</span><div><b>Volver a la sala ${esc(ss.code)}</b><small>Si se cerró la app, entras con tu mismo lugar.</small></div><button class="btn ghost" id="rejoin">Volver</button></div>` : ""}
+    <div class="hx-hero-rail" id="rail">${feat.map(([x, t]) => `<article class="hx-hero" data-k="${gIdx(x)}" style="--c1:${x.c1};--c2:${x.c2}" tabindex="0" role="button" aria-label="${x.g.name}">
+      <div class="art">${ART[x.g.id]}</div><div class="txt"><span class="hx-tag ${t === "NUEVO" ? "" : "alt"}">${t}</span><h2>${x.g.name}</h2><p>${x.tag}</p></div>
+      <div class="hx-cta"><span class="hx-pill">${UI_ICON.people}${gRange(x.g)}</span><span class="hx-play">${UI_ICON.play}Jugar</span></div></article>`).join("")}</div>
+    <div class="hx-dots" aria-hidden="true">${feat.map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div>
+    <section class="hx-onl"><div class="hd"><span class="ic">${UI_ICON.online}</span><div><b>Jugar en línea</b><small>Cada uno en su celular · hasta ${MAXP} personas</small></div></div>
+      <div class="hx-join"><input id="hcode" maxlength="4" placeholder="Código de sala" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Código de la sala"><button id="hjoin" aria-label="Unirme a la sala">${UI_ICON.arrow}</button></div>
+      <button class="btn ghost" id="hmk">Crear una sala nueva</button></section>
+    ${most.length ? `<div class="hx-sec"><h3>Lo que más juegas</h3></div><div class="hx-rail">${most.map(x => `<button class="hx-wide" data-k="${gIdx(x)}" style="--c1:${x.c1};--c2:${x.c2}"><span class="bg">${uiWideArt(x.g.id)}</span><span class="sh"></span><b>${x.g.name}</b><small>${plays[x.g.id]} ${plays[x.g.id] === 1 ? "partida" : "partidas"}</small></button>`).join("")}</div>` : ""}
+    ${CATS.map(([c]) => { const L = GAMES.filter(x => x.cat === c); return `<div class="hx-sec"><h3>${catName(c)}</h3>${L.length > 2 ? `<button data-cat="${c}">Ver todos</button>` : ""}</div><div class="hx-rail">${L.map(uiTile).join("")}</div>`; }).join("")}
+    <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>`, "home");
+  uiBindGames(v);
+  $("#prof", v).onclick = () => profile();
+  const hs = $("#hsnd", v); hs.onclick = () => { S.muted = !S.muted; save(); drawMute(); hs.innerHTML = UI_ICON[S.muted ? "mute" : "sound"]; hs.setAttribute("aria-pressed", !S.muted); if (!S.muted) sfx.pick(); };
+  $("#srch", v).onclick = () => gamesList("all", "", true);
+  v.querySelectorAll("[data-cat]").forEach(b => b.onclick = () => gamesList(b.dataset.cat));
+  const rail = $("#rail", v), dots = v.querySelectorAll(".hx-dots i");
+  rail.addEventListener("scroll", () => { const c = rail.firstElementChild; if (!c) return; const k = Math.round(rail.scrollLeft / (c.offsetWidth + 12)); dots.forEach((d, i) => d.classList.toggle("on", i === k)); }, { passive: true });
+  const ci = $("#hcode", v); ci.oninput = () => { ci.value = ci.value.toUpperCase().replace(/[^A-Z0-9]/g, ""); };
+  const join = () => { const c = ci.value.trim().toUpperCase(); if (c.length !== 4) { ci.focus(); toast("El código tiene 4 letras o números"); return; } if (!(S.me || "").trim()) return onlineMenu(c); NET.join(c); joining(c); };
+  $("#hjoin", v).onclick = join; ci.onkeydown = e => { if (e.key === "Enter") join(); };
+  $("#hmk", v).onclick = () => { if (!(S.me || "").trim()) return onlineMenu(); sfx.pick(); NET.host(); lobby(); };
+  const cr = $("#cfres", v); if (cr) cr.onclick = () => { sfx.pick(); cfResume(); };
+  const cd = $("#cfdel", v); if (cd) cd.onclick = () => { if (!confirm("¿Borrar la partida guardada? No se puede recuperar.")) return; try { localStorage.removeItem(CF_SAVE); } catch { } home(); };
+  const rj = $("#rejoin", v); if (rj) rj.onclick = () => { const s2 = sessGet(); if (!s2) return home(); NET.join(s2.code, true); joining(s2.code); };
+}
+/* ============================ JUEGOS ============================ */
+function gamesList(cat = "all", q = "", focus = false) {
+  const v = show(`<div class="ui-head"><h1>Juegos</h1><p>${GAMES.length} juegos · en el mismo celular o en línea</p></div>
+    <label class="hx-search in">${UI_ICON.search}<input id="q" placeholder="Buscar un juego…" value="${esc(q)}" autocomplete="off" aria-label="Buscar un juego"></label>
+    <div class="ui-chips" id="cats" role="tablist">${[["all", "Todos"], ...CATS.map(([c]) => [c, catName(c)])].map(([c, t]) => `<button role="tab" data-c="${c}" class="${c === cat ? "on" : ""}" aria-selected="${c === cat}">${t}</button>`).join("")}</div>
+    <div class="ui-list" id="gl"></div>`, "games");
+  const draw = () => {
+    UI_GL.cat = cat; UI_GL.q = q;
+    const qq = uiNorm(q.trim()), L = GAMES.filter(x => (cat === "all" || x.cat === cat) && (!qq || uiNorm(`${x.g.name} ${x.tag} ${x.tags.join(" ")} ${catName(x.cat)}`).includes(qq)));
+    $("#gl", v).innerHTML = L.map(x => uiRow(x)).join("") || `<div class="ui-empty"><b>No encontramos “${esc(q)}”</b><span>Prueba con otra palabra, como “cartas” o “fiesta”.</span></div>`;
+    uiBindGames($("#gl", v));
+  };
+  const qi = $("#q", v); qi.oninput = () => { q = qi.value; draw(); };
+  v.querySelectorAll("#cats button").forEach(b => b.onclick = () => { cat = b.dataset.c; v.querySelectorAll("#cats button").forEach(z => { z.classList.toggle("on", z === b); z.setAttribute("aria-selected", z === b); }); draw(); });
+  draw(); if (focus) setTimeout(() => qi.focus(), 60);
+}
+/* ============================ PERFIL ============================ */
+function profile() {
+  const plays = S.plays || {}, total = Object.values(plays).reduce((a, b) => a + b, 0);
+  const recs = GAMES.map(x => [x, (S.wins[x.g.id] || []).reduce((a, b) => a + (b || 0), 0)]).filter(r => r[1]).sort((a, b) => b[1] - a[1]);
+  const av = () => ((S.me || "").trim().slice(0, 1).toUpperCase() || "?");
+  const v = show(`<div class="ui-head"><h1>Perfil</h1><p>Tu nombre, los jugadores de este celular y tus récords.</p></div>
+    <div class="pf-card"><span class="pf-av" id="pav">${esc(av())}</span><label><small>Tu nombre para jugar en línea</small><input id="me" maxlength="10" value="${esc(S.me || "")}" placeholder="Escribe tu nombre" aria-label="Tu nombre"></label></div>
+    <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Perdidas en línea</small><b>${S.onl[1]}</b></div></div>
+    <div class="hx-sec"><h3>Jugadores en este celular</h3></div>
+    <p class="ui-note">Se usan cuando juegan en el mismo celular: en los juegos de acción el <b style="color:var(--p1)">rojo</b> se sienta abajo y el <b style="color:var(--p2)">azul</b> enfrente.</p>
+    ${[0, 1, 2, 3].map(i => `<label class="namef" style="--c:${COL[i]}"><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="${COL[i]}"/></svg><input maxlength="10" value="${esc(S.names[i] || PNAMES[i])}" data-i="${i}" aria-label="Nombre del jugador ${i + 1}"></label>`).join("")}
+    <div class="hx-sec"><h3>Ajustes</h3></div>
+    <label class="tog"><input type="checkbox" id="snd" ${S.muted ? "" : "checked"}><span>Sonidos y efectos</span></label>
+    ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
+  const me = $("#me", v); me.oninput = () => { S.me = me.value.trim().slice(0, 10); save(); $("#pav", v).textContent = av(); };
+  v.querySelectorAll(".namef input").forEach(inp => inp.oninput = () => { S.names[+inp.dataset.i] = inp.value.trim() || PNAMES[+inp.dataset.i]; save(); });
+  const sn = $("#snd", v); sn.onchange = () => { S.muted = !sn.checked; save(); drawMute(); if (!S.muted) sfx.pick(); };
+}
+function names() { profile(); }
+
+/* =====================================================================
    PANTALLAS EN LÍNEA: menú · sala (lobby) · resultado · desconexión
    ===================================================================== */
 const shareURL = code => `${location.origin}${location.pathname}${location.search}#sala-${code}`;
@@ -5558,20 +5793,20 @@ function toast(t) { const el = h(`<div class="toast">${esc(t)}</div>`); document
 function myName() { const n = (S.me || "").trim(); return n || "Jugador"; }
 function onlineMenu(code = "") {
   NET.reset();
-  const v = show(`<div class="topbar"><button class="back" id="bk">‹ Volver</button></div>
-    <h2 style="font-size:36px">Jugar en línea</h2>
-    <p class="dim" style="font-weight:800">Cada uno en su celular, estén donde estén. Funciona con Wi-Fi o datos.</p>
+  const v = show(`${code ? `<div class="topbar"><button class="back" id="bk">‹ Volver</button></div>` : ""}
+    <div class="ui-head"><h1>${code ? "Entrar a la sala" : "Jugar en línea"}</h1><p>Cada uno en su celular, estén donde estén. Funciona con Wi-Fi o datos.</p></div>
     <p class="label">Tu nombre</p>
-    <label class="namef" style="--c:var(--gold)"><input id="me" maxlength="10" placeholder="Escribe tu nombre" value="${esc(S.me || "")}" aria-label="Tu nombre"></label>
-    ${code ? "" : `<button class="btn gold" id="mk"><span>CREAR SALA<small>y pásale el código a tu amigo</small></span></button>
-    <div class="or"><span>o únete a una sala</span></div>`}
-    <p class="label">Código de la sala</p>
+    <label class="namef" style="--c:var(--u-b)"><input id="me" maxlength="10" placeholder="Escribe tu nombre" value="${esc(S.me || "")}" aria-label="Tu nombre"></label>
+    ${code ? "" : `<div class="on-opt"><span class="ic">${UI_ICON.crown}</span><div><b>Crea una sala</b><small>Tú eliges el juego y le pasas el código a tus amigos.</small></div></div>
+    <button class="btn green" id="mk">Crear sala</button>
+    <div class="or"><span>o únete con un código</span></div>`}
+    ${code ? `<p class="label">Código de la sala</p>` : ""}
     <input id="code" class="codein" maxlength="4" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABCD" value="${esc(code)}" aria-label="Código de la sala">
-    <button class="btn ${code ? "green" : ""}" id="jn">${code ? "ENTRAR A LA SALA" : "UNIRME"}</button>
-    <p class="dim center" style="font-size:12px;margin-top:4px">Si la conexión directa entre los celulares no se puede, Arena Mini usa un relé automático.</p>`);
+    <button class="btn ${code ? "green" : "ghost"}" id="jn">${code ? "Entrar a la sala" : "Unirme"}</button>
+    <p class="ui-note center">Si la conexión directa entre los celulares no se puede, Arena Mini usa un relé automático.</p>`, code ? null : "online");
   const nameOk = () => { S.me = $("#me", v).value.trim().slice(0, 10); save(); if (!S.me) { S.me = ""; } return true; };
   const ci = $("#code", v); ci.oninput = () => { ci.value = ci.value.toUpperCase().replace(/[^A-Z0-9]/g, ""); };
-  $("#bk", v).onclick = () => { history.replaceState(null, "", location.pathname + location.search); home(); };
+  const bk = $("#bk", v); if (bk) bk.onclick = () => { history.replaceState(null, "", location.pathname + location.search); home(); };
   if (!code) $("#mk", v).onclick = () => { nameOk(); S.me = myName(); save(); NET.host(); lobby(); };
   $("#jn", v).onclick = () => {
     nameOk(); const c = ci.value.trim().toUpperCase();
@@ -5596,7 +5831,7 @@ NET.ui = ev => {
     const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">No encontramos la sala</h2>
       <div class="code center">${esc(code)}</div>
       <p class="center dim" style="font-weight:800">Revisa el código, y que tu amigo tenga la sala abierta en su pantalla.</p>
-      <div class="grow"></div><button class="btn green" id="rt">INTENTAR OTRA VEZ</button><button class="btn ghost" id="bk">Volver</button>`);
+      <div class="grow"></div><button class="btn green" id="rt">Intentar otra vez</button><button class="btn ghost" id="bk">Volver</button>`);
     $("#rt", v).onclick = () => { NET.join(code); joining(code); }; $("#bk", v).onclick = () => onlineMenu();
   } else if (ev === "taken") { if (T.g && T.online) { setTimeout(() => { if (NET.role === "host") NET.peerHost().catch(() => {}); }, 30000); return; } NET.host(); lobby(); }
   else if (ev === "busy") { const el = $("#jst"); if (el) el.textContent = "Tus amigos están en medio de una partida. Entrarás apenas termine…"; }
@@ -5610,23 +5845,24 @@ function lobby() {
   if (host) NET.gseats = seats;
   const kind = NET.kind(), via = kind === "p2p" ? "Conexión directa" : kind === "mqtt" ? "Conexión por relé" : kind === "local" ? "Conexión local" : "";
   const msg = `¡Juguemos Arena Mini en línea! Entra a mi sala con este link: ${shareURL(code)} (código ${code})`;
+  const list = GAMES.map((x, k) => [x, k]).sort((a, b) => { const f = x => { const r = grange(x.g); return n >= r[0] && n <= r[1] ? 0 : 1; }; return f(a[0]) - f(b[0]); });
   const v = show(`<div class="topbar lobbyv"><button class="back" id="bk">‹ Salir de la sala</button><span class="label">Sala ${esc(code)}</span></div>
-    ${n < 2 ? `<h2 style="font-size:32px">Tu sala está lista</h2><p class="dim" style="font-weight:800">Pásale este código a tus amigos (caben hasta ${MAXP}), o envíales el link:</p>` : ""}
-    <div class="invite ${n < 2 ? "" : "mini"}"><div class="code ${n < 2 ? "big" : ""} center">${esc(code)}</div>
-      <div class="row"><button class="btn green" id="wa">${n < 2 ? "ENVIAR POR WHATSAPP" : "Invitar"}</button><button class="btn ghost" id="cp">Copiar link</button></div></div>
-    <p class="label">En la sala · ${n} ${n === 1 ? "persona" : "personas"}</p>
-    <div class="plist">${seats.map((s, k) => `<span class="pchip" style="--c:${COL[k % COL.length]}"><i></i>${esc(NET.names[s] || "")}${s === NET.me ? " <small>tú</small>" : ""}${s === 0 ? " <small>👑</small>" : ""}</span>`).join("")}</div>
-    <p class="dim center" style="font-size:12px;font-weight:800" id="png">${via}</p>
-    ${n < 2 ? `<div class="card center" style="display:grid;gap:10px"><div class="dots4"><i style="background:var(--p1)"></i><i style="background:var(--gold)"></i><i style="background:var(--p2)"></i></div><b>Esperando a tus amigos…</b><span class="dim" style="font-size:13px;font-weight:700">Deja esta pantalla abierta. Cuando entren, eligen el juego.</span></div>` : ""}
-    <p class="label" style="margin-top:4px">${host ? "Elige un juego" : `${esc(NET.names[0] || "El anfitrión")} está eligiendo el juego… (toca uno para pedirlo)`}</p>
-    ${GAMES.map((x, k) => [x, k]).sort((a, b) => { const f = x => { const r = grange(x.g); return n >= r[0] && n <= r[1] && !x.g.localOnly ? 0 : 1; }; return f(a[0]) - f(b[0]); }).map(([x, k]) => { const r = grange(x.g), ok = n >= r[0] && n <= r[1] && !x.g.localOnly;
-      return `<button class="gcard ${ok ? "" : "off"}" data-k="${k}" style="--c1:${x.c1};--c2:${x.c2}" ${ok ? "" : 'aria-disabled="true"'}>${ART[x.g.id]}<div><h3>${x.g.name}</h3><p>${ok ? x.tag : x.g.localOnly ? "Por ahora solo en el mismo celular. El modo en línea llega pronto." : rangeTxt(r) + (n > r[1] ? ": hay demasiadas personas en la sala" : "")}</p><div class="tags"><span>${rangeTxt(r)}</span></div></div></button>`; }).join("")}`);
+    <div class="lb-code"><small>Código de la sala</small><div class="lb-digits" aria-label="Código ${esc(code)}">${[...code].map(c => `<span>${esc(c)}</span>`).join("")}</div>
+      <p>${n < 2 ? `Pásale este código a tus amigos (caben hasta ${MAXP}) o envíales el link.` : `${n} de ${MAXP} personas en la sala`}</p>
+      <div class="row"><button class="btn green" id="wa">WhatsApp</button><button class="btn ghost" id="cp">Copiar link</button></div></div>
+    <div class="hx-sec"><h3>En la sala · ${n}</h3><span class="lb-via" id="png">${via}</span></div>
+    <div class="lb-ppl">${seats.map((s, k) => `<div class="lb-p" style="--c:${COL[k % COL.length]}"><i>${esc((NET.names[s] || "?").slice(0, 1).toUpperCase())}</i><div><b>${esc(NET.names[s] || "")}${s === NET.me ? " <small>(tú)</small>" : ""}</b><small>${s === 0 ? "Anfitrión" : "Conectado"}</small></div>${s === 0 ? `<span class="cr">${UI_ICON.crown}</span>` : `<span class="dot"></span>`}</div>`).join("")}</div>
+    ${n < 2 ? `<div class="lb-wait"><div class="dots4"><i style="background:var(--u-b)"></i><i style="background:#fff"></i><i style="background:var(--u-b)"></i></div><b>Esperando a tus amigos…</b><span>Deja esta pantalla abierta. Cuando entren, eligen el juego.</span></div>` : ""}
+    <div class="hx-sec"><h3>${host ? "Elige un juego" : "Juegos"}</h3></div>
+    ${host ? "" : `<p class="ui-note">${esc(NET.names[0] || "El anfitrión")} está eligiendo el juego. Toca uno para pedírselo.</p>`}
+    <div class="ui-list">${list.map(([x, k]) => { const r = grange(x.g), ok = n >= r[0] && n <= r[1];
+      return `<button class="ui-row lb-g ${ok ? "" : "off"}" data-k="${k}" ${ok ? "" : 'aria-disabled="true"'}><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${ok ? rangeTxt(r) : rangeTxt(r) + (n > r[1] ? " · son demasiados" : " · faltan personas")}</p></span><span class="go">${host ? "Elegir" : "Pedir"}</span></button>`; }).join("")}</div>`);
   $("#bk", v).onclick = () => { NET.leave(); history.replaceState(null, "", location.pathname + location.search); home(); };
   $("#wa", v).onclick = () => window.open("https://wa.me/?text=" + encodeURIComponent(msg), "_blank");
   $("#cp", v).onclick = async () => { try { await navigator.clipboard.writeText(shareURL(code)); toast("Link copiado"); } catch { prompt("Copia este link:", shareURL(code)); } };
-  v.querySelectorAll(".gcard[data-k]").forEach(b => b.onclick = () => {
+  v.querySelectorAll(".lb-g[data-k]").forEach(b => b.onclick = () => {
     const x = GAMES[+b.dataset.k];
-    if (b.classList.contains("off")) { toast(x.g.localOnly ? "Este juego todavía es solo en el mismo celular" : rangeTxt(grange(x.g))); return; }
+    if (b.classList.contains("off")) { toast(rangeTxt(grange(x.g))); return; }
     if (host) { NET.game = x.g.id; NET.send({ k: "pick", game: x.g.id }); info(x, "host"); }
     else { NET.send({ k: "sug", game: x.g.id }); toast(`Le pediste ${x.g.name} a ${NET.names[0] || "el anfitrión"}`); }
   });
@@ -5649,7 +5885,7 @@ function sendChat(t) { t = String(t || "").replace(/[<>]/g, "").trim().slice(0, 
 function onNetKick(again) {
   if (!again) try { localStorage.setItem("arena-mini-kick", JSON.stringify({ code: NET.code, t: Date.now() })); } catch {}
   if (E.st !== "off") stopMatch(); tStop(); NET.reset(); sessSet(null); VOICE.leave(true);
-  const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión te sacó de la sala</h2><p class="center dim" style="font-weight:800">Ya no puedes volver a esta sala.</p><div class="grow"></div><button class="btn green" id="bk">MENÚ</button>`);
+  const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión te sacó de la sala</h2><p class="center dim" style="font-weight:800">Ya no puedes volver a esta sala.</p><div class="grow"></div><button class="btn green" id="bk">Ir al inicio</button>`);
   $("#bk", v).onclick = home;
 }
 function sendEmote(e) { if (NET.role === "host") { NET.send({ k: "emo", e, from: 0 }); onEmote(0, e); } else NET.send({ k: "emo", e }); }
@@ -5683,13 +5919,13 @@ function onNetLost() {
   const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">Se perdió la conexión</h2>
     <p class="center dim" style="font-weight:800">Puede ser la señal o que el anfitrión cerró la app. Puedes intentar entrar de nuevo.</p>
     <div class="code center">${esc(code)}</div><div class="grow"></div>
-    <button class="btn green" id="rt">${wasHost ? "ABRIR LA SALA OTRA VEZ" : "VOLVER A ENTRAR"}</button><button class="btn ghost" id="bk">Menú</button>`);
+    <button class="btn green" id="rt">${wasHost ? "Abrir la sala otra vez" : "Volver a entrar"}</button><button class="btn ghost" id="bk">Menú</button>`);
   $("#rt", v).onclick = () => { if (wasHost) { NET.host(code); lobby(); } else { NET.join(code); joining(code); } };
   $("#bk", v).onclick = home;
 }
 function onNetBye() {
   if (E.st !== "off") stopMatch(); tStop();
-  const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión cerró la sala</h2><div class="grow"></div><button class="btn green" id="bk">MENÚ</button>`);
+  const v = show(`<div class="grow"></div><h2 class="center" style="font-size:30px">El anfitrión cerró la sala</h2><div class="grow"></div><button class="btn green" id="bk">Ir al inicio</button>`);
   $("#bk", v).onclick = home;
 }
 function resultOnline(w, sc, nm) {
@@ -5704,8 +5940,8 @@ function resultOnline(w, sc, nm) {
     ${sc && sc.length === 2 ? `<div class="score"><span>${sc[0]}</span><i>–</i><span>${sc[1]}</span></div>` : sc && sc.length > 2 ? `<div class="card" style="display:grid;gap:6px">${sc.map((x, i) => `<div style="display:flex;justify-content:space-between;font-weight:900"><span style="color:${COL[i % COL.length]}">${esc(N(i))}</span><span>${g.fmt ? g.fmt(x) : x}</span></div>`).join("")}</div>` : ""}
     <p class="center dim" style="font-weight:800">Tu récord en línea: ${S.onl[0]} ganadas, ${S.onl[1]} perdidas</p>
     <div class="grow"></div>
-    ${host ? `<button class="btn green" id="re">REVANCHA</button><button class="btn ghost" id="ot">Elegir otro juego</button>`
-      : `<button class="btn green" id="rq">PEDIR REVANCHA</button><p class="center dim" style="font-weight:800">Esperando que ${esc(NET.names[0] || "el anfitrión")} elija…</p>`}
+    ${host ? `<button class="btn green" id="re">Revancha</button><button class="btn ghost" id="ot">Elegir otro juego</button>`
+      : `<button class="btn green" id="rq">Pedir revancha</button><p class="center dim" style="font-weight:800">Esperando que ${esc(NET.names[0] || "el anfitrión")} elija…</p>`}
     <button class="btn ghost" id="lv">Salir de la sala</button>`);
   if (host) { $("#re", v).onclick = () => launch(g, true, Object.assign({ np: 2, lv: DUO.lv }, T.opts || {})); $("#ot", v).onclick = () => { NET.send({ k: "lobby" }); lobby(); }; }
   else $("#rq", v).onclick = () => { NET.send({ k: "sug", game: g.id }); toast("Le pediste la revancha"); };
