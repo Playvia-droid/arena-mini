@@ -665,6 +665,50 @@ body.hasnav #app{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
 .lb-p .dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,.18);flex:none}.lb-p .cr{color:#ffd36b;flex:none}.lb-p .cr svg{width:18px;height:18px}
 .lb-wait{display:grid;gap:8px;justify-items:center;text-align:center;background:var(--u-1);border:1px dashed rgba(255,255,255,.12);border-radius:20px;padding:18px}.lb-wait b{font-weight:600}.lb-wait span{font:400 12.5px var(--u-f);color:var(--u-d)}
 .wrap .cf-resume{background:linear-gradient(135deg,#1c2029,#14161b);border:1px solid rgba(47,140,255,.22)}
+/* ===== opiniones ===== */
+.rv{display:grid;gap:14px}
+.rv-cnt{font:400 12.5px var(--u-f);color:var(--u-d)}
+.rv-load,.rv-first{background:var(--u-1);border:1px dashed var(--u-l);border-radius:18px;padding:16px;text-align:center;font:400 13.5px var(--u-f);color:var(--u-d)}
+.rv-sum{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--u-1);border:1px solid var(--u-l);border-radius:20px;padding:16px}
+.rv-sum .big{display:grid;justify-items:center;gap:4px}.rv-sum .big b{font:700 40px/1 var(--u-f)}.rv-sum .big small{font:400 11.5px var(--u-f);color:var(--u-d)}
+.rv-sum .bars{display:grid;gap:5px}.rv-sum .bars div{display:grid;grid-template-columns:12px 1fr;gap:8px;align-items:center;font:500 11.5px var(--u-f);color:var(--u-d)}
+.rv-sum .bars i{height:7px;border-radius:4px;background:rgba(255,255,255,.07);overflow:hidden;display:block}.rv-sum .bars u{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#ffb938,#ffd36b)}
+.rv-st{display:inline-flex;gap:2px;vertical-align:middle}.rv-st i{width:16px;height:16px;display:block;color:rgba(255,255,255,.16)}.rv-st i svg{width:100%;height:100%;fill:currentColor;display:block}
+.rv-st i.on{color:#ffc443}.rv-st i.half{color:#ffc443;-webkit-mask:linear-gradient(90deg,#000 50%,rgba(0,0,0,.25) 50%);mask:linear-gradient(90deg,#000 50%,rgba(0,0,0,.25) 50%)}
+.rv-st.sm i{width:12px;height:12px}
+.rv-form{background:linear-gradient(160deg,#1a1d24,#131519);border:1px solid var(--u-l);border-radius:22px;padding:16px;display:grid;gap:10px}
+.rv-form>p:first-child{font:600 15px var(--u-f);text-align:center}
+.rv-pick{display:flex;justify-content:center;gap:6px}
+.rv-pick button{appearance:none;border:0;background:none;padding:4px;width:48px;height:48px;color:rgba(255,255,255,.18);cursor:pointer;transition:transform .12s,color .12s}
+.rv-pick button svg{width:100%;height:100%;fill:currentColor}.rv-pick button.on{color:#ffc443;filter:drop-shadow(0 4px 10px rgba(255,196,67,.35))}.rv-pick button:active{transform:scale(.88)}
+.rv-lbl{text-align:center;font:500 12.5px var(--u-f);color:var(--u-d);margin-top:-4px}
+.rv-form textarea,.rv-row input{width:100%;background:var(--u-0);border:1px solid var(--u-l);border-radius:14px;color:#fff;font:400 14.5px/1.45 var(--u-f);padding:12px;resize:none;user-select:text;-webkit-user-select:text}
+.rv-form textarea:focus,.rv-row input:focus{outline:none;border-color:rgba(47,140,255,.6)}
+.rv-row{display:flex;gap:10px;align-items:center}.rv-row input{flex:1;min-width:0;padding:10px 12px}.rv-row span{font:400 11.5px var(--u-f);color:var(--u-d);flex:none}
+.rv-form .btn[disabled]{opacity:.45;box-shadow:none}
+.rv-legal{font:400 11.5px/1.5 var(--u-f);color:var(--u-d);text-align:center}
+.rv-link{appearance:none;border:0;background:none;color:#5aa6ff;font:500 12.5px var(--u-f);padding:2px 0;cursor:pointer}
+.rv-form>.rv-link{justify-self:center}
+.rv-list{display:grid;gap:10px}
+.rv-c{background:var(--u-1);border:1px solid var(--u-l);border-radius:18px;padding:12px 14px;display:grid;gap:8px}
+.rv-c.mine{border-color:rgba(47,140,255,.35);background:linear-gradient(160deg,rgba(47,140,255,.08),var(--u-1))}
+.rv-c .hd{display:flex;align-items:center;gap:10px}.rv-c .hd>i{width:34px;height:34px;flex:none;border-radius:50%;background:var(--c,var(--u-b));display:grid;place-items:center;font:600 14px var(--u-f);font-style:normal;color:#0a0b0e}
+.rv-c .hd>div{flex:1;min-width:0;display:grid;gap:2px}.rv-c .hd b{font:600 13.5px var(--u-f);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rv-c .hd small{font:400 11px var(--u-f);color:var(--u-d);flex:none}
+.rv-c p{font:400 14px/1.5 var(--u-f);color:#dcdfe6;word-break:break-word}
+.rv-c .act{display:flex;gap:14px}.rv-c .act .rv-link{color:#8b91a1;font-size:12px}
+.adm-id{font:600 13px var(--u-f);word-break:break-all;color:#ffd36b}
+/* insignia de estrellas */
+.rv-b{display:none;align-items:center;gap:3px;color:#ffc443;font-weight:600;margin-right:6px}.rv-b.on{display:inline-flex}.rv-b svg{width:12px;height:12px;fill:currentColor}
+.ix-tags .rv-b.on{background:rgba(255,196,67,.14);color:#ffd36b;padding:5px 9px;border-radius:999px;font:600 11px var(--u-f);margin:0}
+/* varios */
+.ui-ask{appearance:none;width:100%;display:grid;grid-template-columns:44px 1fr 20px;gap:12px;align-items:center;text-align:left;color:#fff;cursor:pointer;background:linear-gradient(135deg,rgba(255,196,67,.12),rgba(255,196,67,.03));border:1px solid rgba(255,196,67,.25);border-radius:20px;padding:12px 14px;font-family:var(--u-f)}
+.ui-ask .ic{width:44px;height:44px;border-radius:14px;background:rgba(255,196,67,.15);display:grid;place-items:center;font-size:20px}.ui-ask b{display:block;font:600 14.5px var(--u-f)}.ui-ask small{display:block;font:400 12px var(--u-f);color:var(--u-d)}.ui-ask>svg{width:18px;height:18px;color:#ffd36b}
+.ui-menu{display:grid;background:var(--u-1);border:1px solid var(--u-l);border-radius:20px;overflow:hidden}
+.ui-menu button{appearance:none;border:0;border-bottom:1px solid var(--u-l);background:none;color:#fff;display:grid;grid-template-columns:26px 1fr 18px;gap:10px;align-items:center;text-align:left;padding:14px 16px;font:500 14.5px var(--u-f);cursor:pointer}
+.ui-menu button:last-child{border-bottom:0}.ui-menu button svg{width:16px;height:16px;color:var(--u-d)}.ui-menu button.danger span{color:#ff7b86}.ui-menu button:active{background:var(--u-2)}
+.ui-foot{display:flex;justify-content:center;gap:8px;font:400 12px var(--u-f);color:#5f6473;padding:4px 0}.ui-foot button{appearance:none;border:0;background:none;color:#8b91a1;font:500 12px var(--u-f);text-decoration:underline;cursor:pointer;padding:0}
+.pp{display:grid;gap:10px;background:var(--u-1);border:1px solid var(--u-l);border-radius:22px;padding:18px 16px}
+.pp h3{font:600 15.5px var(--u-f);margin-top:8px}.pp p{font:400 14px/1.6 var(--u-f);color:#cfd2da}.pp b{color:#fff;font-weight:600}
 </style>
 </head>
 <body>
@@ -5590,13 +5634,14 @@ function info(x, mode) {
   const setupTxt = onl ? (multi ? "Cada uno juega desde su celular." : (pads ? `En línea, <b>cada uno se ve abajo</b> en su propio celular y tu rival aparece arriba.` : g === DUO ? "Cada uno maneja a su personaje desde su celular. Pongan el celular de lado." : "Cada uno juega desde su celular; solo puedes tocar en tu turno.") + ` Tu color: <b style="color:${COL[me]}">${me === 0 ? "ROJO" : "AZUL"}</b>${g === DUO ? ` (${me === 0 ? "Fuego" : "Agua"})` : g === CHESS ? ` (${me === 0 ? "blancas" : "negras"})` : ""}.`)
     : x.setup || `Pongan el celular plano en la mesa: <b style="color:var(--p1)">${esc(nm(0))}</b> del lado de abajo y <b style="color:var(--p2)">${esc(nm(1))}</b> del lado de arriba. Desactiven el giro automático de pantalla.`;
   const v = show(`<div class="topbar"><button class="back" id="bk">${onl ? (mode === "host" ? "‹ Sala" : "") : "‹ Volver"}</button>${onl ? `<span class="label">En línea · ${multi ? NET.gseats.length + " jugadores" : esc(N(0)) + " vs " + esc(N(1))}</span>` : ""}</div>
-    <div class="ix-hero" style="--c1:${x.c1};--c2:${x.c2}"><div class="art">${ART[g.id]}</div><div class="txt"><h2>${g.name}</h2><p>${who}</p><div class="ix-tags">${(onl ? [] : x.tags).map(t => `<span>${t}</span>`).join("")}</div></div></div>
+    <div class="ix-hero" style="--c1:${x.c1};--c2:${x.c2}"><div class="art">${ART[g.id]}</div><div class="txt"><h2>${g.name}</h2><p>${who}</p><div class="ix-tags">${onl ? "" : `<span class="rv-b" data-g="${g.id}"></span>`}${(onl ? [] : x.tags).map(t => `<span>${t}</span>`).join("")}</div></div></div>
     ${optHtml}
     <p class="label">Cómo se juega</p>
     ${pads ? `<div style="display:grid;grid-template-columns:1fr;gap:12px">${onl ? phoneOnline(g.id, me) : phone(g.id)}</div>` : ""}
     <div class="steps">${x.steps.map((s, k) => `<div class="step"><b class="n">${k + 1}</b><p>${s}</p></div>`).join("")}</div>
     <div class="goal">🏆 ${x.goal}</div>
     <div class="setup"><span>${setupTxt}</span></div>
+    ${onl ? "" : `<section class="rv" id="rv"></section>`}
     <div class="stick">${mode === "guest" ? `<button class="btn ghost" id="go" disabled style="opacity:.85">Esperando que ${esc(NET.names[0] || "el anfitrión")} empiece…</button>` : `<button class="btn green" id="go">${UI_ICON.play}Jugar ahora</button>`}</div>`);
   const chips = (sel, key, num = true) => v.querySelectorAll(sel + " .chip").forEach(b => b.onclick = () => { if (b.disabled) return; opts[key] = num ? +(b.dataset.n ?? b.dataset.v) : b.dataset.v; v.querySelectorAll(sel + " .chip").forEach(z => z.classList.toggle("on", z === b)); });
   chips("#np", "np"); chips("#lv", "lv"); chips("#hm", "mode", false); chips("#sr", "rounds"); chips("#cr", "rounds");
@@ -5612,6 +5657,7 @@ function info(x, mode) {
   if (mode === "guest") { $("#bk", v).style.display = "none"; return; }
   if (mode === "host") { $("#bk", v).onclick = () => { NET.send({ k: "lobby" }); lobby(); }; $("#go", v).onclick = () => launch(g, true, opts); return; }
   $("#bk", v).onclick = uiBack;
+  rvBadges(v); rvMount($("#rv", v), g.id);
   $("#go", v).onclick = () => { if (x.party) { syncParty(); opts.names = S.party.slice(0, g.maxp); } launch(g, false, opts); };
 }
 function result(g, w, sc) {
@@ -5702,10 +5748,10 @@ const catName = c => (CATS.find(x => x[0] === c) || ["", c])[1].replace(/^\S+\s/
 const FEAT = [["yonunca", "NUEVO"], ["cityfortune", "BETA"], ["botellita", "FIESTA"], ["ludo", "CLÁSICO"]];
 const NEWG = ["yonunca"];
 function uiRow(x, btn = "Jugar", extra = "") {
-  return `<button class="ui-row ${extra}" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}${NEWG.includes(x.g.id) ? ` <em class="ui-new">Nuevo</em>` : ""}</h3><p>${gRange(x.g)} · ${catName(x.cat)}</p></span><span class="go">${btn}</span></button>`;
+  return `<button class="ui-row ${extra}" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}${NEWG.includes(x.g.id) ? ` <em class="ui-new">Nuevo</em>` : ""}</h3><p><span class="rv-b" data-g="${x.g.id}"></span>${gRange(x.g)} · ${catName(x.cat)}</p></span><span class="go">${btn}</span></button>`;
 }
 function uiTile(x) {
-  return `<button class="hx-tile" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}${NEWG.includes(x.g.id) ? `<em class="ui-new">Nuevo</em>` : ""}</span><b>${x.g.name}</b><small>${gRange(x.g)}</small></button>`;
+  return `<button class="hx-tile" data-k="${gIdx(x)}"><span class="th">${ART[x.g.id]}${NEWG.includes(x.g.id) ? `<em class="ui-new">Nuevo</em>` : ""}</span><b>${x.g.name}</b><small><span class="rv-b" data-g="${x.g.id}"></span>${gRange(x.g)}</small></button>`;
 }
 const uiWideArt = id => ART[id].replace("<svg ", '<svg preserveAspectRatio="xMidYMid slice" ');
 function uiBindGames(v) { v.querySelectorAll("[data-k]").forEach(b => { if (b.closest("#bnav")) return; b.onclick = () => { sfx.tap(); info(GAMES[+b.dataset.k]); }; b.onkeydown = e => { if (e.key === "Enter") b.onclick(); }; }); }
@@ -5732,8 +5778,11 @@ function home() {
       <button class="btn ghost" id="hmk">Crear una sala nueva</button></section>
     ${most.length ? `<div class="hx-sec"><h3>Lo que más juegas</h3></div><div class="hx-rail">${most.map(x => `<button class="hx-wide" data-k="${gIdx(x)}" style="--c1:${x.c1};--c2:${x.c2}"><span class="bg">${uiWideArt(x.g.id)}</span><span class="sh"></span><b>${x.g.name}</b><small>${plays[x.g.id]} ${plays[x.g.id] === 1 ? "partida" : "partidas"}</small></button>`).join("")}</div>` : ""}
     ${CATS.map(([c]) => { const L = GAMES.filter(x => x.cat === c); return `<div class="hx-sec"><h3>${catName(c)}</h3>${L.length > 2 ? `<button data-cat="${c}">Ver todos</button>` : ""}</div><div class="hx-rail">${L.map(uiTile).join("")}</div>`; }).join("")}
-    <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>`, "home");
-  uiBindGames(v);
+    <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>
+    <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta?</b><small>Califica Arena Mini y danos ideas</small></span>${UI_ICON.arrow}</button>
+    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v15</span></footer>`, "home");
+  uiBindGames(v); rvBadges(v);
+  $("#fb", v).onclick = () => appFeedback(); $("#pp", v).onclick = () => privacy();
   $("#prof", v).onclick = () => profile();
   const hs = $("#hsnd", v); hs.onclick = () => { S.muted = !S.muted; save(); drawMute(); hs.innerHTML = UI_ICON[S.muted ? "mute" : "sound"]; hs.setAttribute("aria-pressed", !S.muted); if (!S.muted) sfx.pick(); };
   $("#srch", v).onclick = () => gamesList("all", "", true);
@@ -5753,12 +5802,14 @@ function gamesList(cat = "all", q = "", focus = false) {
   const v = show(`<div class="ui-head"><h1>Juegos</h1><p>${GAMES.length} juegos · en el mismo celular o en línea</p></div>
     <label class="hx-search in">${UI_ICON.search}<input id="q" placeholder="Buscar un juego…" value="${esc(q)}" autocomplete="off" aria-label="Buscar un juego"></label>
     <div class="ui-chips" id="cats" role="tablist">${[["all", "Todos"], ...CATS.map(([c]) => [c, catName(c)])].map(([c, t]) => `<button role="tab" data-c="${c}" class="${c === cat ? "on" : ""}" aria-selected="${c === cat}">${t}</button>`).join("")}</div>
-    <div class="ui-list" id="gl"></div>`, "games");
+    <div class="ui-list" id="gl"></div>
+    <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta a Arena Mini?</b><small>Califica la página y cuéntanos qué agregar</small></span>${UI_ICON.arrow}</button>`, "games");
+  $("#fb", v).onclick = () => appFeedback();
   const draw = () => {
     UI_GL.cat = cat; UI_GL.q = q;
     const qq = uiNorm(q.trim()), L = GAMES.filter(x => (cat === "all" || x.cat === cat) && (!qq || uiNorm(`${x.g.name} ${x.tag} ${x.tags.join(" ")} ${catName(x.cat)}`).includes(qq)));
     $("#gl", v).innerHTML = L.map(x => uiRow(x)).join("") || `<div class="ui-empty"><b>No encontramos “${esc(q)}”</b><span>Prueba con otra palabra, como “cartas” o “fiesta”.</span></div>`;
-    uiBindGames($("#gl", v));
+    uiBindGames($("#gl", v)); rvBadges($("#gl", v));
   };
   const qi = $("#q", v); qi.oninput = () => { q = qi.value; draw(); };
   v.querySelectorAll("#cats button").forEach(b => b.onclick = () => { cat = b.dataset.c; v.querySelectorAll("#cats button").forEach(z => { z.classList.toggle("on", z === b); z.setAttribute("aria-selected", z === b); }); draw(); });
@@ -5777,12 +5828,256 @@ function profile() {
     ${[0, 1, 2, 3].map(i => `<label class="namef" style="--c:${COL[i]}"><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="${COL[i]}"/></svg><input maxlength="10" value="${esc(S.names[i] || PNAMES[i])}" data-i="${i}" aria-label="Nombre del jugador ${i + 1}"></label>`).join("")}
     <div class="hx-sec"><h3>Ajustes</h3></div>
     <label class="tog"><input type="checkbox" id="snd" ${S.muted ? "" : "checked"}><span>Sonidos y efectos</span></label>
+    <div class="hx-sec"><h3>Opiniones y privacidad</h3></div>
+    <div class="ui-menu">
+      <button id="pfb">💡<span>Opinar sobre Arena Mini</span>${UI_ICON.arrow}</button>
+      <button id="ppp">🔒<span>Política de privacidad</span>${UI_ICON.arrow}</button>
+      <button id="pdm">🗑️<span>Borrar mis opiniones</span>${UI_ICON.arrow}</button>
+      <button id="pdl" class="danger">⚠️<span>Borrar datos de este celular</span>${UI_ICON.arrow}</button>
+      ${S.admin ? `<button id="padm">🛡️<span>Panel de administrador</span>${UI_ICON.arrow}</button>` : ""}
+    </div>
     ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
+  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v15</span></footer>`);
+  $("#pfb", v).onclick = () => appFeedback(); $("#ppp", v).onclick = () => privacy();
+  $("#pdm", v).onclick = async () => { if (!confirm("¿Borrar todas las opiniones que publicaste desde este celular?")) return; try { const n = await RV.delMine(); toast(n ? (n === 1 ? "Se borró 1 opinión" : `Se borraron ${n} opiniones`) : "No tenías opiniones publicadas"); } catch { toast("No se pudo. Revisa tu internet."); } };
+  $("#pdl", v).onclick = () => { if (!confirm("Se borrarán tu nombre, jugadores, victorias, ajustes y la partida guardada de este celular. Tus opiniones publicadas se quedan (bórralas antes si quieres). ¿Continuar?")) return; try { Object.keys(localStorage).filter(k => k.startsWith("arena-mini")).forEach(k => localStorage.removeItem(k)); sessionStorage.clear(); } catch {} location.reload(); };
+  const pa = $("#padm", v); if (pa) pa.onclick = () => rvAdmin();
+  let taps = 0, tt = 0; $("#ver", v).onclick = () => { const n = Date.now(); taps = n - tt < 800 ? taps + 1 : 1; tt = n; if (taps >= 7) { taps = 0; S.admin = !S.admin; save(); toast(S.admin ? "Modo administrador activado" : "Modo administrador apagado"); profile(); } };
   const me = $("#me", v); me.oninput = () => { S.me = me.value.trim().slice(0, 10); save(); $("#pav", v).textContent = av(); };
   v.querySelectorAll(".namef input").forEach(inp => inp.oninput = () => { S.names[+inp.dataset.i] = inp.value.trim() || PNAMES[+inp.dataset.i]; save(); });
   const sn = $("#snd", v); sn.onchange = () => { S.muted = !sn.checked; save(); drawMute(); if (!S.muted) sfx.pick(); };
 }
 function names() { profile(); }
+
+/* =====================================================================
+   RESEÑAS · estrellas y comentarios por juego y de Arena Mini
+   - Se guardan en Google Firebase (Firestore) usando su API web, sin librerías
+   - Cada celular entra con una cuenta anónima (sin correo ni contraseña)
+   - Una opinión por juego y por celular (se puede editar o borrar)
+   - Mientras Firebase no esté conectado, se guardan solo en este celular
+   ===================================================================== */
+const FB_CFG = { apiKey: "", projectId: "" };                 // se completa al conectar Firebase
+const FB_ON = () => !!(FB_CFG.apiKey && FB_CFG.projectId);
+const RV_AUTH_K = "arena-mini-fb", RV_LOCAL_K = "arena-mini-rv", RV_CACHE_K = "arena-mini-rv-cache", RV_HIDE_K = "arena-mini-rv-hide";
+const RV_BAD = YN_BAD.concat(["hijueput", "hijo de put", "malparid", "gonorrea", "pendej", "imbecil", "imbécil", "estupid", "estúpid", "zorra", "verga", "mamaguev", "put4", "p0rn", "porn", "xxx", "sexo"]);
+const RV_MAX = 300;
+function rvClean(t) {
+  t = String(t ?? "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
+  if (t.length > RV_MAX) return { err: `Máximo ${RV_MAX} letras` };
+  if (YN_BLOCK.test(t) || /\b[\w.-]+@[\w-]+\.\w+/.test(t)) return { err: "Sin enlaces ni correos, por favor" };
+  if (/(\+?\d[\d\s-]{7,}\d)/.test(t)) return { err: "No escribas números de teléfono" };
+  const low = uiNorm(t); if (RV_BAD.some(w => low.includes(uiNorm(w)))) return { err: "Tu comentario tiene palabras que no se permiten" };
+  return { t };
+}
+const rvJSON = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const rvPut = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+const RV = {
+  list: null, at: 0, loading: null,
+  base() { return `https://firestore.googleapis.com/v1/projects/${FB_CFG.projectId}/databases/(default)/documents`; },
+  /* cuenta anónima de Firebase: se crea una sola vez por celular */
+  async auth() {
+    if (!FB_ON()) return { uid: "local", token: "" };
+    let a = rvJSON(RV_AUTH_K, null);
+    const post = async (url, body, form) => { const r = await fetch(url, { method: "POST", headers: { "Content-Type": form ? "application/x-www-form-urlencoded" : "application/json" }, body }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error((j.error && j.error.message) || "auth"); return j; };
+    if (!a || !a.rt) {
+      const j = await post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FB_CFG.apiKey}`, JSON.stringify({ returnSecureToken: true }));
+      a = { uid: j.localId, tok: j.idToken, rt: j.refreshToken, exp: Date.now() + (+j.expiresIn || 3600) * 1000 - 60000 }; rvPut(RV_AUTH_K, a);
+    } else if (Date.now() > a.exp) {
+      const j = await post(`https://securetoken.googleapis.com/v1/token?key=${FB_CFG.apiKey}`, "grant_type=refresh_token&refresh_token=" + encodeURIComponent(a.rt), true);
+      a = { uid: j.user_id, tok: j.id_token, rt: j.refresh_token, exp: Date.now() + (+j.expires_in || 3600) * 1000 - 60000 }; rvPut(RV_AUTH_K, a);
+    }
+    return { uid: a.uid, token: a.tok };
+  },
+  uid() { return FB_ON() ? (rvJSON(RV_AUTH_K, {}).uid || "") : "local"; },
+  dec(d) {
+    const f = d.fields || {}, v = x => x ? (x.stringValue ?? (x.integerValue !== undefined ? +x.integerValue : x.timestampValue)) : undefined;
+    return { id: d.name.split("/").pop(), g: v(f.g), s: v(f.s), t: v(f.t) || "", n: v(f.n) || "", u: v(f.u), at: Date.parse(v(f.at) || d.updateTime || 0) || 0, r: v(f.r) };
+  },
+  async query(col, filter, auth) {
+    const q = { structuredQuery: { from: [{ collectionId: col }], limit: 1000 } };
+    if (filter) q.structuredQuery.where = { fieldFilter: { field: { fieldPath: filter[0] }, op: "EQUAL", value: { stringValue: filter[1] } } };
+    const h = { "Content-Type": "application/json" }; if (auth) h.Authorization = "Bearer " + (await this.auth()).token;
+    const r = await fetch(`${this.base()}:runQuery?key=${FB_CFG.apiKey}`, { method: "POST", headers: h, body: JSON.stringify(q) });
+    if (!r.ok) throw new Error("query " + r.status);
+    return (await r.json()).filter(x => x.document).map(x => this.dec(x.document));
+  },
+  /* todas las reseñas (para los promedios); se guardan 20 minutos en el celular */
+  async all(force) {
+    if (!FB_ON()) return (this.list = rvJSON(RV_LOCAL_K, []));
+    if (!force && this.list && Date.now() - this.at < 20 * 60e3) return this.list;
+    if (!force) { const c = rvJSON(RV_CACHE_K, null); if (c && Date.now() - c.at < 20 * 60e3) { this.list = c.list; this.at = c.at; return this.list; } }
+    if (this.loading) return this.loading;
+    this.loading = this.query("reviews").then(l => { this.list = l; this.at = Date.now(); rvPut(RV_CACHE_K, { at: this.at, list: l }); return l; }).finally(() => { this.loading = null; });
+    return this.loading;
+  },
+  async game(g) {                                               // reseñas de un juego, siempre frescas
+    if (!FB_ON()) return rvJSON(RV_LOCAL_K, []).filter(r => r.g === g);
+    const l = await this.query("reviews", ["g", g]);
+    if (this.list) { this.list = this.list.filter(r => r.g !== g).concat(l); rvPut(RV_CACHE_K, { at: this.at, list: this.list }); }
+    return l;
+  },
+  stats(list, g) {
+    const l = list.filter(r => r.g === g && r.s >= 1 && r.s <= 5), n = l.length, dist = [0, 0, 0, 0, 0];
+    l.forEach(r => dist[r.s - 1]++);
+    return { n, avg: n ? l.reduce((a, r) => a + r.s, 0) / n : 0, dist };
+  },
+  async save(g, s, t, n) {
+    const { uid, token } = await this.auth(), id = g + "_" + uid;
+    const rec = { id, g, s, t, n, u: uid, at: Date.now() };
+    if (!FB_ON()) { const L = rvJSON(RV_LOCAL_K, []).filter(r => r.id !== id); L.push(rec); rvPut(RV_LOCAL_K, L); return rec; }
+    const body = { writes: [{ update: { name: `projects/${FB_CFG.projectId}/databases/(default)/documents/reviews/${id}`, fields: { g: { stringValue: g }, s: { integerValue: String(s) }, t: { stringValue: t }, n: { stringValue: n }, u: { stringValue: uid } } }, updateTransforms: [{ fieldPath: "at", setToServerValue: "REQUEST_TIME" }] }] };
+    const r = await fetch(`${this.base()}:commit?key=${FB_CFG.apiKey}`, { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify(body) });
+    if (!r.ok) throw new Error(r.status === 403 ? "wait" : "save");
+    if (this.list) { this.list = this.list.filter(x => x.id !== id).concat(rec); rvPut(RV_CACHE_K, { at: this.at, list: this.list }); }
+    return rec;
+  },
+  async del(id) {
+    if (!FB_ON()) { rvPut(RV_LOCAL_K, rvJSON(RV_LOCAL_K, []).filter(r => r.id !== id)); return; }
+    const { token } = await this.auth();
+    const r = await fetch(`${this.base()}/reviews/${encodeURIComponent(id)}?key=${FB_CFG.apiKey}`, { method: "DELETE", headers: { Authorization: "Bearer " + token } });
+    if (!r.ok) throw new Error("del");
+    if (this.list) { this.list = this.list.filter(x => x.id !== id); rvPut(RV_CACHE_K, { at: this.at, list: this.list }); }
+  },
+  async report(id) {
+    const hid = rvJSON(RV_HIDE_K, []); if (!hid.includes(id)) { hid.push(id); rvPut(RV_HIDE_K, hid.slice(-200)); }
+    if (!FB_ON()) return;
+    const { uid, token } = await this.auth();
+    const body = { writes: [{ update: { name: `projects/${FB_CFG.projectId}/databases/(default)/documents/reports/${id}_${uid}`, fields: { r: { stringValue: id }, u: { stringValue: uid } } }, updateTransforms: [{ fieldPath: "at", setToServerValue: "REQUEST_TIME" }] }] };
+    await fetch(`${this.base()}:commit?key=${FB_CFG.apiKey}`, { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify(body) }).catch(() => {});
+  },
+  async delMine() {                                             // borrar todas mis reseñas
+    if (!FB_ON()) { const n = rvJSON(RV_LOCAL_K, []).length; rvPut(RV_LOCAL_K, null); return n; }
+    const { uid } = await this.auth(), mine = await this.query("reviews", ["u", uid]);
+    for (const r of mine) await this.del(r.id);
+    return mine.length;
+  },
+  hidden() { return rvJSON(RV_HIDE_K, []); },
+  /* opiniones que se guardaron en el celular antes de conectar Firebase: se publican solas */
+  async migrate() {
+    if (!FB_ON() || this.migrating) return; const L = rvJSON(RV_LOCAL_K, []); if (!L.length) return;
+    this.migrating = true;
+    try { for (const r of L) { await this.save(r.g, r.s, r.t, r.n); rvPut(RV_LOCAL_K, rvJSON(RV_LOCAL_K, []).filter(x => x.g !== r.g)); } } catch {} finally { this.migrating = false; }
+  },
+};
+setTimeout(() => RV.migrate(), 4000);
+/* ---------- piezas de interfaz ---------- */
+const RV_STAR = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg>`;
+const rvStars = (v, cls = "") => `<span class="rv-st ${cls}" role="img" aria-label="${(Math.round(v * 10) / 10).toString().replace(".", ",")} de 5 estrellas">${[1, 2, 3, 4, 5].map(k => `<i class="${v >= k - .25 ? "on" : v >= k - .75 ? "half" : ""}">${RV_STAR}</i>`).join("")}</span>`;
+const rvAvg = v => v.toFixed(1).replace(".", ",");
+function rvAgo(t) {
+  const d = (Date.now() - t) / 1000;
+  if (d < 90) return "hace un momento"; if (d < 3600) return `hace ${Math.round(d / 60)} min`; if (d < 86400) return `hace ${Math.round(d / 3600)} h`;
+  if (d < 86400 * 30) { const n = Math.round(d / 86400); return `hace ${n} día${n > 1 ? "s" : ""}`; }
+  return new Date(t).toLocaleDateString("es", { day: "numeric", month: "short", year: "numeric" });
+}
+/* insignia ★ 4,6 en las tarjetas y filas de juegos */
+function rvBadges(root) {
+  const els = (root || document).querySelectorAll(".rv-b[data-g]"); if (!els.length) return;
+  RV.all().then(list => els.forEach(el => { const st = RV.stats(list, el.dataset.g); el.innerHTML = st.n ? `${RV_STAR}${rvAvg(st.avg)}` : ""; el.classList.toggle("on", !!st.n); })).catch(() => {});
+}
+/* sección completa de opiniones: resumen, formulario y comentarios */
+function rvMount(el, g, opt = {}) {
+  if (!el) return;
+  const S0 = { pick: 0, edit: false, all: false, list: null, err: "" };
+  const paint = () => {
+    const uid = RV.uid(), hid = RV.hidden(), list = (S0.list || []).filter(r => !hid.includes(r.id) || r.u === uid);
+    const st = RV.stats(list, g), mine = list.find(r => r.u === uid && uid), admin = !!S.admin && FB_ON();
+    const others = list.filter(r => r !== mine).sort((a, b) => (!!b.t - !!a.t) || b.at - a.at), shown = S0.all ? others : others.slice(0, 8);
+    const formOpen = !mine || S0.edit;
+    if (!S0.pick && mine) S0.pick = mine.s;
+    el.innerHTML = `<div class="hx-sec"><h3>${opt.title || "Opiniones"}</h3>${st.n ? `<span class="rv-cnt">${st.n} ${st.n === 1 ? "opinión" : "opiniones"}</span>` : ""}</div>
+      ${S0.list === null ? `<div class="rv-load">Cargando opiniones…</div>` : S0.err ? `<div class="rv-load">${S0.err} <button class="rv-link" id="rvre">Reintentar</button></div>` : `
+      ${st.n ? `<div class="rv-sum"><div class="big"><b>${rvAvg(st.avg)}</b>${rvStars(st.avg)}<small>de 5</small></div>
+        <div class="bars">${[5, 4, 3, 2, 1].map(k => `<div><span>${k}</span><i><u style="width:${st.n ? st.dist[k - 1] / st.n * 100 : 0}%"></u></i></div>`).join("")}</div></div>` : `<p class="rv-first">${opt.empty || "Todavía nadie lo ha calificado. ¡Sé el primero!"}</p>`}
+      ${formOpen ? `<div class="rv-form"><p>${mine ? "Edita tu opinión" : opt.ask || "¿Qué te pareció este juego?"}</p>
+        <div class="rv-pick" role="radiogroup" aria-label="Calificación">${[1, 2, 3, 4, 5].map(k => `<button role="radio" aria-checked="${S0.pick === k}" aria-label="${k} estrella${k > 1 ? "s" : ""}" data-s="${k}" class="${S0.pick >= k ? "on" : ""}">${RV_STAR}</button>`).join("")}</div>
+        <small class="rv-lbl">${["Toca las estrellas para calificar", "No me gustó", "Le falta mucho", "Está bien", "Me gustó", "¡Me encantó!"][S0.pick]}</small>
+        <textarea id="rvtx" maxlength="${RV_MAX}" rows="3" placeholder="${opt.ph || "¿Qué le falta al juego? ¿Qué mejorarías? (opcional)"}">${esc(mine && S0.edit ? mine.t : S0.draft || "")}</textarea>
+        <div class="rv-row"><input id="rvnm" maxlength="20" placeholder="Tu nombre (opcional)" value="${esc(S0.name ?? (mine ? mine.n : (S.me || "")))}" aria-label="Tu nombre"><span id="rvct">0/${RV_MAX}</span></div>
+        <button class="btn green" id="rvok" ${S0.pick ? "" : "disabled"}>${mine ? "Guardar cambios" : "Publicar opinión"}</button>${mine ? `<button class="rv-link" id="rvcan">Cancelar</button>` : ""}
+        <p class="rv-legal">${FB_ON() ? "Tu opinión será pública." : "Por ahora tu opinión se guarda solo en este celular."} No escribas datos personales. <button class="rv-link" id="rvpp">Política de privacidad</button></p></div>`
+      : `<div class="rv-c mine"><div class="hd"><i>${esc((mine.n || "T").slice(0, 1).toUpperCase())}</i><div><b>Tu opinión</b>${rvStars(mine.s, "sm")}</div><small>${rvAgo(mine.at)}</small></div>${mine.t ? `<p>${esc(mine.t)}</p>` : ""}<div class="act"><button class="rv-link" id="rved">Editar</button><button class="rv-link" id="rvdel">Borrar</button></div></div>`}
+      <div class="rv-list">${shown.map(r => `<div class="rv-c" data-id="${esc(r.id)}"><div class="hd"><i style="--c:${COL[(r.u || "").split("").reduce((a, c) => a + c.charCodeAt(0), 0) % COL.length]}">${esc((r.n || "A").slice(0, 1).toUpperCase())}</i><div><b>${esc(r.n || "Anónimo")}</b>${rvStars(r.s, "sm")}</div><small>${rvAgo(r.at)}</small></div>
+        ${r.t ? `<p>${esc(r.t)}</p>` : ""}<div class="act"><button class="rv-link rv-rep">Reportar</button>${admin ? `<button class="rv-link rv-adm">Borrar (admin)</button>` : ""}</div></div>`).join("")}</div>
+      ${others.length > shown.length ? `<button class="btn ghost" id="rvmore">Ver las ${others.length} opiniones</button>` : ""}`}`;
+    bind();
+  };
+  const bind = () => {
+    const on = (s, f) => { const b = $(s, el); if (b) b.onclick = f; };
+    on("#rvre", load); on("#rvpp", () => privacy());
+    el.querySelectorAll(".rv-pick button").forEach(b => b.onclick = () => { S0.draft = ($("#rvtx", el) || {}).value; S0.name = ($("#rvnm", el) || {}).value; S0.pick = +b.dataset.s; sfx.tap(); paint(); const t = $("#rvtx", el); if (t) { t.value = S0.draft || t.value; } });
+    const tx = $("#rvtx", el), ct = $("#rvct", el); if (tx && ct) { const u = () => ct.textContent = `${tx.value.length}/${RV_MAX}`; tx.oninput = () => { S0.draft = tx.value; u(); }; u(); }
+    on("#rvok", async () => {
+      const c = rvClean(tx.value); if (c.err) return toast(c.err);
+      const n = rvClean(($("#rvnm", el).value || "").slice(0, 20)); if (n.err) return toast("Ese nombre no se permite");
+      const b = $("#rvok", el); b.disabled = true; b.textContent = "Publicando…";
+      try { await RV.save(g, S0.pick, c.t, n.t); S0.edit = false; S0.draft = ""; sfx.win(); toast(FB_ON() ? "¡Gracias por tu opinión!" : "Guardada en este celular"); await load(); rvBadges(); }
+      catch (e) { b.disabled = false; b.textContent = "Publicar opinión"; toast(e.message === "wait" ? "Espera unos segundos antes de volver a publicar" : "No se pudo publicar. Revisa tu internet."); }
+    });
+    on("#rvcan", () => { S0.edit = false; paint(); });
+    on("#rved", () => { S0.edit = true; paint(); });
+    on("#rvdel", async () => { if (!confirm("¿Borrar tu opinión?")) return; const mine = (S0.list || []).find(r => r.u === RV.uid()); try { await RV.del(mine.id); S0.pick = 0; toast("Opinión borrada"); await load(); rvBadges(); } catch { toast("No se pudo borrar. Revisa tu internet."); } });
+    on("#rvmore", () => { S0.all = true; paint(); });
+    el.querySelectorAll(".rv-rep").forEach(b => b.onclick = async () => { if (!confirm("¿Reportar este comentario? Dejarás de verlo y lo revisaremos.")) return; await RV.report(b.closest(".rv-c").dataset.id); toast("Gracias. Comentario reportado."); paint(); });
+    el.querySelectorAll(".rv-adm").forEach(b => b.onclick = async () => { if (!confirm("¿Borrar este comentario para todos?")) return; try { await RV.del(b.closest(".rv-c").dataset.id); await load(); } catch { toast("No se pudo borrar (¿pusiste tu ID en las reglas?)"); } });
+  };
+  const load = async () => { S0.err = ""; try { S0.list = await RV.game(g); } catch { S0.list = S0.list || []; S0.err = "No se pudieron cargar las opiniones."; } paint(); };
+  paint(); load();
+}
+/* ============================ OPINA SOBRE ARENA MINI ============================ */
+function appFeedback() {
+  const back = UI_LAST;
+  const v = show(`<div class="topbar"><button class="back" id="bk">‹ Volver</button></div>
+    <div class="ui-head"><h1>¿Qué le falta a Arena Mini?</h1><p>Califica la página y cuéntanos qué juego quieres que agreguemos o qué mejorarías.</p></div>
+    <section class="rv" id="rv"></section>`, back);
+  $("#bk", v).onclick = uiBack;
+  rvMount($("#rv", v), "arena", { title: "Opiniones de Arena Mini", ask: "¿Qué te parece Arena Mini?", ph: "¿Qué juego nos falta? ¿Qué mejorarías? (opcional)", empty: "Todavía no hay opiniones. ¡Cuéntanos qué juego quieres!" });
+}
+/* ============================ PRIVACIDAD ============================ */
+function privacy() {
+  const back = UI_LAST;
+  const v = show(`<div class="topbar"><button class="back" id="bk">‹ Volver</button></div>
+    <div class="ui-head"><h1>Política de privacidad</h1><p>Última actualización: 26 de septiembre de 2026</p></div>
+    <div class="pp">
+      <p>Arena Mini es un sitio gratuito de juegos para jugar con amigos, hecho por un desarrollador independiente. No tiene publicidad, no pide cuentas ni correos y no vende ni comparte tus datos para anuncios. Aquí te contamos qué datos se usan y para qué.</p>
+      <h3>1. Lo que se guarda en tu celular</h3>
+      <p>Tu nombre, los nombres de los jugadores, tus victorias, los ajustes (como el sonido), las partidas guardadas de City Fortune y un identificador anónimo. Todo esto queda en el almacenamiento de tu navegador y no se envía a ningún servidor, salvo lo que se explica abajo. Puedes borrarlo cuando quieras desde <b>Perfil → Borrar datos de este celular</b>.</p>
+      <h3>2. Opiniones y calificaciones</h3>
+      <p>Cuando publicas una opinión se guardan: las estrellas, el comentario, el nombre que escribas (puede ser inventado o quedar vacío), la fecha y un identificador anónimo al azar que sirve para que solo tú puedas editarla o borrarla. Se guardan en <b>Google Firebase</b> y <b>cualquier persona puede verlas</b>. No escribas datos personales como tu teléfono, dirección o correo.</p>
+      <p>Los comentarios con insultos, enlaces o datos personales se rechazan automáticamente, y cualquiera puede reportar un comentario. Podemos borrar comentarios que no respeten estas reglas.</p>
+      <h3>3. Jugar en línea</h3>
+      <p>Para jugar en línea, los celulares se conectan directamente entre sí (WebRTC). Para encontrarse usan el servicio público de <b>PeerJS</b> y, si la conexión directa no se puede, relés públicos (<b>EMQX</b> y <b>HiveMQ</b>). Por ahí pasan tu nombre y las jugadas, pero Arena Mini no los guarda. Como en cualquier conexión por internet, esos servicios y los otros jugadores de la sala pueden ver tu dirección IP.</p>
+      <h3>4. Fotos, videos y voz</h3>
+      <p>Las fotos y videos de Botellita y Yo Nunca Nunca, y el chat de voz, van directo a los celulares de la sala. No se guardan en ningún servidor de Arena Mini, y las fotos y videos se borran de la partida al terminar el turno. Recuerda que otra persona siempre podría tomar una captura de pantalla: comparte solo lo que te sientas cómodo compartiendo.</p>
+      <h3>5. Otros servicios que usa la página</h3>
+      <p>La página está alojada en <b>GitHub Pages</b>, carga las letras desde <b>Google Fonts</b> y algunas herramientas desde <b>jsDelivr</b> y <b>unpkg</b>. Estos servicios pueden registrar datos técnicos como tu dirección IP según sus propias políticas. Arena Mini no usa herramientas de análisis ni de rastreo.</p>
+      <h3>6. Menores de edad</h3>
+      <p>Las preguntas picantes (+18) vienen apagadas y el anfitrión debe confirmar que todos son mayores de edad para activarlas. Si eres menor de 13 años, no publiques opiniones.</p>
+      <h3>7. Tus opciones</h3>
+      <p>Puedes editar o borrar tu opinión desde el juego, o borrar todas tus opiniones desde <b>Perfil → Borrar mis opiniones</b>. Si borras los datos de tu celular antes, se pierde el identificador anónimo y ya no podrás borrarlas tú mismo.</p>
+      <p><b>Contacto:</b> pronto agregaremos un correo para dudas y solicitudes de privacidad.</p>
+      <h3>8. Cambios</h3>
+      <p>Si esta política cambia, actualizaremos la fecha de arriba.</p>
+    </div>`, back);
+  $("#bk", v).onclick = uiBack;
+}
+/* ============================ ADMINISTRADOR ============================ */
+async function rvAdmin() {
+  const v = show(`<div class="topbar"><button class="back" id="bk">‹ Perfil</button></div>
+    <div class="ui-head"><h1>Administrador</h1><p>Revisa los comentarios reportados.</p></div><div id="adm" class="rv-load">Cargando…</div>`, "user");
+  $("#bk", v).onclick = () => profile();
+  const box = $("#adm", v);
+  if (!FB_ON()) { box.textContent = "Primero hay que conectar Firebase."; return; }
+  let uid = ""; try { uid = (await RV.auth()).uid; } catch {}
+  let reps = null; try { reps = await RV.query("reports", null, true); } catch { }
+  const all = await RV.all(true).catch(() => []);
+  const cnt = {}; (reps || []).forEach(r => cnt[r.r] = (cnt[r.r] || 0) + 1);
+  const L = all.filter(r => cnt[r.id]).sort((a, b) => cnt[b.id] - cnt[a.id]);
+  box.className = ""; box.innerHTML = `<div class="rv-c"><p>Tu ID de administrador (va en las reglas de Firebase):</p><p><b class="adm-id">${esc(uid)}</b></p><button class="rv-link" id="cpid">Copiar ID</button></div>
+    ${reps === null ? `<p class="ui-note">No tienes permiso de administrador todavía: pega tu ID en las reglas de Firebase.</p>` : L.length ? L.map(r => `<div class="rv-c" data-id="${esc(r.id)}"><div class="hd"><div><b>${esc(r.n || "Anónimo")} · ${esc((GAMES.find(x => x.g.id === r.g) || { g: { name: "Arena Mini" } }).g.name)}</b>${rvStars(r.s, "sm")}</div><small>${cnt[r.id]} reporte${cnt[r.id] > 1 ? "s" : ""}</small></div><p>${esc(r.t)}</p><div class="act"><button class="rv-link rv-adm">Borrar comentario</button></div></div>`).join("") : `<p class="ui-note">No hay comentarios reportados. 🎉</p>`}`;
+  const cp = $("#cpid", v); cp.onclick = async () => { try { await navigator.clipboard.writeText(uid); toast("ID copiado"); } catch { prompt("Copia tu ID:", uid); } };
+  v.querySelectorAll(".rv-adm").forEach(b => b.onclick = async () => { if (!confirm("¿Borrar este comentario para todos?")) return; try { await RV.del(b.closest(".rv-c").dataset.id); toast("Borrado"); rvAdmin(); } catch { toast("No se pudo borrar"); } });
+}
 
 /* =====================================================================
    PANTALLAS EN LÍNEA: menú · sala (lobby) · resultado · desconexión
