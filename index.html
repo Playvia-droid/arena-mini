@@ -590,7 +590,7 @@ body.hasnav #app{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
 .hx-top{display:flex;align-items:center;gap:10px;min-height:42px}body.hasnav #mute{display:none}
 .hx-ic{width:42px;height:42px;border-radius:50%;border:0;background:var(--u-2);box-shadow:inset 0 0 0 1px var(--u-l);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}.hx-ic svg{width:20px;height:20px}
 .hx-brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}.hx-brand b{display:block;font:700 17px var(--u-f);letter-spacing:-.01em}.hx-brand small{display:block;font:400 11.5px var(--u-f);color:var(--u-d)}
-.hx-logo{width:40px;height:40px;flex:none;border-radius:12px;background:linear-gradient(135deg,#3a95ff,#7b5cff);display:grid;place-items:center;padding:7px 6px 6px;color:#fff;box-shadow:0 8px 18px -6px rgba(47,140,255,.7)}.hx-logo svg{width:100%;height:auto;display:block}
+.hx-brand{margin:0;line-height:0}.hx-logo{display:block;width:72px;color:#fff;filter:drop-shadow(0 6px 18px rgba(47,140,255,.45))}.hx-logo svg{width:100%;height:auto;display:block}
 #splash{position:fixed;inset:0;z-index:200;pointer-events:none;background:radial-gradient(70% 45% at 50% 42%,rgba(47,140,255,.22),transparent 70%),#0a0b0e;display:grid;place-items:center;transition:opacity .45s ease,visibility .45s}
 #splash.out{opacity:0;visibility:hidden}
 .sp-in{display:grid;justify-items:center;gap:18px;color:#fff;animation:spIn .7s cubic-bezier(.2,1.2,.4,1) both}
@@ -5773,7 +5773,7 @@ function home() {
   const feat = FEAT.map(([id, t]) => [GAMES.find(x => x.g.id === id), t]).filter(f => f[0]);
   const cf = cfSaved(), ss = !cf && sessGet();
   const v = show(`
-    <header class="hx-top"><div class="hx-brand"><span class="hx-logo" aria-hidden="true">${LOGO_SVG}</span><div><b>Arena Mini</b><small>${GAMES.length} juegos con amigos</small></div></div>
+    <header class="hx-top"><h1 class="hx-brand"><span class="hx-logo" role="img" aria-label="Arena Mini">${LOGO_SVG}</span></h1>
       <button class="hx-ic" id="hsnd" aria-label="Sonido" aria-pressed="${!S.muted}">${UI_ICON[S.muted ? "mute" : "sound"]}</button><button class="hx-av" id="prof" aria-label="Tu perfil">${first ? esc(first.slice(0, 1).toUpperCase()) : UI_ICON.user}</button></header>
     <section class="hx-hi"><h1>${first ? `Hola, ${esc(first)}` : "¡Hola!"}</h1><p>¿A qué jugamos hoy?</p></section>
     <button class="hx-search" id="srch">${UI_ICON.search}<span>Buscar un juego…</span></button>
@@ -5790,7 +5790,7 @@ function home() {
     ${CATS.map(([c]) => { const L = GAMES.filter(x => x.cat === c); return `<div class="hx-sec"><h3>${catName(c)}</h3>${L.length > 2 ? `<button data-cat="${c}">Ver todos</button>` : ""}</div><div class="hx-rail">${L.map(uiTile).join("")}</div>`; }).join("")}
     <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>
     <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta?</b><small>Califica Arena Mini y danos ideas</small></span>${UI_ICON.arrow}</button>
-    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v16</span></footer>`, "home");
+    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v17</span></footer>`, "home");
   uiBindGames(v); rvBadges(v);
   $("#fb", v).onclick = () => appFeedback(); $("#pp", v).onclick = () => privacy();
   $("#prof", v).onclick = () => profile();
@@ -5847,7 +5847,7 @@ function profile() {
       ${S.admin ? `<button id="padm">🛡️<span>Panel de administrador</span>${UI_ICON.arrow}</button>` : ""}
     </div>
     ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
-  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v16</span></footer>`);
+  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v17</span></footer>`);
   $("#pfb", v).onclick = () => appFeedback(); $("#ppp", v).onclick = () => privacy();
   $("#pdm", v).onclick = async () => { if (!confirm("¿Borrar todas las opiniones que publicaste desde este celular?")) return; try { const n = await RV.delMine(); toast(n ? (n === 1 ? "Se borró 1 opinión" : `Se borraron ${n} opiniones`) : "No tenías opiniones publicadas"); } catch { toast("No se pudo. Revisa tu internet."); } };
   $("#pdl", v).onclick = () => { if (!confirm("Se borrarán tu nombre, jugadores, victorias, ajustes y la partida guardada de este celular. Tus opiniones publicadas se quedan (bórralas antes si quieres). ¿Continuar?")) return; try { Object.keys(localStorage).filter(k => k.startsWith("arena-mini")).forEach(k => localStorage.removeItem(k)); sessionStorage.clear(); } catch {} location.reload(); };
