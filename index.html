@@ -714,9 +714,10 @@ body.hasnav #app{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
 .ui-menu{display:grid;background:var(--u-1);border:1px solid var(--u-l);border-radius:20px;overflow:hidden}
 .ui-menu button{appearance:none;border:0;border-bottom:1px solid var(--u-l);background:none;color:#fff;display:grid;grid-template-columns:26px 1fr 18px;gap:10px;align-items:center;text-align:left;padding:14px 16px;font:500 14.5px var(--u-f);cursor:pointer}
 .ui-menu button:last-child{border-bottom:0}.ui-menu button svg{width:16px;height:16px;color:var(--u-d)}.ui-menu button.danger span{color:#ff7b86}.ui-menu button:active{background:var(--u-2)}
-.ui-foot{display:flex;justify-content:center;gap:8px;font:400 12px var(--u-f);color:#5f6473;padding:4px 0}.ui-foot button{appearance:none;border:0;background:none;color:#8b91a1;font:500 12px var(--u-f);text-decoration:underline;cursor:pointer;padding:0}
+.ui-foot{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font:400 12px var(--u-f);color:#5f6473;padding:4px 0}.ui-foot button{appearance:none;border:0;background:none;color:#8b91a1;font:500 12px var(--u-f);text-decoration:underline;cursor:pointer;padding:0}
 .pp{display:grid;gap:10px;background:var(--u-1);border:1px solid var(--u-l);border-radius:22px;padding:18px 16px}
 .pp h3{font:600 15.5px var(--u-f);margin-top:8px}.pp p{font:400 14px/1.6 var(--u-f);color:#cfd2da}.pp b{color:#fff;font-weight:600}
+.ui-dev{flex-basis:100%;text-align:center;font:400 12px var(--u-f);color:#6b7080;margin-top:2px}.ui-dev b{font-weight:600;color:#aab0bf}
 </style>
 </head>
 <body>
@@ -5790,7 +5791,7 @@ function home() {
     ${CATS.map(([c]) => { const L = GAMES.filter(x => x.cat === c); return `<div class="hx-sec"><h3>${catName(c)}</h3>${L.length > 2 ? `<button data-cat="${c}">Ver todos</button>` : ""}</div><div class="hx-rail">${L.map(uiTile).join("")}</div>`; }).join("")}
     <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>
     <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta?</b><small>Califica Arena Mini y danos ideas</small></span>${UI_ICON.arrow}</button>
-    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v17</span></footer>`, "home");
+    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v18</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`, "home");
   uiBindGames(v); rvBadges(v);
   $("#fb", v).onclick = () => appFeedback(); $("#pp", v).onclick = () => privacy();
   $("#prof", v).onclick = () => profile();
@@ -5847,7 +5848,7 @@ function profile() {
       ${S.admin ? `<button id="padm">🛡️<span>Panel de administrador</span>${UI_ICON.arrow}</button>` : ""}
     </div>
     ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
-  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v17</span></footer>`);
+  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v18</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`);
   $("#pfb", v).onclick = () => appFeedback(); $("#ppp", v).onclick = () => privacy();
   $("#pdm", v).onclick = async () => { if (!confirm("¿Borrar todas las opiniones que publicaste desde este celular?")) return; try { const n = await RV.delMine(); toast(n ? (n === 1 ? "Se borró 1 opinión" : `Se borraron ${n} opiniones`) : "No tenías opiniones publicadas"); } catch { toast("No se pudo. Revisa tu internet."); } };
   $("#pdl", v).onclick = () => { if (!confirm("Se borrarán tu nombre, jugadores, victorias, ajustes y la partida guardada de este celular. Tus opiniones publicadas se quedan (bórralas antes si quieres). ¿Continuar?")) return; try { Object.keys(localStorage).filter(k => k.startsWith("arena-mini")).forEach(k => localStorage.removeItem(k)); sessionStorage.clear(); } catch {} location.reload(); };
