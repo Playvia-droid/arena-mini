@@ -6938,7 +6938,7 @@ function home() {
     <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>
     ${donCard()}
     <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta?</b><small>Califica Arena Mini y danos ideas</small></span>${UI_ICON.arrow}</button>
-    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v22</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`, "home");
+    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v23</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`, "home");
   uiBindGames(v); rvBadges(v);
   $("#fb", v).onclick = () => appFeedback(); $("#pp", v).onclick = () => privacy();
   const dg = $("#dongo", v); if (dg) dg.onclick = () => donate();
@@ -7000,7 +7000,7 @@ function profile() {
       ${S.admin ? `<button id="padm">🛡️<span>Panel de administrador</span>${UI_ICON.arrow}</button>` : ""}
     </div>
     ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
-  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v22</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`);
+  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v23</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`);
   $("#pfb", v).onclick = () => appFeedback(); const pdn = $("#pdon", v); if (pdn) pdn.onclick = () => donate(); const pi = $("#pinst", v); if (pi) pi.onclick = () => PWA.go(); $("#ppp", v).onclick = () => privacy();
   $("#pdm", v).onclick = async () => { if (!confirm("¿Borrar todas las opiniones que publicaste desde este celular?")) return; try { const n = await RV.delMine(); toast(n ? (n === 1 ? "Se borró 1 opinión" : `Se borraron ${n} opiniones`) : "No tenías opiniones publicadas"); } catch { toast("No se pudo. Revisa tu internet."); } };
   $("#pdl", v).onclick = () => { if (!confirm("Se borrarán tu nombre, jugadores, victorias, ajustes y la partida guardada de este celular. Tus opiniones publicadas se quedan (bórralas antes si quieres). ¿Continuar?")) return; try { Object.keys(localStorage).filter(k => k.startsWith("arena-mini")).forEach(k => localStorage.removeItem(k)); sessionStorage.clear(); } catch {} location.reload(); };
@@ -7264,7 +7264,7 @@ async function rvAdmin() {
 /* ============================ DONACIONES (Stripe Payment Link) ============================ */
 /* DONATE_URL: enlace real (modo live). Mientras esté vacío, el botón solo lo ve el administrador,
    que usa el enlace de prueba (tarjeta de prueba 4242 4242 4242 4242). */
-const DONATE_URL = "";
+const DONATE_URL = "https://donate.stripe.com/5kQ28kgpy2Mmdiu9qf0Ba00";
 const DONATE_TEST = "https://donate.stripe.com/test_fZu5kw7LJbu93fK4DR3F600";
 const DON = {
   url: () => DONATE_URL || (S.admin ? DONATE_TEST : ""),
