@@ -783,6 +783,23 @@ body.hasnav #app{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
 .pl8-stage{flex:1;position:relative;min-height:340px;border-radius:14px;overflow:hidden;background:radial-gradient(80% 60% at 50% 45%,#1a1f2a,#0a0b0e)}
 .pl8-stage canvas{position:absolute;inset:0;display:block;touch-action:none}
 .pl8-emo{margin-top:0}
+.ui-don{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:linear-gradient(135deg,rgba(255,77,125,.2),rgba(255,138,76,.08));border:1px solid rgba(255,90,130,.35);border-radius:20px;padding:12px}
+.ui-don .ic{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#ff4d7d,#ff8a4c);display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px -8px #ff4d7d}.ui-don .ic svg{width:24px;height:24px}
+.ui-don b{display:block;font:600 14px var(--u-f)}.ui-don small{display:block;font:400 11.5px/1.35 var(--u-f);color:var(--u-d)}
+.ui-don .btn{min-height:38px;padding:8px 16px;font:600 13px var(--u-f);width:auto;border-radius:12px;box-shadow:none;background:linear-gradient(180deg,#ff5a86,#e8386a);color:#fff}
+.don-row small{display:block;font:400 11.5px var(--u-f);color:#ff8fb0;margin-top:2px}
+.don-sh{overflow:hidden}.don-hrt{width:64px;height:64px;justify-self:center;border-radius:20px;background:linear-gradient(135deg,#ff4d7d,#ff8a4c);display:grid;place-items:center;color:#fff;box-shadow:0 14px 30px -10px #ff4d7d}.don-hrt svg{width:34px;height:34px}
+.don-hrt.big{animation:donBeat 1.2s ease-in-out infinite}
+.don-p{margin:0;text-align:center;font:400 14.5px/1.5 var(--u-f);color:#d6d9e0}
+.don-l{list-style:none;margin:0;padding:12px;display:grid;gap:8px;background:#1c1f26;border-radius:16px;font:500 14px var(--u-f);color:#fff}.don-l li{display:flex;gap:10px;align-items:center}.don-l span{width:30px;height:30px;border-radius:9px;background:#262a33;display:grid;place-items:center;font-size:15px}
+.don-t{margin:0;padding:10px 12px;border-radius:12px;background:rgba(255,196,0,.12);border:1px dashed rgba(255,196,0,.5);color:#ffd766;font:500 12.5px/1.45 var(--u-f)}
+.pwa-in .btn.don-go{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:linear-gradient(180deg,#ff5a86,#e8386a);color:#fff}.don-go svg{width:18px;height:18px}
+.don-s{margin:0;text-align:center;font:400 12px/1.45 var(--u-f);color:#8b91a1}
+.don-x{appearance:none;border:0;background:none;color:#8b91a1;font:500 14px var(--u-f);padding:6px;cursor:pointer}
+.don-sig{margin:0;text-align:center;font:italic 500 13px var(--u-f);color:#ff8fb0}
+.don-f{position:absolute;bottom:-40px;width:26px;height:26px;color:#ff5a86;opacity:.9;transform:scale(var(--s));animation:donUp 3s ease-in forwards;pointer-events:none}.don-f svg{width:100%;height:100%}
+@keyframes donUp{0%{transform:translateY(0) scale(var(--s))}100%{transform:translateY(-110vh) rotate(25deg) scale(var(--s));opacity:0}}
+@keyframes donBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
 </style>
 </head>
 <body>
@@ -6919,10 +6936,12 @@ function home() {
     ${most.length ? `<div class="hx-sec"><h3>Lo que más juegas</h3></div><div class="hx-rail">${most.map(x => `<button class="hx-wide" data-k="${gIdx(x)}" style="--c1:${x.c1};--c2:${x.c2}"><span class="bg">${uiWideArt(x.g.id)}</span><span class="sh"></span><b>${x.g.name}</b><small>${plays[x.g.id]} ${plays[x.g.id] === 1 ? "partida" : "partidas"}</small></button>`).join("")}</div>` : ""}
     ${CATS.map(([c]) => { const L = GAMES.filter(x => x.cat === c); return `<div class="hx-sec"><h3>${catName(c)}</h3>${L.length > 2 ? `<button data-cat="${c}">Ver todos</button>` : ""}</div><div class="hx-rail">${L.map(uiTile).join("")}</div>`; }).join("")}
     <div class="hx-stats"><div><small>Partidas</small><b>${total}</b></div><div><small>Ganadas en línea</small><b>${S.onl[0]}</b></div><div><small>Juegos</small><b>${GAMES.length}</b></div></div>
+    ${donCard()}
     <button class="ui-ask" id="fb"><span class="ic">💡</span><span><b>¿Qué juego le falta?</b><small>Califica Arena Mini y danos ideas</small></span>${UI_ICON.arrow}</button>
-    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v21</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`, "home");
+    <footer class="ui-foot"><button id="pp">Política de privacidad</button><span>·</span><span>Arena Mini v22</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`, "home");
   uiBindGames(v); rvBadges(v);
   $("#fb", v).onclick = () => appFeedback(); $("#pp", v).onclick = () => privacy();
+  const dg = $("#dongo", v); if (dg) dg.onclick = () => donate();
   const ig = $("#instgo", v); if (ig) ig.onclick = () => PWA.go();
   const ix = $("#instx", v); if (ix) ix.onclick = () => { S.instHide = true; save(); $("#inst", v).remove(); toast("Puedes instalarla después desde Perfil"); };
   $("#prof", v).onclick = () => profile();
@@ -6970,9 +6989,10 @@ function profile() {
     ${[0, 1, 2, 3].map(i => `<label class="namef" style="--c:${COL[i]}"><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="${COL[i]}"/></svg><input maxlength="10" value="${esc(S.names[i] || PNAMES[i])}" data-i="${i}" aria-label="Nombre del jugador ${i + 1}"></label>`).join("")}
     <div class="hx-sec"><h3>Ajustes</h3></div>
     <label class="tog"><input type="checkbox" id="snd" ${S.muted ? "" : "checked"}><span>Sonidos y efectos</span></label>
-    <div class="hx-sec"><h3>Opiniones y privacidad</h3></div>
+    <div class="hx-sec"><h3>Apoyo, opiniones y privacidad</h3></div>
     <div class="ui-menu">
       ${PWA.can() ? `<button id="pinst">📲<span>Instalar como app</span>${UI_ICON.arrow}</button>` : ""}
+      ${DON.on() ? `<button id="pdon" class="don-row">❤️<span>Apoyar al desarrollador${S.donor ? `<small>Gracias por tu apoyo 💙</small>` : ""}</span>${UI_ICON.arrow}</button>` : ""}
       <button id="pfb">💡<span>Opinar sobre Arena Mini</span>${UI_ICON.arrow}</button>
       <button id="ppp">🔒<span>Política de privacidad</span>${UI_ICON.arrow}</button>
       <button id="pdm">🗑️<span>Borrar mis opiniones</span>${UI_ICON.arrow}</button>
@@ -6980,8 +7000,8 @@ function profile() {
       ${S.admin ? `<button id="padm">🛡️<span>Panel de administrador</span>${UI_ICON.arrow}</button>` : ""}
     </div>
     ${recs.length ? `<div class="hx-sec"><h3>Victorias en este celular</h3></div><div class="ui-list">${recs.map(([x, n]) => `<div class="ui-row static"><span class="th">${ART[x.g.id]}</span><span class="tx"><h3>${x.g.name}</h3><p>${(S.wins[x.g.id] || []).map((w, i) => w ? `${esc(S.names[i] || PNAMES[i])}: ${w}` : "").filter(Boolean).join(" · ")}</p></span><span class="go n">${n}</span></div>`).join("")}</div>` : ""}`, "user");
-  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v21</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`);
-  $("#pfb", v).onclick = () => appFeedback(); const pi = $("#pinst", v); if (pi) pi.onclick = () => PWA.go(); $("#ppp", v).onclick = () => privacy();
+  v.insertAdjacentHTML("beforeend", `<footer class="ui-foot"><span id="ver">Arena Mini v22</span><p class="ui-dev">Desarrollador <b>Adriel Malave</b></p></footer>`);
+  $("#pfb", v).onclick = () => appFeedback(); const pdn = $("#pdon", v); if (pdn) pdn.onclick = () => donate(); const pi = $("#pinst", v); if (pi) pi.onclick = () => PWA.go(); $("#ppp", v).onclick = () => privacy();
   $("#pdm", v).onclick = async () => { if (!confirm("¿Borrar todas las opiniones que publicaste desde este celular?")) return; try { const n = await RV.delMine(); toast(n ? (n === 1 ? "Se borró 1 opinión" : `Se borraron ${n} opiniones`) : "No tenías opiniones publicadas"); } catch { toast("No se pudo. Revisa tu internet."); } };
   $("#pdl", v).onclick = () => { if (!confirm("Se borrarán tu nombre, jugadores, victorias, ajustes y la partida guardada de este celular. Tus opiniones publicadas se quedan (bórralas antes si quieres). ¿Continuar?")) return; try { Object.keys(localStorage).filter(k => k.startsWith("arena-mini")).forEach(k => localStorage.removeItem(k)); sessionStorage.clear(); } catch {} location.reload(); };
   const pa = $("#padm", v); if (pa) pa.onclick = () => rvAdmin();
@@ -7212,12 +7232,14 @@ function privacy() {
       <p>Las fotos y videos de Botellita y Yo Nunca Nunca, y el chat de voz, van directo a los celulares de la sala. No se guardan en ningún servidor de Arena Mini, y las fotos y videos se borran de la partida al terminar el turno. Recuerda que otra persona siempre podría tomar una captura de pantalla: comparte solo lo que te sientas cómodo compartiendo.</p>
       <h3>5. Otros servicios que usa la página</h3>
       <p>La página está alojada en <b>GitHub Pages</b>, carga las letras desde <b>Google Fonts</b> y algunas herramientas desde <b>jsDelivr</b> y <b>unpkg</b>. Estos servicios pueden registrar datos técnicos como tu dirección IP según sus propias políticas. Arena Mini no usa herramientas de análisis ni de rastreo.</p>
-      <h3>6. Menores de edad</h3>
+      <h3>6. Donaciones</h3>
+      <p>Las donaciones son voluntarias y se procesan con <b>Stripe</b>. Al donar sales a una página segura de Stripe: Arena Mini nunca ve ni guarda los datos de tu tarjeta. Stripe pide tu correo para enviarte el recibo y procesa el pago según su propia política de privacidad. El desarrollador puede ver en Stripe la cantidad, la fecha, tu nombre y tu correo, y los usa solo para llevar las cuentas y, si hace falta, atender una devolución. En este celular solo queda guardado que ya apoyaste, para darte las gracias.</p>
+      <h3>7. Menores de edad</h3>
       <p>Las preguntas picantes (+18) vienen apagadas y el anfitrión debe confirmar que todos son mayores de edad para activarlas. Si eres menor de 13 años, no publiques opiniones.</p>
-      <h3>7. Tus opciones</h3>
+      <h3>8. Tus opciones</h3>
       <p>Puedes editar o borrar tu opinión desde el juego, o borrar todas tus opiniones desde <b>Perfil → Borrar mis opiniones</b>. Si borras los datos de tu celular antes, se pierde el identificador anónimo y ya no podrás borrarlas tú mismo.</p>
       <p><b>Contacto:</b> pronto agregaremos un correo para dudas y solicitudes de privacidad.</p>
-      <h3>8. Cambios</h3>
+      <h3>9. Cambios</h3>
       <p>Si esta política cambia, actualizaremos la fecha de arriba.</p>
     </div>`, back);
   $("#bk", v).onclick = uiBack;
@@ -7239,6 +7261,50 @@ async function rvAdmin() {
   const cp = $("#cpid", v); cp.onclick = async () => { try { await navigator.clipboard.writeText(uid); toast("ID copiado"); } catch { prompt("Copia tu ID:", uid); } };
   v.querySelectorAll(".rv-adm").forEach(b => b.onclick = async () => { if (!confirm("¿Borrar este comentario para todos?")) return; try { await RV.del(b.closest(".rv-c").dataset.id); toast("Borrado"); rvAdmin(); } catch { toast("No se pudo borrar"); } });
 }
+/* ============================ DONACIONES (Stripe Payment Link) ============================ */
+/* DONATE_URL: enlace real (modo live). Mientras esté vacío, el botón solo lo ve el administrador,
+   que usa el enlace de prueba (tarjeta de prueba 4242 4242 4242 4242). */
+const DONATE_URL = "";
+const DONATE_TEST = "https://donate.stripe.com/test_fZu5kw7LJbu93fK4DR3F600";
+const DON = {
+  url: () => DONATE_URL || (S.admin ? DONATE_TEST : ""),
+  on() { return !!this.url(); },
+  test() { return !DONATE_URL && !!S.admin; },
+};
+const DON_HEART = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.5 1.1 4.4 2.4.9-1.3 2.3-2.4 4.4-2.4 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>`;
+function donCard() {
+  if (!DON.on()) return "";
+  return `<section class="ui-don" id="don"><span class="ic">${DON_HEART}</span><span class="tx"><b>Apoya al desarrollador</b><small>Arena Mini es gratis y sin anuncios. Tu aporte ayuda a crear más juegos.</small></span><button class="btn" id="dongo">Donar</button></section>`;
+}
+function donate() {
+  const u = DON.url(); if (!u) return;
+  sfx.pick();
+  const v = h(`<div class="pwa-sh don-sh" role="dialog" aria-label="Apoya a Arena Mini"><div class="pwa-in">
+    <span class="don-hrt">${DON_HEART}</span><h3>Apoya a Arena Mini</h3>
+    <p class="don-p">Arena Mini es gratis, sin anuncios y lo hace un desarrollador independiente. Si te gusta, puedes apoyar con lo que quieras.</p>
+    <ul class="don-l"><li><span>🎮</span>Juegos nuevos y mejores</li><li><span>🛠️</span>Arreglos y mejoras más rápido</li><li><span>🌐</span>Mantener el juego en línea gratis</li></ul>
+    ${DON.test() ? `<p class="don-t">Modo de prueba (solo tú lo ves como administrador). Usa la tarjeta 4242 4242 4242 4242, cualquier fecha futura y cualquier CVC.</p>` : ""}
+    <a class="btn don-go" id="dongo2" href="${u}" target="_blank" rel="noopener">${DON_HEART}Donar con Stripe</a>
+    <p class="don-s">🔒 Pago seguro con Stripe · tú eliges la cantidad (desde $1). Arena Mini nunca ve los datos de tu tarjeta.</p>
+    <button class="don-x" id="donno">Ahora no</button></div></div>`);
+  document.body.appendChild(v);
+  v.onclick = e => { if (e.target === v || e.target.id === "donno") v.remove(); };
+  $("#dongo2", v).onclick = () => setTimeout(() => v.remove(), 300);
+}
+function donThanks() {
+  S.donor = Date.now(); save();
+  const v = h(`<div class="pwa-sh don-sh" role="dialog" aria-label="Gracias"><div class="pwa-in don-ty">
+    <span class="don-hrt big">${DON_HEART}</span><h3>¡Gracias por tu apoyo!</h3>
+    <p class="don-p">Tu donación ayuda a que Arena Mini siga creciendo. Stripe te enviará el recibo a tu correo.</p>
+    <p class="don-sig">— Adriel Malave, desarrollador</p>
+    <button class="btn green" id="donok">¡A jugar!</button></div></div>`);
+  document.body.appendChild(v);
+  for (let i = 0; i < 14; i++) { const f = document.createElement("i"); f.className = "don-f"; f.innerHTML = DON_HEART; f.style.cssText = `left:${8 + Math.random() * 84}%;animation-delay:${(Math.random() * .9).toFixed(2)}s;--s:${(.6 + Math.random() * .8).toFixed(2)}`; v.appendChild(f); }
+  try { sfx.win(); } catch { }
+  v.onclick = e => { if (e.target === v || e.target.id === "donok") v.remove(); };
+}
+/* al volver de Stripe: ?gracias=1 */
+(() => { const q = new URLSearchParams(location.search); if (!q.has("gracias")) return; q.delete("gracias"); const s = q.toString(); history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); setTimeout(donThanks, 800); })();
 
 /* =====================================================================
    PANTALLAS EN LÍNEA: menú · sala (lobby) · resultado · desconexión
